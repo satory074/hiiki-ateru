@@ -1,0 +1,702 @@
+{
+  "baystars-p-aranami": {
+    "key": "荒波翔|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-ebina": {
+    "key": "蝦名達夫|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-ise": {
+    "key": "伊勢大夢|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-ishida-kenta": {
+    "key": "石田健大|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-ishikawa-takehiro": {
+    "key": "石川雄洋|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-kinjo": {
+    "key": "金城龍彦|baystars,giants",
+    "by": "intai-fa"
+  },
+  "baystars-p-miyazaki": {
+    "key": "宮﨑敏郎|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-sano": {
+    "key": "佐野恵太|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-shimozono": {
+    "key": "下園辰哉|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-shindo": {
+    "key": "進藤達哉|baystars,buffaloes",
+    "by": "intai-fa"
+  },
+  "baystars-p-suzuki-takanori": {
+    "key": "鈴木尚典|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-tobashira": {
+    "key": "戸柱恭孝|baystars",
+    "by": "intai-fa"
+  },
+  "baystars-p-watarai": {
+    "key": "度会隆輝|baystars",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-abe-shota": {
+    "key": "阿部翔太|buffaloes",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-adachi": {
+    "key": "安達了一|buffaloes",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-goto-mitsutaka": {
+    "key": "後藤光尊|buffaloes,eagles",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-higa": {
+    "key": "比嘉幹貴|buffaloes",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-hoshino": {
+    "key": "星野伸之|buffaloes,tigers",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-kaida": {
+    "key": "海田智行|buffaloes",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-nakagawa-keita": {
+    "key": "中川圭太|buffaloes",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-nishino": {
+    "key": "西野真弘|buffaloes",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-oshiro": {
+    "key": "大城滉二|buffaloes",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-sakaguchi": {
+    "key": "坂口智隆|buffaloes,swallows",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-sugimoto": {
+    "key": "杉本裕太郎|buffaloes",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-tani": {
+    "key": "谷佳知|buffaloes,giants",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-tongu": {
+    "key": "頓宮裕真|buffaloes",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-yamada-nobuyoshi": {
+    "key": "山田修義|buffaloes",
+    "by": "intai-fa"
+  },
+  "carp-p-amaya": {
+    "key": "天谷宗一郎|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-higashide": {
+    "key": "東出輝裕|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-kozono": {
+    "key": "小園海斗|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-nagakawa": {
+    "key": "永川勝浩|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-nakamura-shosei": {
+    "key": "中村奨成|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-ogata": {
+    "key": "緒方孝市|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-sakakura": {
+    "key": "坂倉将吾|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-sasaoka": {
+    "key": "佐々岡真司|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-shimauchi": {
+    "key": "島内颯太郎|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-soyogi": {
+    "key": "梵英心|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-suekane": {
+    "key": "末包昇大|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-tokoda": {
+    "key": "床田寛樹|carp",
+    "by": "intai-fa"
+  },
+  "carp-p-yano": {
+    "key": "矢野雅哉|carp",
+    "by": "intai-fa"
+  },
+  "dragons-p-asao": {
+    "key": "浅尾拓也|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-dounoue-naomichi": {
+    "key": "堂上直倫|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-fujii": {
+    "key": "藤井淳志|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-hirata": {
+    "key": "平田良介|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-imanaka": {
+    "key": "今中慎二|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-kinoshita-takuya": {
+    "key": "木下拓哉|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-matsuyama": {
+    "key": "松山晋也|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-morino": {
+    "key": "森野将彦|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-muramatsu": {
+    "key": "村松開人|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-okabayashi": {
+    "key": "岡林勇希|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-shimizu-tatsuya": {
+    "key": "清水達也|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-tanaka-mikiya": {
+    "key": "田中幹也|dragons",
+    "by": "intai-fa"
+  },
+  "dragons-p-yanagi": {
+    "key": "柳裕也|dragons",
+    "by": "intai-fa"
+  },
+  "eagles-p-aoyama": {
+    "key": "青山浩二|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-hayakawa": {
+    "key": "早川隆久|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-hijirisawa": {
+    "key": "聖澤諒|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-kobukata": {
+    "key": "小深田大翔|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-muneyama": {
+    "key": "宗山塁|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-murabayashi": {
+    "key": "村林一輝|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-ogo": {
+    "key": "小郷裕哉|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-okajima": {
+    "key": "岡島豪郎|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-ota": {
+    "key": "太田光|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-shima": {
+    "key": "嶋基宏|eagles,swallows",
+    "by": "intai-fa"
+  },
+  "eagles-p-shimauchi": {
+    "key": "島内宏明|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-shiomi": {
+    "key": "塩見貴洋|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-suzuki-shoma": {
+    "key": "鈴木翔天|eagles",
+    "by": "intai-fa"
+  },
+  "eagles-p-tatsumi": {
+    "key": "辰己涼介|eagles",
+    "by": "intai-fa"
+  },
+  "fighters-p-isobata": {
+    "key": "五十幡亮汰|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-kamikawabata": {
+    "key": "上川畑大悟|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-kaneko-makoto": {
+    "key": "金子誠|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-koyano": {
+    "key": "小谷野栄一|buffaloes,fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-mannami": {
+    "key": "万波中正|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-miyanishi": {
+    "key": "宮西尚生|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-nakashima-takuya": {
+    "key": "中島卓也|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-sugiya": {
+    "key": "杉谷拳士|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-takeda-hisashi": {
+    "key": "武田久|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-tamai": {
+    "key": "玉井大翔|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-tamiya": {
+    "key": "田宮裕涼|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-tanaka-kensuke": {
+    "key": "田中賢介|fighters",
+    "by": "intai-fa"
+  },
+  "fighters-p-tsuruoka": {
+    "key": "鶴岡慎也|fighters,hawks",
+    "by": "intai-fa"
+  },
+  "fighters-p-yo-daikan": {
+    "key": "陽岱鋼|fighters,giants",
+    "by": "intai-fa"
+  },
+  "foil-p-01": {
+    "key": "宮之原拓真|",
+    "by": "absent"
+  },
+  "foil-p-02": {
+    "key": "久留島颯太|",
+    "by": "absent"
+  },
+  "foil-p-03": {
+    "key": "樋渡恭平|",
+    "by": "absent"
+  },
+  "foil-p-04": {
+    "key": "菅生大河|",
+    "by": "absent"
+  },
+  "foil-p-05": {
+    "key": "鷲尾慎之介|",
+    "by": "absent"
+  },
+  "foil-p-06": {
+    "key": "能登谷陽向|",
+    "by": "absent"
+  },
+  "foil-p-07": {
+    "key": "早乙女隼|",
+    "by": "absent"
+  },
+  "foil-p-08": {
+    "key": "百武誠吾|",
+    "by": "absent"
+  },
+  "foil-p-09": {
+    "key": "勅使河原蓮|",
+    "by": "absent"
+  },
+  "foil-p-10": {
+    "key": "東海林孝太郎|",
+    "by": "absent"
+  },
+  "foil-p-11": {
+    "key": "御厨聡志|",
+    "by": "absent"
+  },
+  "foil-p-12": {
+    "key": "鬼塚千尋|",
+    "by": "absent"
+  },
+  "foil-p-13": {
+    "key": "日比生楓真|",
+    "by": "absent"
+  },
+  "giants-p-funabasama": {
+    "key": "船迫大雅|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-hagio": {
+    "key": "萩尾匡也|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-kadowaki": {
+    "key": "門脇誠|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-makihara": {
+    "key": "槙原寛己|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-masuda-daiki": {
+    "key": "増田大輝|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-motoki": {
+    "key": "元木大介|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-nakagawa": {
+    "key": "中川皓太|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-ochi": {
+    "key": "越智大祐|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-oshiro": {
+    "key": "大城卓三|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-suzuki-takahiro": {
+    "key": "鈴木尚広|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-terauchi": {
+    "key": "寺内崇幸|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-yamaguchi-tetsuya": {
+    "key": "山口鉄也|giants",
+    "by": "intai-fa"
+  },
+  "giants-p-yoshikawa": {
+    "key": "吉川尚輝|giants",
+    "by": "intai-fa"
+  },
+  "hawks-p-akashi": {
+    "key": "明石健志|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-fujii-masao": {
+    "key": "藤井将雄|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-hasegawa": {
+    "key": "長谷川勇也|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-higashihama": {
+    "key": "東浜巨|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-honda": {
+    "key": "本多雄一|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-imamiya": {
+    "key": "今宮健太|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-kawase": {
+    "key": "川瀬晃|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-morifuku": {
+    "key": "森福允彦|giants,hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-settsu": {
+    "key": "攝津正|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-shibahara": {
+    "key": "柴原洋|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-shuto": {
+    "key": "周東佑京|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-tsumori": {
+    "key": "津森宥紀|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-umino": {
+    "key": "海野隆司|hawks",
+    "by": "intai-fa"
+  },
+  "hawks-p-yanagimachi": {
+    "key": "柳町達|hawks",
+    "by": "intai-fa"
+  },
+  "lions-p-akada": {
+    "key": "赤田将吾|buffaloes,fighters,lions",
+    "by": "intai-fa"
+  },
+  "lions-p-genda": {
+    "key": "源田壮亮|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-hasegawa": {
+    "key": "長谷川信哉|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-hoshino": {
+    "key": "星野智樹|eagles,lions",
+    "by": "intai-fa"
+  },
+  "lions-p-kaneko": {
+    "key": "金子侑司|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-kishi": {
+    "key": "岸孝之|eagles,lions",
+    "by": "intai-fa"
+  },
+  "lions-p-koga": {
+    "key": "古賀悠斗|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-kumashiro": {
+    "key": "熊代聖人|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-nishiguchi": {
+    "key": "西口文也|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-nishikawa": {
+    "key": "西川愛也|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-sogame": {
+    "key": "十亀剣|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-sumida": {
+    "key": "隅田知一郎|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-takizawa": {
+    "key": "滝澤夏央|lions",
+    "by": "intai-fa"
+  },
+  "lions-p-tonosaki": {
+    "key": "外崎修汰|lions",
+    "by": "intai-fa"
+  },
+  "marines-p-fujioka": {
+    "key": "藤岡裕大|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-hori": {
+    "key": "堀幸一|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-kakunaka": {
+    "key": "角中勝也|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-masuda": {
+    "key": "益田直也|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-ogino": {
+    "key": "荻野貴司|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-okada": {
+    "key": "岡田幸文|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-ono": {
+    "key": "小野晋吾|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-sato-toshiya": {
+    "key": "佐藤都志也|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-satozaki": {
+    "key": "里崎智也|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-takabe": {
+    "key": "髙部瑛斗|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-taneichi": {
+    "key": "種市篤暉|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-wada": {
+    "key": "和田康士朗|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-watanabe-shunsuke": {
+    "key": "渡辺俊介|marines",
+    "by": "intai-fa"
+  },
+  "marines-p-yabuta": {
+    "key": "薮田安彦|marines",
+    "by": "intai-fa"
+  },
+  "swallows-p-dobashi": {
+    "key": "土橋勝征|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-hatakeyama": {
+    "key": "畠山和洋|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-ishiyama": {
+    "key": "石山泰稚|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-ito-tomohito": {
+    "key": "伊藤智仁|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-kawabata": {
+    "key": "川端慎吾|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-kizawa": {
+    "key": "木澤尚文|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-manaka": {
+    "key": "真中満|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-nagaoka": {
+    "key": "長岡秀樹|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-nakamura-yuhei": {
+    "key": "中村悠平|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-namiki": {
+    "key": "並木秀尊|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-shimizu": {
+    "key": "清水昇|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-shiomi": {
+    "key": "塩見泰隆|swallows",
+    "by": "intai-fa"
+  },
+  "swallows-p-tateyama": {
+    "key": "館山昌平|swallows",
+    "by": "intai-fa"
+  },
+  "tigers-p-akahoshi": {
+    "key": "赤星憲広|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-haraguchi": {
+    "key": "原口文仁|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-hiyama": {
+    "key": "桧山進次郎|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-ishii-daichi": {
+    "key": "石井大智|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-itohara": {
+    "key": "糸原健斗|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-iwazaki": {
+    "key": "岩崎優|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-kirishiki": {
+    "key": "桐敷拓馬|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-kubota": {
+    "key": "久保田智之|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-nakano": {
+    "key": "中野拓夢|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-sekimoto": {
+    "key": "関本賢太郎|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-shimada": {
+    "key": "島田海吏|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-umeno": {
+    "key": "梅野隆太郎|tigers",
+    "by": "intai-fa"
+  },
+  "tigers-p-yagi": {
+    "key": "八木裕|tigers",
+    "by": "intai-fa"
+  }
+}

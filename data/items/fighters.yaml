@@ -1,0 +1,111 @@
+# 北海道日本ハムファイターズの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp の 2026年度 選手一覧（https://npb.jp/bis/teams/rst_f.html）で在籍を確認した。
+items:
+  # --- 選手：現役 ---
+  - { id: fighters-p-miyanishi, kind: player, genre: player, text: 宮西 尚生, hint: 投手・2000〜20年代, teams: [fighters], tier: B, era: current, source: "https://npb.jp/bis/players/41445116.html", check: auto }
+  - { id: fighters-p-mannami, kind: player, genre: player, text: 万波 中正, hint: 外野手・2020年代, teams: [fighters], tier: B, era: current, source: "https://npb.jp/bis/players/11815138.html", check: auto }
+  - { id: fighters-p-nakashima-takuya, kind: player, genre: player, text: 中島 卓也, hint: 内野手・2010〜20年代, teams: [fighters], tier: C, era: current, source: "https://npb.jp/bis/players/11215118.html", check: auto }
+  - { id: fighters-p-kamikawabata, kind: player, genre: player, text: 上川畑 大悟, hint: 内野手・2020年代, teams: [fighters], tier: C, era: current, source: "https://npb.jp/bis/players/01505155.html", check: auto }
+  - { id: fighters-p-isobata, kind: player, genre: player, text: 五十幡 亮汰, hint: 外野手・2020年代, teams: [fighters], tier: C, era: current, source: "https://npb.jp/bis/players/11315153.html", check: auto }
+  - { id: fighters-p-tamiya, kind: player, genre: player, text: 田宮 裕涼, hint: 捕手・2020年代, teams: [fighters], tier: C, era: current, source: "https://npb.jp/bis/players/51055138.html", check: auto }
+  - { id: fighters-p-tamai, kind: player, genre: player, text: 玉井 大翔, hint: 投手・2010〜20年代, teams: [fighters], tier: C, era: current, source: "https://npb.jp/bis/players/91295134.html", check: auto }
+  # --- 選手：OB ---
+  - { id: fighters-p-tanaka-kensuke, kind: player, genre: player, text: 田中 賢介, hint: 内野手・2000〜10年代, teams: [fighters], tier: B, era: ob, source: "https://npb.jp/bis/players/11915111.html", check: auto }
+  - { id: fighters-p-yo-daikan, kind: player, genre: player, text: 陽 岱鋼, hint: 外野手・2000〜10年代, teams: [fighters, giants], tier: B, era: ob, source: "https://npb.jp/bis/players/21825112.html", check: auto }
+  - { id: fighters-p-koyano, kind: player, genre: player, text: 小谷野 栄一, hint: 内野手・2000〜10年代, teams: [fighters, buffaloes], tier: B, era: ob, source: "https://npb.jp/bis/players/71975117.html", check: auto }
+  - { id: fighters-p-kaneko-makoto, kind: player, genre: player, text: 金子 誠, hint: 内野手・1990〜2010年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/21323889.html", check: auto }
+  - { id: fighters-p-sugiya, kind: player, genre: player, text: 杉谷 拳士, hint: 内野手・2010年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/81785118.html", check: auto }
+  - { id: fighters-p-takeda-hisashi, kind: player, genre: player, text: 武田 久, hint: 投手・2000〜10年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/41045117.html", check: auto }
+  - { id: fighters-p-tsuruoka, kind: player, genre: player, text: 鶴岡 慎也, hint: 捕手・2000〜10年代, teams: [fighters, hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/71275117.html", check: auto }
+
+  # --- 名物 ---
+  - id: fighters-c-bb
+    kind: culture
+    genre: mascot
+    text: B・B
+    hint: 球団マスコット
+    teams: [fighters]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    note: 北海道移転の2004年に登場。2018年から球場での活動に区切り
+    check: owner
+  - id: fighters-c-frep
+    kind: culture
+    genre: mascot
+    text: フレップ・ザ・フォックス
+    hint: 球団マスコット
+    teams: [fighters]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    check: owner
+  - id: fighters-c-kitsune-dance
+    kind: culture
+    genre: cheer
+    text: きつねダンス
+    hint: 球場の応援
+    teams: [fighters]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    check: owner
+  - id: fighters-c-inaba-jump
+    kind: culture
+    genre: cheer
+    text: 稲葉ジャンプ
+    hint: 球場の応援
+    teams: [fighters]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    check: owner
+  - id: fighters-c-we-love-hokkaido
+    kind: culture
+    genre: event
+    text: WE LOVE HOKKAIDOシリーズ
+    hint: 球団のイベント
+    teams: [fighters]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    note: 2025年からは「WE LOVE HOKKAIDO & FIGHTERS SERIES」の名で開催。球団名を含むので短い名前で出す
+    check: owner
+  - id: fighters-c-tower11
+    kind: culture
+    genre: stadium
+    text: TOWER11（タワー・イレブン）
+    hint: 球場
+    teams: [fighters]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/エスコンフィールドHOKKAIDO"
+    note: 本拠地球場のレフト側にある温泉・サウナ付きの施設
+    check: owner
+  - id: fighters-c-kamagaya
+    kind: culture
+    genre: stadium
+    text: 鎌ケ谷スタジアム
+    hint: 球場
+    teams: [fighters]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    note: 二軍の本拠地（千葉県鎌ケ谷市）。正式名は球団名を含むので略称で出す。二軍の北海道移転構想あり
+    check: owner
+
+  # --- クイズ ---
+  - id: fighters-q-1
+    kind: quiz
+    genre: quiz
+    text: 北海道に本拠地を移して最初のシーズンは何年？
+    choices: [2001年, 2004年, 2006年, 2008年]
+    answer: 1
+    teams: [fighters]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    check: owner
+  - id: fighters-q-2
+    kind: quiz
+    genre: quiz
+    text: マスコットのフレップがつける背番号「179」は何の数？
+    choices: [球場の住所の番地, 北海道の市町村の数, 北海道の駅の数, 球団創設からの年数]
+    answer: 1
+    teams: [fighters]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    note: 本拠地の市名（北広島市）を問う案は「広島」を含むため検査に掛かるので差し替えた
+    check: owner

@@ -1,0 +1,110 @@
+# 東京ヤクルトスワローズの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp「2026年度 選手一覧」（https://npb.jp/bis/teams/rst_s.html、シーズン終了時点）で在籍を確認。
+items:
+  # 選手（現役）
+  - { id: swallows-p-nakamura-yuhei, kind: player, genre: player, text: 中村 悠平, hint: 捕手・2010〜20年代, teams: [swallows], tier: B, era: current, source: "https://npb.jp/bis/players/51255118.html", check: auto }
+  - { id: swallows-p-shiomi, kind: player, genre: player, text: 塩見 泰隆, hint: 外野手・2020年代, teams: [swallows], tier: B, era: current, source: "https://npb.jp/bis/players/71975136.html", check: auto }
+  - { id: swallows-p-nagaoka, kind: player, genre: player, text: 長岡 秀樹, hint: 内野手・2020年代, teams: [swallows], tier: B, era: current, source: "https://npb.jp/bis/players/51455151.html", check: auto }
+  - { id: swallows-p-shimizu, kind: player, genre: player, text: 清水 昇, hint: 投手・2020年代, teams: [swallows], tier: C, era: current, source: "https://npb.jp/bis/players/51955138.html", check: auto }
+  - { id: swallows-p-kizawa, kind: player, genre: player, text: 木澤 尚文, hint: 投手・2020年代, teams: [swallows], tier: C, era: current, source: "https://npb.jp/bis/players/11915153.html", check: auto }
+  - { id: swallows-p-namiki, kind: player, genre: player, text: 並木 秀尊, hint: 外野手・2020年代, teams: [swallows], tier: C, era: current, source: "https://npb.jp/bis/players/91695153.html", check: auto }
+  - { id: swallows-p-ishiyama, kind: player, genre: player, text: 石山 泰稚, hint: 投手・2010〜20年代, teams: [swallows], tier: C, era: current, source: "https://npb.jp/bis/players/21125137.html", check: auto }
+  # 選手（OB）
+  - { id: swallows-p-ito-tomohito, kind: player, genre: player, text: 伊藤 智仁, hint: 投手・1990年代, teams: [swallows], tier: B, era: ob, source: "https://npb.jp/bis/players/21123887.html", check: auto }
+  - id: swallows-p-kawabata
+    kind: player
+    genre: player
+    text: 川端 慎吾
+    hint: 内野手・2010年代
+    teams: [swallows]
+    tier: B
+    era: ob
+    source: "https://npb.jp/bis/players/31735112.html"
+    check: auto
+    note: 2025年限りで引退を発表。引退試合（2026年3月14日）のために一時支配下登録され、3月16日に任意引退。2026年の NPB.jp 選手一覧には載っていないので ob 扱い
+  - { id: swallows-p-manaka, kind: player, genre: player, text: 真中 満, hint: 外野手・1990〜2000年代, teams: [swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/91293887.html", check: auto }
+  - { id: swallows-p-dobashi, kind: player, genre: player, text: 土橋 勝征, hint: 内野手・1990年代, teams: [swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/71773864.html", check: auto }
+  - { id: swallows-p-hatakeyama, kind: player, genre: player, text: 畠山 和洋, hint: 内野手・2010年代, teams: [swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/31235113.html", check: auto }
+  - { id: swallows-p-tateyama, kind: player, genre: player, text: 館山 昌平, hint: 投手・2000〜10年代, teams: [swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/81085117.html", check: auto }
+
+  # 名物
+  - id: swallows-c-tsubakuro
+    kind: culture
+    genre: mascot
+    text: つば九郎
+    hint: 球団マスコット
+    teams: [swallows]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
+    check: owner
+    note: 2025年3月から休止し、2026年3月31日の神宮開幕戦で活動再開
+  - id: swallows-c-tsubami
+    kind: culture
+    genre: mascot
+    text: つばみ
+    hint: 球団マスコット
+    teams: [swallows]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
+    check: owner
+  - id: swallows-c-torukuya
+    kind: culture
+    genre: mascot
+    text: トルクーヤ
+    hint: 球団マスコット
+    teams: [swallows]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
+    check: owner
+  - id: swallows-c-kasa
+    kind: culture
+    genre: cheer
+    text: 東京音頭の傘応援
+    hint: 球場の応援
+    teams: [swallows]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E9%9F%B3%E9%A0%AD"
+    check: owner
+    note: 得点時と神宮の7回裏の前に、広げたビニール傘を振って歌う。曲名だけで歌詞は載せない
+  - id: swallows-c-jinkara
+    kind: culture
+    genre: food
+    text: じんカラ
+    hint: 球場グルメ
+    teams: [swallows]
+    tier: C
+    source: "https://baseballking.jp/ns/695726/"
+    check: owner
+    note: 神宮球場のからあげ。出典は他球団のからあげイベントへの出店記事で、そこで「神宮球場の名物グルメ」と紹介されている
+  - id: swallows-c-hanabi
+    kind: culture
+    genre: event
+    text: 神宮花火ナイター
+    hint: 球団のイベント
+    teams: [swallows]
+    tier: C
+    source: "https://www.yakult-swallows.co.jp/news/detail/32246"
+    check: owner
+    note: 夏の主催試合で5回裏終了時に花火300発。公式の告知は説明的な題で、この呼び名はイベント情報サイト（walkerplus）のもの
+
+  # クイズ
+  - id: swallows-q-1
+    kind: quiz
+    genre: quiz
+    text: つば九郎がユニフォームを着るときの背番号は？
+    choices: ["0", "296", "1994", "2896"]
+    answer: 3
+    teams: [swallows]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
+    check: owner
+  - id: swallows-q-2
+    kind: quiz
+    genre: quiz
+    text: 本拠地の明治神宮野球場があるのは東京都の何区？
+    choices: [港区, 新宿区, 渋谷区, 千代田区]
+    answer: 1
+    teams: [swallows]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE%E9%87%8E%E7%90%83%E5%A0%B4"
+    check: owner

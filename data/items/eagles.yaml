@@ -1,0 +1,112 @@
+# 東北楽天ゴールデンイーグルスの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp の 2026年度 選手一覧（https://npb.jp/bis/teams/rst_e.html）で在籍を確認した。
+# OB は 2026-11-25 時点で 12 球団どの 2026年度 選手一覧にも載っていないことを確認した。
+items:
+  # --- 選手（現役） ---
+  - { id: eagles-p-ota, kind: player, genre: player, text: 太田 光, hint: 捕手・2020年代, teams: [eagles], tier: C, era: current, source: "https://npb.jp/bis/players/71375138.html", check: auto }
+  - { id: eagles-p-kobukata, kind: player, genre: player, text: 小深田 大翔, hint: 内野手・2020年代, teams: [eagles], tier: C, era: current, source: "https://npb.jp/bis/players/61965151.html", check: auto }
+  - { id: eagles-p-murabayashi, kind: player, genre: player, text: 村林 一輝, hint: 内野手・2020年代, teams: [eagles], tier: C, era: current, source: "https://npb.jp/bis/players/41845132.html", check: auto }
+  - { id: eagles-p-ogo, kind: player, genre: player, text: 小郷 裕哉, hint: 外野手・2020年代, teams: [eagles], tier: C, era: current, source: "https://npb.jp/bis/players/81385138.html", check: auto }
+  - { id: eagles-p-suzuki-shoma, kind: player, genre: player, text: 鈴木 翔天, hint: 投手・2020年代, teams: [eagles], tier: C, era: current, source: "https://npb.jp/bis/players/01905138.html", check: auto }
+  - { id: eagles-p-hayakawa, kind: player, genre: player, text: 早川 隆久, hint: 投手・2020年代, teams: [eagles], tier: B, era: current, source: "https://npb.jp/bis/players/31835153.html", check: auto }
+  - { id: eagles-p-tatsumi, kind: player, genre: player, text: 辰己 涼介, hint: 外野手・2010〜20年代, teams: [eagles], tier: B, era: current, source: "https://npb.jp/bis/players/11015138.html", check: auto }
+  - { id: eagles-p-muneyama, kind: player, genre: player, text: 宗山 塁, hint: 内野手・2020年代, teams: [eagles], tier: B, era: current, source: "https://npb.jp/bis/players/53155150.html", check: auto }
+  # --- 選手（OB） ---
+  - { id: eagles-p-shima, kind: player, genre: player, text: 嶋 基宏, hint: 捕手・2000〜10年代, teams: [eagles, swallows], tier: B, era: ob, source: "https://npb.jp/bis/players/01905114.html", check: auto }
+  - { id: eagles-p-hijirisawa, kind: player, genre: player, text: 聖澤 諒, hint: 外野手・2010年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/61265116.html", check: auto }
+  - { id: eagles-p-aoyama, kind: player, genre: player, text: 青山 浩二, hint: 投手・2000〜10年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/91195112.html", check: auto }
+  - { id: eagles-p-shimauchi, kind: player, genre: player, text: 島内 宏明, hint: 外野手・2010〜20年代, teams: [eagles], tier: B, era: ob, source: "https://npb.jp/bis/players/71975135.html", check: auto }
+  - { id: eagles-p-okajima, kind: player, genre: player, text: 岡島 豪郎, hint: 外野手・2010〜20年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/21325135.html", check: auto }
+  - { id: eagles-p-shiomi, kind: player, genre: player, text: 塩見 貴洋, hint: 投手・2010年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/11015133.html", check: auto }
+
+  # --- 名物 ---
+  - id: eagles-c-clutch
+    kind: culture
+    genre: mascot
+    text: クラッチ
+    hint: 球団マスコット
+    teams: [eagles]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/東北楽天ゴールデンイーグルス"
+    check: owner
+  - id: eagles-c-clutchina
+    kind: culture
+    genre: mascot
+    text: クラッチーナ
+    hint: 球団マスコット
+    teams: [eagles]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/東北楽天ゴールデンイーグルス"
+    check: owner
+  - id: eagles-c-carrasco
+    kind: culture
+    genre: mascot
+    text: Mr.カラスコ
+    hint: 球団マスコット
+    teams: [eagles]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/Mr.カラスコ"
+    check: owner
+    note: 球団の「非公認」マスコットという設定。hint は他と揃えて「球団マスコット」にした
+  - id: eagles-c-glico-park
+    kind: culture
+    genre: stadium
+    text: スマイルグリコパーク
+    hint: 球場
+    teams: [eagles]
+    tier: C
+    source: "https://www.walkerplus.com/article/1407944/"
+    check: owner
+    note: 本拠地球場のレフト後方にある観覧車のある広場（2016年開業、2026年も営業）
+  - id: eagles-c-k-sta
+    kind: culture
+    genre: stadium
+    text: Kスタ宮城
+    hint: 球場
+    teams: [eagles]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/宮城球場"
+    check: owner
+    note: 本拠地球場の 2008〜2013年の公式略称
+  - id: eagles-c-benyland
+    kind: culture
+    genre: cheer
+    text: 八木山ベニーランドのテーマ
+    hint: 球場の応援
+    teams: [eagles]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/八木山ベニーランド"
+    check: owner
+    note: 遊園地の CM 曲がチャンステーマに使われている。東北の人はファンでなくても曲自体は知っている可能性あり
+  - id: eagles-c-golden-angels
+    kind: culture
+    genre: cheer
+    text: 東北ゴールデンエンジェルス
+    hint: 球場の応援
+    teams: [eagles]
+    tier: C
+    source: "https://baseballking.jp/ns/682355/"
+    check: owner
+    note: 球団公式チアリーダー。2026年メンバー発表の記事
+
+  # --- クイズ ---
+  - id: eagles-q-1
+    kind: quiz
+    genre: quiz
+    text: 仙台にあるプロ野球の本拠地球場は、仙台市の何区にある？
+    choices: [青葉区, 宮城野区, 若林区, 太白区]
+    answer: 1
+    teams: [eagles]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/宮城球場"
+    check: owner
+  - id: eagles-q-2
+    kind: quiz
+    genre: quiz
+    text: 2005年に仙台で誕生したプロ野球球団の、初代監督は？
+    choices: [野村克也, 星野仙一, 田尾安志, マーティ・ブラウン]
+    answer: 2
+    teams: [eagles]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/東北楽天ゴールデンイーグルス"
+    check: owner

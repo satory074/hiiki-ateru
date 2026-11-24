@@ -1,0 +1,112 @@
+# 中日ドラゴンズの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp「2026年度 選手一覧」（シーズン終了時点）で在籍を確認した。
+items:
+  # --- 選手（現役） ---
+  - { id: dragons-p-matsuyama, kind: player, genre: player, text: 松山 晋也, hint: 投手・2020年代, teams: [dragons], tier: C, era: current, source: "https://npb.jp/bis/players/61865157.html", check: auto }
+  - { id: dragons-p-shimizu-tatsuya, kind: player, genre: player, text: 清水 達也, hint: 投手・2020年代, teams: [dragons], tier: C, era: current, source: "https://npb.jp/bis/players/01905136.html", check: auto }
+  - { id: dragons-p-muramatsu, kind: player, genre: player, text: 村松 開人, hint: 内野手・2020年代, teams: [dragons], tier: C, era: current, source: "https://npb.jp/bis/players/03105157.html", check: auto }
+  - { id: dragons-p-tanaka-mikiya, kind: player, genre: player, text: 田中 幹也, hint: 内野手・2020年代, teams: [dragons], tier: C, era: current, source: "https://npb.jp/bis/players/21025157.html", check: auto }
+  - { id: dragons-p-kinoshita-takuya, kind: player, genre: player, text: 木下 拓哉, hint: 捕手・2010〜20年代, teams: [dragons], tier: C, era: current, source: "https://npb.jp/bis/players/31735132.html", check: auto }
+  - { id: dragons-p-okabayashi, kind: player, genre: player, text: 岡林 勇希, hint: 外野手・2020年代, teams: [dragons], tier: B, era: current, source: "https://npb.jp/bis/players/81585151.html", check: auto }
+  - { id: dragons-p-yanagi, kind: player, genre: player, text: 柳 裕也, hint: 投手・2010〜20年代, teams: [dragons], tier: B, era: current, source: "https://npb.jp/bis/players/63165134.html", check: auto }
+  # --- 選手（OB） ---
+  - { id: dragons-p-morino, kind: player, genre: player, text: 森野 将彦, hint: 内野手・2000〜10年代, teams: [dragons], tier: B, era: ob, source: "https://npb.jp/bis/players/21223884.html", check: auto }
+  - { id: dragons-p-asao, kind: player, genre: player, text: 浅尾 拓也, hint: 投手・2000〜10年代, teams: [dragons], tier: B, era: ob, source: "https://npb.jp/bis/players/71175114.html", check: auto }
+  - { id: dragons-p-imanaka, kind: player, genre: player, text: 今中 慎二, hint: 投手・1990年代, teams: [dragons], tier: B, era: ob, source: "https://npb.jp/bis/players/71173868.html", check: auto }
+  - { id: dragons-p-hirata, kind: player, genre: player, text: 平田 良介, hint: 外野手・2010年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/61265112.html", check: auto }
+  - { id: dragons-p-dounoue-naomichi, kind: player, genre: player, text: 堂上 直倫, hint: 内野手・2010年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/01205114.html", check: auto }
+  - { id: dragons-p-fujii, kind: player, genre: player, text: 藤井 淳志, hint: 外野手・2000〜10年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/51455112.html", check: auto }
+
+  # --- 名物 ---
+  - id: dragons-c-doala
+    kind: culture
+    genre: mascot
+    text: ドアラ
+    hint: 球団マスコット
+    teams: [dragons]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A2%E3%83%A9"
+    check: owner
+  - id: dragons-c-shaolong
+    kind: culture
+    genre: mascot
+    text: シャオロン
+    hint: 球団マスコット
+    teams: [dragons]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A2%E3%83%A9"
+    check: owner
+    note: 1997年のドーム移転時に登場（出典の沿革）
+  - id: dragons-c-black-doala
+    kind: culture
+    genre: mascot
+    text: ブラックドアラ
+    hint: 球団マスコット
+    teams: [dragons]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A2%E3%83%A9"
+    check: owner
+    note: 2026年7月3日に初登場したライバル役。背番号4991
+  - id: dragons-c-hr-wing
+    kind: culture
+    genre: stadium
+    text: ホームランウイング
+    hint: 球場
+    teams: [dragons]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%B3%E3%83%86%E3%83%AA%E3%83%B3%E3%83%89%E3%83%BC%E3%83%A0_%E3%83%8A%E3%82%B4%E3%83%A4"
+    check: owner
+    note: 2026年からバンテリンドームの左中間・右中間の外野フェンス手前に設けた席
+  - id: dragons-c-tamaben
+    kind: culture
+    genre: food
+    text: 球弁（たまべん）
+    hint: 球場グルメ
+    teams: [dragons]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%B3%E3%83%86%E3%83%AA%E3%83%B3%E3%83%89%E3%83%BC%E3%83%A0_%E3%83%8A%E3%82%B4%E3%83%A4"
+    check: owner
+    note: バンテリンドームで売られる弁当の総称（2005年から）。西武ドームにも「きゅうべん」と読む同字の弁当がある
+  - id: dragons-c-nagoya-kyujo
+    kind: culture
+    genre: stadium
+    text: ナゴヤ球場
+    hint: 球場
+    teams: [dragons]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%97%A5%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%BA"
+    check: owner
+    note: 1996年までの一軍本拠地で、現在の二軍本拠地
+  - id: dragons-c-ryujinsai
+    kind: culture
+    genre: event
+    text: 竜陣祭
+    hint: 球団のイベント
+    teams: [dragons]
+    tier: C
+    source: "https://sports.yahoo.co.jp/official/detail/2026060900089-spnaviow"
+    check: owner
+    note: 夏の主催試合の企画。2026年は8月21〜23日に開催（出典は球団の公式発表の転載）
+
+  # --- クイズ ---
+  - id: dragons-q-1
+    kind: quiz
+    genre: quiz
+    text: コアラのマスコット「ドアラ」の背番号は？
+    choices: ["1954", "1974", "1994", "1997"]
+    answer: 2
+    teams: [dragons]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A2%E3%83%A9"
+    check: owner
+    note: デビューした1994年にちなむ
+  - id: dragons-q-2
+    kind: quiz
+    genre: quiz
+    text: 二軍の本拠地「ナゴヤ球場」があるのは名古屋市の何区？
+    choices: [中川区, 熱田区, 港区, 東区]
+    answer: 0
+    teams: [dragons]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%97%A5%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%BA"
+    check: owner

@@ -1,0 +1,110 @@
+# 千葉ロッテマリーンズの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp の 2026年度 選手一覧（https://npb.jp/bis/teams/rst_m.html）で在籍を確認した。
+# OB は 2026-11-25 時点で 12 球団どの 2026年度 選手一覧にも載っていないことを確認した（荻野 貴司 は 2026年に海外の球団へ）。
+items:
+  # --- 選手（現役） ---
+  - { id: marines-p-masuda, kind: player, genre: player, text: 益田 直也, hint: 投手・2010〜20年代, teams: [marines], tier: B, era: current, source: "https://npb.jp/bis/players/71675135.html", check: auto }
+  - { id: marines-p-taneichi, kind: player, genre: player, text: 種市 篤暉, hint: 投手・2010〜20年代, teams: [marines], tier: B, era: current, source: "https://npb.jp/bis/players/71275134.html", check: auto }
+  - { id: marines-p-kakunaka, kind: player, genre: player, text: 角中 勝也, hint: 外野手・2010〜20年代, teams: [marines], tier: B, era: current, source: "https://npb.jp/bis/players/41545114.html", check: auto }
+  - { id: marines-p-fujioka, kind: player, genre: player, text: 藤岡 裕大, hint: 内野手・2010〜20年代, teams: [marines], tier: C, era: current, source: "https://npb.jp/bis/players/41645136.html", check: auto }
+  - { id: marines-p-sato-toshiya, kind: player, genre: player, text: 佐藤 都志也, hint: 捕手・2020年代, teams: [marines], tier: C, era: current, source: "https://npb.jp/bis/players/71075151.html", check: auto }
+  - { id: marines-p-takabe, kind: player, genre: player, text: 髙部 瑛斗, hint: 外野手・2020年代, teams: [marines], tier: C, era: current, source: "https://npb.jp/bis/players/11215151.html", check: auto }
+  - { id: marines-p-wada, kind: player, genre: player, text: 和田 康士朗, hint: 外野手・2020年代, teams: [marines], tier: C, era: current, source: "https://npb.jp/bis/players/33335136.html", check: auto }
+  # --- 選手（OB） ---
+  - { id: marines-p-satozaki, kind: player, genre: player, text: 里崎 智也, hint: 捕手・2000〜10年代, teams: [marines], tier: B, era: ob, source: "https://npb.jp/bis/players/31733888.html", check: auto }
+  - { id: marines-p-watanabe-shunsuke, kind: player, genre: player, text: 渡辺 俊介, hint: 投手・2000年代, teams: [marines], tier: B, era: ob, source: "https://npb.jp/bis/players/71675113.html", check: auto }
+  - { id: marines-p-yabuta, kind: player, genre: player, text: 薮田 安彦, hint: 投手・2000年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/71273882.html", check: auto }
+  - { id: marines-p-hori, kind: player, genre: player, text: 堀 幸一, hint: 内野手・1990〜2000年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/73873868.html", check: auto }
+  - { id: marines-p-okada, kind: player, genre: player, text: 岡田 幸文, hint: 外野手・2010年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/81385118.html", check: auto }
+  - { id: marines-p-ogino, kind: player, genre: player, text: 荻野 貴司, hint: 外野手・2010〜20年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/71575131.html", check: auto }
+  - { id: marines-p-ono, kind: player, genre: player, text: 小野 晋吾, hint: 投手・1990〜2000年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/71373889.html", check: auto }
+
+  # --- 名物 ---
+  - id: marines-c-makun
+    kind: culture
+    genre: mascot
+    text: マーくん
+    hint: 球団マスコット
+    teams: [marines]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/千葉ロッテマリーンズ"
+    check: owner
+  - id: marines-c-reen
+    kind: culture
+    genre: mascot
+    text: リーンちゃん
+    hint: 球団マスコット
+    teams: [marines]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/千葉ロッテマリーンズ"
+    check: owner
+  - id: marines-c-zoo
+    kind: culture
+    genre: mascot
+    text: ズーちゃん
+    hint: 球団マスコット
+    teams: [marines]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/千葉ロッテマリーンズ"
+    check: owner
+  - id: marines-c-zozo-marine
+    kind: culture
+    genre: stadium
+    text: ZOZOマリンスタジアム
+    hint: 球場
+    teams: [marines]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/千葉マリンスタジアム"
+    check: owner
+  - id: marines-c-marine-wind
+    kind: culture
+    genre: stadium
+    text: マリン風
+    hint: 球場
+    teams: [marines]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/千葉マリンスタジアム"
+    check: owner
+    note: 東京湾に近い本拠地球場に吹く強い海風の通称
+  - id: marines-c-kazuchan-motsuni
+    kind: culture
+    genre: food
+    text: かずちゃんのもつ煮こみ
+    hint: 球場グルメ
+    teams: [marines]
+    tier: C
+    source: "https://netshop.impress.co.jp/r/prtimes/items/000000003.000111793"
+    check: owner
+    note: 1992年から本拠地球場で売られているもつ煮（2026年8月のプレスリリース）
+  - id: marines-c-black-summer-week
+    kind: culture
+    genre: event
+    text: BLACK SUMMER WEEK
+    hint: 球団のイベント
+    teams: [marines]
+    tier: C
+    source: "https://news.livedoor.com/article/detail/31873948/"
+    check: owner
+    note: 夏の本拠地主催試合の企画。2021年から、2026年も開催
+
+  # --- クイズ ---
+  - id: marines-q-1
+    kind: quiz
+    genre: quiz
+    text: 千葉市にあるプロ野球の本拠地球場は、千葉市の何区にある？
+    choices: [中央区, 花見川区, 稲毛区, 美浜区]
+    answer: 3
+    teams: [marines]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/千葉マリンスタジアム"
+    check: owner
+  - id: marines-q-2
+    kind: quiz
+    genre: quiz
+    text: 千葉を本拠地とするプロ野球球団が「ファンの番号」として欠番にしている背番号は？
+    choices: ["12", "26", "10", "99"]
+    answer: 1
+    teams: [marines]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/千葉ロッテマリーンズ"
+    check: owner

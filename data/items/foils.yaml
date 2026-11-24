@@ -1,0 +1,39 @@
+# 架空の質問（実在しない選手・名物）。知ったかぶり（知らないのに「知ってる」と答える）を見抜く。
+# 4・12・20・28問目に1つずつ出し、結果画面で「実は架空でした」と種明かしする。
+# 選手名は intai-fa の people.jsonl・people-extra.jsonl のどの人とも一致しないことを check-items.ts が毎回確かめる。
+# 名物は 2026-11-25 に Web 検索で同名のものが見つからないことを確かめた（note に記録）。
+items:
+  - { id: foil-p-01, kind: foil, look: player, genre: player, text: 宮之原 拓真, hint: 投手・2010年代 }
+  - { id: foil-p-02, kind: foil, look: player, genre: player, text: 久留島 颯太, hint: 外野手・2020年代 }
+  - { id: foil-p-03, kind: foil, look: player, genre: player, text: 樋渡 恭平, hint: 捕手・2000年代 }
+  - { id: foil-p-04, kind: foil, look: player, genre: player, text: 菅生 大河, hint: 内野手・2020年代 }
+  - { id: foil-p-05, kind: foil, look: player, genre: player, text: 鷲尾 慎之介, hint: 投手・1990年代 }
+  - { id: foil-p-06, kind: foil, look: player, genre: player, text: 能登谷 陽向, hint: 投手・2020年代 }
+  - { id: foil-p-07, kind: foil, look: player, genre: player, text: 早乙女 隼, hint: 外野手・2010年代 }
+  - { id: foil-p-08, kind: foil, look: player, genre: player, text: 百武 誠吾, hint: 内野手・2000年代 }
+  - { id: foil-p-09, kind: foil, look: player, genre: player, text: 勅使河原 蓮, hint: 投手・2010年代 }
+  - { id: foil-p-10, kind: foil, look: player, genre: player, text: 東海林 孝太郎, hint: 内野手・1990年代 }
+  - { id: foil-p-11, kind: foil, look: player, genre: player, text: 御厨 聡志, hint: 捕手・2010年代 }
+  - { id: foil-p-12, kind: foil, look: player, genre: player, text: 鬼塚 千尋, hint: 投手・2020年代 }
+  - { id: foil-p-13, kind: foil, look: player, genre: player, text: 日比生 楓真, hint: 外野手・2020年代 }
+  - id: foil-c-01
+    kind: foil
+    look: culture
+    genre: food
+    text: みそカツ焼きそば
+    hint: 球場グルメ
+    note: 2026-11-25 の Web 検索で、球場で売られている同名の品は見つからなかった
+  - id: foil-c-02
+    kind: foil
+    look: culture
+    genre: cheer
+    text: 七回表のうちわリレー
+    hint: 球場の応援
+    note: 2026-11-25 の Web 検索で、同名の応援・企画は見つからなかった（神宮の「チアリレー対決」は別物）
+  - id: foil-c-03
+    kind: foil
+    look: culture
+    genre: mascot
+    text: もぐらん
+    hint: 球団マスコット
+    note: 2026-11-25 の Web 検索で、同名の NPB 球団マスコットは見つからなかった

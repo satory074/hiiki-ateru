@@ -1,0 +1,63 @@
+# 検査してからビルドし、GitHub Pages に出す。どれか 1 つでも落ちたら公開しない。
+# 必要なリポジトリ変数（Settings → Secrets and variables → Actions → Variables。公開してよい値だけ）:
+#   PUBLIC_SUPABASE_URL / PUBLIC_SUPABASE_ANON_KEY（xword と同じプロジェクト。無ければ答え合わせを送らないだけ）
+#   PUBLIC_CF_BEACON_TOKEN（Cloudflare Web Analytics。無ければ解析タグなし）
+# service role キーはここに置かない（scripts/reflect.ts をオーナーの手元で使うだけ）。
+name: Test and deploy to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # 質問データ（intai-fa が無いので data/verified.json と突き合わせる）・仕組み・画面・SQL の不変条件
+      - run: npm test
+
+      - run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+        env:
+          PUBLIC_SUPABASE_URL: ${{ vars.PUBLIC_SUPABASE_URL }}
+          PUBLIC_SUPABASE_ANON_KEY: ${{ vars.PUBLIC_SUPABASE_ANON_KEY }}
+          PUBLIC_CF_BEACON_TOKEN: ${{ vars.PUBLIC_CF_BEACON_TOKEN }}
+
+      # 検索・AI に読める形か（basecamp/docs/app-backlink.md）と、1 回の読み込みの重さ
+      - run: npm run seo
+      - run: npm run weight
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

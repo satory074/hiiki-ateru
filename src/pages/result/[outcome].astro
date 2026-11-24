@@ -1,0 +1,27 @@
+---
+// シェアされる結果ページ（15 種類）。X のカードに結果を出すためだけのページなので noindex にする
+// （中身が薄いページを検索に出さない。basecamp/docs/app-backlink.md の方針）。
+import Layout from "../../components/Layout.astro";
+import { bank } from "../../lib/site";
+import { outcomeKeys } from "../../lib/explain";
+import { resultCopy } from "../../lib/result-copy";
+
+export function getStaticPaths() {
+  return outcomeKeys(bank.teams).map((outcome) => ({ params: { outcome } }));
+}
+const { outcome } = Astro.params as { outcome: string };
+const copy = resultCopy(bank.teams, outcome);
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title={copy.title} description={copy.description} ogImage={`/og/${outcome}.png`} noindex>
+  <section class="board" data-view="shared">
+    <div class="board-row"><span class="qno">RESULT</span><span>12球団当て</span></div>
+    <p class="verdict">{copy.headline}</p>
+    <p class="q-hint">{copy.sub}</p>
+  </section>
+  <p>知っている選手や球場の名物を答えるだけで、あなたの贔屓球団も当てます。10〜30問・約3分。</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href={base}>あなたも遊ぶ</a>
+  </div>
+</Layout>

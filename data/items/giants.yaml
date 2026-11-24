@@ -1,0 +1,112 @@
+# 読売ジャイアンツの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp「2026年度 選手一覧」（シーズン終了時点）で在籍を確認した。
+items:
+  # --- 選手（現役） ---
+  - { id: giants-p-kadowaki, kind: player, genre: player, text: 門脇 誠, hint: 内野手・2020年代, teams: [giants], tier: C, era: current, source: "https://npb.jp/bis/players/11515157.html", check: auto }
+  - { id: giants-p-masuda-daiki, kind: player, genre: player, text: 増田 大輝, hint: 内野手・2010〜20年代, teams: [giants], tier: C, era: current, source: "https://npb.jp/bis/players/51855132.html", check: auto }
+  - { id: giants-p-funabasama, kind: player, genre: player, text: 船迫 大雅, hint: 投手・2020年代, teams: [giants], tier: C, era: current, source: "https://npb.jp/bis/players/31835157.html", check: auto }
+  - { id: giants-p-nakagawa, kind: player, genre: player, text: 中川 皓太, hint: 投手・2010〜20年代, teams: [giants], tier: C, era: current, source: "https://npb.jp/bis/players/81285132.html", check: auto }
+  - { id: giants-p-hagio, kind: player, genre: player, text: 萩尾 匡也, hint: 外野手・2020年代, teams: [giants], tier: C, era: current, source: "https://npb.jp/bis/players/81485157.html", check: auto }
+  - { id: giants-p-yoshikawa, kind: player, genre: player, text: 吉川 尚輝, hint: 内野手・2010〜20年代, teams: [giants], tier: B, era: current, source: "https://npb.jp/bis/players/73375134.html", check: auto }
+  - { id: giants-p-oshiro, kind: player, genre: player, text: 大城 卓三, hint: 捕手・2010〜20年代, teams: [giants], tier: B, era: current, source: "https://npb.jp/bis/players/21325136.html", check: auto }
+  # --- 選手（OB） ---
+  - { id: giants-p-suzuki-takahiro, kind: player, genre: player, text: 鈴木 尚広, hint: 外野手・2000〜10年代, teams: [giants], tier: C, era: ob, source: "https://npb.jp/bis/players/61763884.html", check: auto }
+  - { id: giants-p-ochi, kind: player, genre: player, text: 越智 大祐, hint: 投手・2000〜10年代, teams: [giants], tier: C, era: ob, source: "https://npb.jp/bis/players/81385112.html", check: auto }
+  - { id: giants-p-terauchi, kind: player, genre: player, text: 寺内 崇幸, hint: 内野手・2000〜10年代, teams: [giants], tier: C, era: ob, source: "https://npb.jp/bis/players/51255114.html", check: auto }
+  - { id: giants-p-yamaguchi-tetsuya, kind: player, genre: player, text: 山口 鉄也, hint: 投手・2000〜10年代, teams: [giants], tier: B, era: ob, source: "https://npb.jp/bis/players/71875112.html", check: auto }
+  - { id: giants-p-motoki, kind: player, genre: player, text: 元木 大介, hint: 内野手・1990〜2000年代, teams: [giants], tier: B, era: ob, source: "https://npb.jp/bis/players/01103883.html", check: auto }
+  - { id: giants-p-makihara, kind: player, genre: player, text: 槙原 寛己, hint: 投手・1980〜90年代, teams: [giants], tier: B, era: ob, source: "https://npb.jp/bis/players/31433867.html", check: auto }
+
+  # --- 名物 ---
+  - id: giants-c-jabbit
+    kind: culture
+    genre: mascot
+    text: ジャビット
+    hint: 球団マスコット
+    teams: [giants]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%93%E3%83%83%E3%83%88"
+    check: owner
+  - id: giants-c-vicky
+    kind: culture
+    genre: mascot
+    text: ビッキー
+    hint: 球団マスコット
+    teams: [giants]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%93%E3%83%83%E3%83%88"
+    check: owner
+    note: ウサギのマスコット一家の妹（シスタージャビット）
+  - id: giants-c-venus
+    kind: culture
+    genre: cheer
+    text: ヴィーナス
+    hint: 球場の応援
+    teams: [giants]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
+    check: owner
+    note: 1994年結成の球団公式チア（マスコットガール）。出典の「マスコットガール」節
+  - id: giants-c-toukon-komete
+    kind: culture
+    genre: cheer
+    text: 闘魂こめて
+    hint: 球場の応援
+    teams: [giants]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E5%B7%A8%E4%BA%BA%E8%BB%8D%E3%81%AE%E6%AD%8C_-%E9%97%98%E9%AD%82%E3%81%93%E3%82%81%E3%81%A6-"
+    check: owner
+    note: 1963年制定の球団歌の通称。曲名だけを出し、歌詞は載せない
+  - id: giants-c-toukon-orange
+    kind: culture
+    genre: event
+    text: 橙魂（とうこん）
+    hint: 球団のイベント
+    teams: [giants]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
+    check: owner
+    note: 2012年からのオレンジ色の限定ユニフォーム企画。出典の「橙魂」の記述。近年も毎年続いているかは未確認
+  - id: giants-c-dentou-no-issen
+    kind: culture
+    genre: event
+    text: 伝統の一戦
+    hint: 球団のイベント
+    teams: [giants, tigers]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
+    check: owner
+    note: 東京ドームの球団と甲子園の球団の対戦の呼び名。両球団のファンが知っている
+  - id: giants-c-big-egg
+    kind: culture
+    genre: stadium
+    text: ビッグエッグ
+    hint: 球場
+    teams: [giants, fighters]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%83%89%E3%83%BC%E3%83%A0"
+    check: owner
+    note: 東京ドームの開場時の愛称（2000年に施設愛称としては廃止）。当時は北海道に移る前のパ・リーグ球団も本拠地にしていた
+
+  # --- クイズ ---
+  - id: giants-q-1
+    kind: quiz
+    genre: quiz
+    text: 2025年3月、二軍の本拠地が川崎市から移った先の市は？
+    choices: [八王子市, 稲城市, 町田市, 府中市]
+    answer: 1
+    teams: [giants]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
+    check: owner
+  - id: giants-q-2
+    kind: quiz
+    genre: quiz
+    text: ウサギのマスコット一家の長兄「ジャビィ」の背番号は？
+    choices: ["111", "333", "555", "777"]
+    answer: 1
+    teams: [giants]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%93%E3%83%83%E3%83%88"
+    check: owner
+    note: 次男ジャバは555（出典の「ミスタージャビット」節）

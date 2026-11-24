@@ -1,0 +1,16 @@
+# 現行 12 球団。id・league・full・色は intai-fa/data/teams.yaml と同じ値（basecamp/app/lib/npb-teams.ts とも一致）。
+# region は本拠地のある地方（data/likelihood.json の regions と同じ表記）。
+# 並び順はセ・パそれぞれ NPB の慣例順。この順番がモデル内の球団番号になるので、並べ替えるとモデルの版が変わる。
+teams:
+  - { id: giants, league: central, name: 巨人, full: 読売ジャイアンツ, color: "#ED7006", colorDark: "#F97709", region: 関東 }
+  - { id: tigers, league: central, name: 阪神, full: 阪神タイガース, color: "#A49100", colorDark: "#FFE201", region: 近畿 }
+  - { id: dragons, league: central, name: 中日, full: 中日ドラゴンズ, color: "#002569", colorDark: "#0056F3", region: 中部 }
+  - { id: baystars, league: central, name: DeNA, full: 横浜DeNAベイスターズ, color: "#0052A5", colorDark: "#0064C9", region: 関東 }
+  - { id: carp, league: central, name: 広島, full: 広島東洋カープ, color: "#FF0000", colorDark: "#FF0000", region: 中国 }
+  - { id: swallows, league: central, name: ヤクルト, full: 東京ヤクルトスワローズ, color: "#002C5B", colorDark: "#0065D0", region: 関東 }
+  - { id: hawks, league: pacific, name: ソフトバンク, full: 福岡ソフトバンクホークス, color: "#B58F00", colorDark: "#FCC800", region: 九州・沖縄 }
+  - { id: fighters, league: pacific, name: 日本ハム, full: 北海道日本ハムファイターズ, color: "#005BAC", colorDark: "#0066C0", region: 北海道 }
+  - { id: buffaloes, league: pacific, name: オリックス, full: オリックス・バファローズ, color: "#B48A38", colorDark: "#B48A38", region: 近畿 }
+  - { id: eagles, league: pacific, name: 楽天, full: 東北楽天ゴールデンイーグルス, color: "#860010", colorDark: "#D30019", region: 東北 }
+  - { id: lions, league: pacific, name: 西武, full: 埼玉西武ライオンズ, color: "#102961", colorDark: "#255DDB", region: 関東 }
+  - { id: marines, league: pacific, name: ロッテ, full: 千葉ロッテマリーンズ, color: "#221815", colorDark: "#C0C0C0", region: 関東 }

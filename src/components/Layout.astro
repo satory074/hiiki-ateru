@@ -1,0 +1,98 @@
+---
+/**
+ * 全ページ共通の枠。SEO の不変条件（basecamp/docs/app-backlink.md）を満たす:
+ * 固有の title / description、canonical = og:url（絶対 URL・末尾 /）、og:image、
+ * JSON-LD（作者 = satory074.com の Person）、戻りリンクのバーを静的 HTML に出す。
+ */
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  /** og 画像（base からのパス）。無ければ /og/default.png */
+  ogImage?: string;
+  noindex?: boolean;
+}
+const { title, description, ogImage = "/og/default.png", noindex = false } = Astro.props;
+
+const SITE_NAME = "12球団当て";
+const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const href = (p: string) => `${base}${p}`;
+const ogUrl = new URL(href(ogImage), Astro.site).toString();
+const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: fullTitle,
+  description,
+  url: canonical,
+  inLanguage: "ja",
+  isPartOf: { "@type": "WebSite", name: SITE_NAME, url: new URL(href("/"), Astro.site).toString() },
+  author: { "@type": "Person", "@id": "https://satory074.com/#person", name: "satory074", url: "https://satory074.com/" },
+};
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d1f19" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href={href("/favicon.svg")} type="image/svg+xml" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+    <slot name="head" />
+    {
+      cfBeaconToken && (
+        <script
+          defer
+          is:inline
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={JSON.stringify({ token: cfBeaconToken })}
+        />
+      )
+    }
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="site-name" href={href("/")}>12球団当て</a>
+        <nav class="site-nav" aria-label="サイト内">
+          <a href={href("/")}>遊ぶ</a>
+          <a href={href("/about/")}>しくみ</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>非公式のファンメイド作品です。NPB・各球団とは関係ありません。球団ロゴ・選手写真・応援歌の歌詞は使っていません。</p>
+        <p><a href={href("/about/")}>しくみと、答え合わせの集計について</a></p>
+      </div>
+    </footer>
+    <!-- サイト間ナビ: 画面下端に常駐する控えめな逆リンクバー（→ satory074.com/apps）。正準仕様: basecamp/docs/app-backlink.md -->
+    <nav class="app-backlink-bar" aria-label="サイト間ナビゲーション">
+      <a href="https://satory074.com/apps/" target="_blank" rel="noopener" aria-label="satory074 のほかのアプリ一覧を新しいタブで開く"
+        >satory074 のほかのアプリ <span aria-hidden="true">↗</span></a
+      >
+    </nav>
+  </body>
+</html>

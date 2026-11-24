@@ -1,0 +1,113 @@
+# 福岡ソフトバンクホークスの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp の 2026年度 選手一覧（https://npb.jp/bis/teams/rst_h.html）で在籍を確認した。
+items:
+  # --- 選手：現役 ---
+  - { id: hawks-p-imamiya, kind: player, genre: player, text: 今宮 健太, hint: 内野手・2010〜20年代, teams: [hawks], tier: B, era: current, source: "https://npb.jp/bis/players/31335131.html", check: auto }
+  - { id: hawks-p-shuto, kind: player, genre: player, text: 周東 佑京, hint: 外野手・2020年代, teams: [hawks], tier: B, era: current, source: "https://npb.jp/bis/players/21925136.html", check: auto }
+  - { id: hawks-p-higashihama, kind: player, genre: player, text: 東浜 巨, hint: 投手・2010〜20年代, teams: [hawks], tier: B, era: current, source: "https://npb.jp/bis/players/01005137.html", check: auto }
+  - { id: hawks-p-kawase, kind: player, genre: player, text: 川瀬 晃, hint: 内野手・2010〜20年代, teams: [hawks], tier: C, era: current, source: "https://npb.jp/bis/players/11715132.html", check: auto }
+  - { id: hawks-p-tsumori, kind: player, genre: player, text: 津森 宥紀, hint: 投手・2020年代, teams: [hawks], tier: C, era: current, source: "https://npb.jp/bis/players/81285151.html", check: auto }
+  - { id: hawks-p-yanagimachi, kind: player, genre: player, text: 柳町 達, hint: 外野手・2020年代, teams: [hawks], tier: C, era: current, source: "https://npb.jp/bis/players/73175151.html", check: auto }
+  - { id: hawks-p-umino, kind: player, genre: player, text: 海野 隆司, hint: 捕手・2020年代, teams: [hawks], tier: C, era: current, source: "https://npb.jp/bis/players/81385151.html", check: auto }
+  # --- 選手：OB ---
+  - { id: hawks-p-honda, kind: player, genre: player, text: 本多 雄一, hint: 内野手・2000〜10年代, teams: [hawks], tier: B, era: ob, source: "https://npb.jp/bis/players/41445112.html", check: auto }
+  - { id: hawks-p-settsu, kind: player, genre: player, text: 攝津 正, hint: 投手・2000〜10年代, teams: [hawks], tier: B, era: ob, source: "https://npb.jp/bis/players/91995118.html", check: auto }
+  - { id: hawks-p-akashi, kind: player, genre: player, text: 明石 健志, hint: 内野手・2000〜10年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/51155119.html", check: auto }
+  - { id: hawks-p-shibahara, kind: player, genre: player, text: 柴原 洋, hint: 外野手・1990〜2000年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/91793884.html", check: auto }
+  - { id: hawks-p-morifuku, kind: player, genre: player, text: 森福 允彦, hint: 投手・2000〜10年代, teams: [hawks, giants], tier: C, era: ob, source: "https://npb.jp/bis/players/61665114.html", check: auto }
+  - { id: hawks-p-hasegawa, kind: player, genre: player, text: 長谷川 勇也, hint: 外野手・2010年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/21425114.html", check: auto }
+  - { id: hawks-p-fujii-masao, kind: player, genre: player, text: 藤井 将雄, hint: 投手・1990年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/61963880.html", check: auto }
+
+  # --- 名物 ---
+  - id: hawks-c-harry-hawk
+    kind: culture
+    genre: mascot
+    text: ハリーホーク
+    hint: 球団マスコット
+    teams: [hawks]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/ハリーホーク"
+    check: owner
+  - id: hawks-c-fuusan
+    kind: culture
+    genre: mascot
+    text: ふうさん
+    hint: 球団マスコット
+    teams: [hawks]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
+    note: 勝利後に飛ばす白いジェット風船がモチーフのキャラクター（2015年〜）
+    check: owner
+  - id: hawks-c-taka-no-saiten
+    kind: culture
+    genre: event
+    text: 鷹の祭典
+    hint: 球団のイベント
+    teams: [hawks]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
+    note: 2024年から「鷹祭 SUMMER BOOST」に改称。知られているのは旧称なので旧称で出す
+    check: owner
+  - id: hawks-c-takagirl-day
+    kind: culture
+    genre: event
+    text: タカガールデー（現・ピンクフルデー）
+    hint: 球団のイベント
+    teams: [hawks]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
+    note: 女子高生デー→タカガール♡デー（2014〜）→ピンクフルデー（2023〜）
+    check: owner
+  - id: hawks-c-izayuke-wakataka
+    kind: culture
+    genre: cheer
+    text: いざゆけ若鷹軍団
+    hint: 球場の応援
+    teams: [hawks]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/いざゆけ若鷹軍団"
+    note: 球団歌。7回の攻撃前と勝利後に流れる。題名だけを出し歌詞は使わない
+    check: owner
+  - id: hawks-c-homerun-terrace
+    kind: culture
+    genre: stadium
+    text: ホームランテラス
+    hint: 球場
+    teams: [hawks]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/福岡ドーム"
+    note: 2015年に外野フェンス前へ増設した観客席
+    check: owner
+  - id: hawks-c-roof-open-show
+    kind: culture
+    genre: stadium
+    text: ルーフオープンショー
+    hint: 球場
+    teams: [hawks]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/福岡ドーム"
+    note: 本拠地で勝った日に屋根を開けて花火を上げる演出
+    check: owner
+
+  # --- クイズ ---
+  - id: hawks-q-1
+    kind: quiz
+    genre: quiz
+    text: 福岡に本拠地を移して最初のシーズンは何年？
+    choices: [1985年, 1989年, 1993年, 1999年]
+    answer: 1
+    teams: [hawks]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
+    check: owner
+  - id: hawks-q-2
+    kind: quiz
+    genre: quiz
+    text: 2017年から、日本シリーズを何年連続で制した？
+    choices: [2年, 3年, 4年, 5年]
+    answer: 2
+    teams: [hawks]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
+    note: 2017〜2020年に4年連続日本一（パ・リーグ初）
+    check: owner

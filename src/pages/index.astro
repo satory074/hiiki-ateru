@@ -1,0 +1,41 @@
+---
+import Layout from "../components/Layout.astro";
+import { loadTeams } from "../lib/site";
+
+const teams = loadTeams();
+const title = "あなたの贔屓球団を当てます";
+const description =
+  "知っている選手や球場の名物を答えるだけで、あなたの贔屓のプロ野球球団を当てます。10〜30問・約3分。贔屓なし・2球団の人も当てます。登録なし・無料。";
+---
+
+<Layout title={title} description={description}>
+  <h1 class="lead">あなたの贔屓球団を、当てます。</h1>
+  <p>知っている選手や球場の名物を答えていくと、その偏りから、あなたがどの球団のファンかを当てます。</p>
+  <div id="game">
+    <section class="board" data-view="start">
+      <div class="board-row"><span class="qno">PLAY BALL</span><span>12球団・セ／パ</span></div>
+      <ul class="start-points">
+        <li>選手や名物を「知ってる／知らない」で答えるだけ</li>
+        <li>10〜30問・3分くらい。答えに合わせて次の質問が変わります</li>
+        <li>贔屓がない人、2球団ある人も当てます</li>
+        <li>知らないものは、正直に「知らない」を</li>
+      </ul>
+      <div class="btn-row">
+        <button class="btn btn-primary" type="button" data-action="start">はじめる</button>
+      </div>
+      <noscript><p>このゲームは JavaScript を使います。</p></noscript>
+    </section>
+  </div>
+  <section class="section prose">
+    <h2>どうやって当てるの？</h2>
+    <p>
+      ファンは、自分の球団の控え選手や球場のグルメをよく知っています。ほかの球団のことは、名前くらいしか知りません。
+      答えるたびに「どの球団のファンなら、こう答えそうか」を計算し直して、いちばんありそうな球団を最後に1回だけ言い切ります。
+      対象は {teams.map((t) => t.name).join("・")} の12球団です。
+    </p>
+    <p><a href={`${import.meta.env.BASE_URL}about/`}>くわしいしくみと、答え合わせの集計について</a></p>
+  </section>
+  <script>
+    import "../app/real";
+  </script>
+</Layout>

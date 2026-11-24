@@ -1,0 +1,114 @@
+# オリックス・バファローズの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp の 2026年度 選手一覧（https://npb.jp/bis/teams/rst_b.html）で在籍を確認した。
+# 近鉄は別の系譜なので、近鉄だけで活躍した選手は入れない（阪急・オリックスでの経歴で選ぶ）。
+items:
+  # --- 選手：現役 ---
+  - { id: buffaloes-p-sugimoto, kind: player, genre: player, text: 杉本 裕太郎, hint: 外野手・2020年代, teams: [buffaloes], tier: B, era: current, source: "https://npb.jp/bis/players/61965132.html", check: auto }
+  - { id: buffaloes-p-tongu, kind: player, genre: player, text: 頓宮 裕真, hint: 捕手・2020年代, teams: [buffaloes], tier: B, era: current, source: "https://npb.jp/bis/players/81085138.html", note: 登録は捕手（試合では一塁・指名打者が多い）, check: auto }
+  - { id: buffaloes-p-nakagawa-keita, kind: player, genre: player, text: 中川 圭太, hint: 内野手・2020年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/51255138.html", check: auto }
+  - { id: buffaloes-p-nishino, kind: player, genre: player, text: 西野 真弘, hint: 内野手・2010〜20年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/91495130.html", check: auto }
+  - { id: buffaloes-p-oshiro, kind: player, genre: player, text: 大城 滉二, hint: 内野手・2010〜20年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/11515132.html", check: auto }
+  - { id: buffaloes-p-abe-shota, kind: player, genre: player, text: 阿部 翔太, hint: 投手・2020年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/01105153.html", check: auto }
+  - { id: buffaloes-p-yamada-nobuyoshi, kind: player, genre: player, text: 山田 修義, hint: 投手・2010〜20年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/61465131.html", check: auto }
+  # --- 選手：OB ---
+  - { id: buffaloes-p-tani, kind: player, genre: player, text: 谷 佳知, hint: 外野手・1990〜2000年代, teams: [buffaloes, giants], tier: B, era: ob, source: "https://npb.jp/bis/players/91993884.html", check: auto }
+  - { id: buffaloes-p-sakaguchi, kind: player, genre: player, text: 坂口 智隆, hint: 外野手・2000〜10年代, teams: [buffaloes, swallows], tier: B, era: ob, source: "https://npb.jp/bis/players/21925117.html", note: 入団は近鉄（2003〜04年）。主な活躍はオリックス（2005〜15年）, check: auto }
+  - { id: buffaloes-p-hoshino, kind: player, genre: player, text: 星野 伸之, hint: 投手・1980〜90年代, teams: [buffaloes, tigers], tier: B, era: ob, source: "https://npb.jp/bis/players/31433860.html", check: auto }
+  - { id: buffaloes-p-adachi, kind: player, genre: player, text: 安達 了一, hint: 内野手・2010〜20年代, teams: [buffaloes], tier: C, era: ob, source: "https://npb.jp/bis/players/31135135.html", check: auto }
+  - { id: buffaloes-p-higa, kind: player, genre: player, text: 比嘉 幹貴, hint: 投手・2010〜20年代, teams: [buffaloes], tier: C, era: ob, source: "https://npb.jp/bis/players/81085131.html", check: auto }
+  - { id: buffaloes-p-goto-mitsutaka, kind: player, genre: player, text: 後藤 光尊, hint: 内野手・2000〜10年代, teams: [buffaloes, eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/71775115.html", check: auto }
+  - { id: buffaloes-p-kaida, kind: player, genre: player, text: 海田 智行, hint: 投手・2010年代, teams: [buffaloes], tier: C, era: ob, source: "https://npb.jp/bis/players/61365135.html", check: auto }
+
+  # --- 名物 ---
+  - id: buffaloes-c-neppie
+    kind: culture
+    genre: mascot
+    text: ネッピー
+    hint: 球団マスコット
+    teams: [buffaloes]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
+    note: 1991年のブルーウェーブ時代に登場。いまは復刻試合などに出る
+    check: owner
+  - id: buffaloes-c-natsunojin
+    kind: culture
+    genre: event
+    text: Bs夏の陣
+    hint: 球団のイベント
+    teams: [buffaloes]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
+    note: 2009年の「Bs大坂夏の陣」から続く夏の限定ユニフォーム企画（2026年も開催）
+    check: owner
+  - id: buffaloes-c-orihime-day
+    kind: culture
+    genre: event
+    text: オリ姫デー
+    hint: 球団のイベント
+    teams: [buffaloes]
+    tier: C
+    source: "https://www.daily.co.jp/baseball/2026/05/11/0020341595.shtml"
+    check: owner
+  - id: buffaloes-c-sky
+    kind: culture
+    genre: cheer
+    text: MEGA STOPPER「SKY」
+    hint: 球場の応援
+    teams: [buffaloes]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
+    note: 7回裏の攻撃前と勝った試合の後に流れる曲。曲名だけを出し歌詞は使わない
+    check: owner
+  - id: buffaloes-c-bsgirls
+    kind: culture
+    genre: cheer
+    text: BsGirls
+    hint: 球場の応援
+    teams: [buffaloes]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
+    note: 球団のダンスチーム
+    check: owner
+  - id: buffaloes-c-hotmotto-kobe
+    kind: culture
+    genre: stadium
+    text: ほっともっとフィールド神戸
+    hint: 球場
+    teams: [buffaloes]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
+    note: 準本拠地（旧グリーンスタジアム神戸）
+    check: owner
+  - id: buffaloes-c-iteme-dog
+    kind: culture
+    genre: food
+    text: いてまえドッグ
+    hint: 球場グルメ
+    teams: [buffaloes]
+    tier: C
+    source: "https://zaikei.co.jp/releases/2853662/"
+    note: 京セラドーム大阪の 3階ライト側の売店。出典は 2025年の発表で、2026年の販売は未確認
+    check: owner
+
+  # --- クイズ ---
+  - id: buffaloes-q-1
+    kind: quiz
+    genre: quiz
+    text: 1995年のシーズンにチームが合言葉にした「がんばろう○○」。○○に入るのは？
+    choices: [KOBE, OSAKA, KANSAI, NIPPON]
+    answer: 0
+    teams: [buffaloes]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
+    check: owner
+  - id: buffaloes-q-2
+    kind: quiz
+    genre: quiz
+    text: 2021年のリーグ優勝は何年ぶりだった？
+    choices: [15年ぶり, 20年ぶり, 25年ぶり, 30年ぶり]
+    answer: 2
+    teams: [buffaloes]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
+    note: 1996年以来 25年ぶり
+    check: owner

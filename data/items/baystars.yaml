@@ -1,0 +1,119 @@
+# 横浜DeNAベイスターズの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp「2026年度 選手一覧」（https://npb.jp/bis/teams/rst_db.html、シーズン終了時点）で在籍を確認。
+# 山本 祐大は 2026/5/13 にソフトバンクへ移籍したので入れていない。
+items:
+  # 選手（現役）
+  - { id: baystars-p-miyazaki, kind: player, genre: player, text: 宮﨑 敏郎, hint: 内野手・2010〜20年代, teams: [baystars], tier: B, era: current, source: "https://npb.jp/bis/players/51455137.html", check: auto }
+  - { id: baystars-p-sano, kind: player, genre: player, text: 佐野 恵太, hint: 外野手・2010〜20年代, teams: [baystars], tier: B, era: current, source: "https://npb.jp/bis/players/91995134.html", check: auto }
+  - { id: baystars-p-watarai, kind: player, genre: player, text: 度会 隆輝, hint: 外野手・2020年代, teams: [baystars], tier: B, era: current, source: "https://npb.jp/bis/players/33535159.html", check: auto }
+  - { id: baystars-p-tobashira, kind: player, genre: player, text: 戸柱 恭孝, hint: 捕手・2010〜20年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/41245132.html", check: auto }
+  - { id: baystars-p-ise, kind: player, genre: player, text: 伊勢 大夢, hint: 投手・2020年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/41145151.html", check: auto }
+  - { id: baystars-p-ishida-kenta, kind: player, genre: player, text: 石田 健大, hint: 投手・2010〜20年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/11315130.html", check: auto }
+  - { id: baystars-p-ebina, kind: player, genre: player, text: 蝦名 達夫, hint: 外野手・2020年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/51555151.html", check: auto }
+  # 選手（OB）
+  - id: baystars-p-suzuki-takanori
+    kind: player
+    genre: player
+    text: 鈴木 尚典
+    hint: 外野手・1990〜2000年代
+    teams: [baystars]
+    tier: B
+    era: ob
+    source: "https://npb.jp/bis/players/93193883.html"
+    check: auto
+    note: NPB.jp の登録名は「鈴木尚」。本名表記の「鈴木 尚典」は intai-fa の名簿と一致
+  - { id: baystars-p-kinjo, kind: player, genre: player, text: 金城 龍彦, hint: 外野手・2000年代, teams: [baystars, giants], tier: B, era: ob, source: "https://npb.jp/bis/players/91593888.html", check: auto }
+  - { id: baystars-p-ishikawa-takehiro, kind: player, genre: player, text: 石川 雄洋, hint: 内野手・2000〜10年代, teams: [baystars], tier: C, era: ob, source: "https://npb.jp/bis/players/91195110.html", check: auto }
+  - { id: baystars-p-shindo, kind: player, genre: player, text: 進藤 達哉, hint: 内野手・1990年代, teams: [baystars, buffaloes], tier: C, era: ob, source: "https://npb.jp/bis/players/91593866.html", check: auto }
+  - { id: baystars-p-shimozono, kind: player, genre: player, text: 下園 辰哉, hint: 外野手・2000〜10年代, teams: [baystars], tier: C, era: ob, source: "https://npb.jp/bis/players/81985114.html", check: auto }
+  - { id: baystars-p-aranami, kind: player, genre: player, text: 荒波 翔, hint: 外野手・2010年代, teams: [baystars], tier: C, era: ob, source: "https://npb.jp/bis/players/01105133.html", check: auto }
+
+  # 名物
+  - id: baystars-c-starman
+    kind: culture
+    genre: mascot
+    text: DB.スターマン
+    hint: 球団マスコット
+    teams: [baystars]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/DB.%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%9E%E3%83%B3"
+    check: owner
+  - id: baystars-c-kirara
+    kind: culture
+    genre: mascot
+    text: DB.キララ
+    hint: 球団マスコット
+    teams: [baystars]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/DB.%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%9E%E3%83%B3"
+    check: owner
+  - id: baystars-c-mikangori
+    kind: culture
+    genre: food
+    text: みかん氷
+    hint: 球場グルメ
+    teams: [baystars]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0"
+    check: owner
+  - id: baystars-c-hamasta
+    kind: culture
+    genre: stadium
+    text: ハマスタ
+    hint: 球場
+    teams: [baystars]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0"
+    check: owner
+  - id: baystars-c-wing
+    kind: culture
+    genre: stadium
+    text: ウィング席
+    hint: 球場
+    teams: [baystars]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0"
+    check: owner
+    note: 2019〜20年の増席改修で、一塁側・三塁側から外野にかけての上段に新設された席
+  - id: baystars-c-atsukihoshi
+    kind: culture
+    genre: cheer
+    text: 熱き星たちよ
+    hint: 球場の応援
+    teams: [baystars]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E7%86%B1%E3%81%8D%E6%98%9F%E3%81%9F%E3%81%A1%E3%82%88"
+    check: owner
+    note: 球団歌の曲名（歌詞は載せない）。スタンドで応援団のトランペットに合わせて歌われる
+  - id: baystars-c-starnight
+    kind: culture
+    genre: event
+    text: STAR☆NIGHT
+    hint: 球団のイベント
+    teams: [baystars]
+    tier: C
+    source: "https://www.baystars.co.jp/news/2026/07/0701_05.php"
+    check: owner
+    note: 正式名は頭に都市名が付く（YOKOHAMA STAR☆NIGHT）ので、そこを外した。毎年夏の恒例イベント
+
+  # クイズ
+  - id: baystars-q-1
+    kind: quiz
+    genre: quiz
+    text: 1998年、38年ぶりの日本一を果たしたときの監督は？
+    choices: [大矢 明彦, 森 祇晶, 権藤 博, 山下 大輔]
+    answer: 2
+    teams: [baystars]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/1998%E5%B9%B4%E3%81%AE%E6%97%A5%E6%9C%AC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA"
+    check: owner
+  - id: baystars-q-2
+    kind: quiz
+    genre: quiz
+    text: 2024年の日本一は、その前の日本一から何年ぶりだった？
+    choices: [16年ぶり, 26年ぶり, 38年ぶり, 50年ぶり]
+    answer: 1
+    teams: [baystars]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E3%81%AE%E6%97%A5%E6%9C%AC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA"
+    check: owner

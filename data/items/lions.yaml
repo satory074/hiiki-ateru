@@ -1,0 +1,111 @@
+# 埼玉西武ライオンズの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp の 2026年度 選手一覧（https://npb.jp/bis/teams/rst_l.html）で在籍を確認した。
+# OB は 2026-11-25 時点でこの球団の 2026年度 選手一覧に載っていない（岸 孝之 は他球団に在籍中）。
+items:
+  # --- 選手（現役） ---
+  - { id: lions-p-genda, kind: player, genre: player, text: 源田 壮亮, hint: 内野手・2010〜20年代, teams: [lions], tier: B, era: current, source: "https://npb.jp/bis/players/71775134.html", check: auto }
+  - { id: lions-p-tonosaki, kind: player, genre: player, text: 外崎 修汰, hint: 内野手・2010〜20年代, teams: [lions], tier: B, era: current, source: "https://npb.jp/bis/players/41245130.html", check: auto }
+  - { id: lions-p-sumida, kind: player, genre: player, text: 隅田 知一郎, hint: 投手・2020年代, teams: [lions], tier: B, era: current, source: "https://npb.jp/bis/players/21025155.html", check: auto }
+  - { id: lions-p-koga, kind: player, genre: player, text: 古賀 悠斗, hint: 捕手・2020年代, teams: [lions], tier: C, era: current, source: "https://npb.jp/bis/players/81785155.html", check: auto }
+  - { id: lions-p-takizawa, kind: player, genre: player, text: 滝澤 夏央, hint: 内野手・2020年代, teams: [lions], tier: C, era: current, source: "https://npb.jp/bis/players/51255155.html", check: auto }
+  - { id: lions-p-nishikawa, kind: player, genre: player, text: 西川 愛也, hint: 外野手・2020年代, teams: [lions], tier: C, era: current, source: "https://npb.jp/bis/players/51455136.html", check: auto }
+  - { id: lions-p-hasegawa, kind: player, genre: player, text: 長谷川 信哉, hint: 外野手・2020年代, teams: [lions], tier: C, era: current, source: "https://npb.jp/bis/players/81685153.html", check: auto }
+  # --- 選手（OB） ---
+  - { id: lions-p-nishiguchi, kind: player, genre: player, text: 西口 文也, hint: 投手・1990〜2000年代, teams: [lions], tier: B, era: ob, source: "https://npb.jp/bis/players/51953880.html", check: auto }
+  - { id: lions-p-kishi, kind: player, genre: player, text: 岸 孝之, hint: 投手・2000〜10年代, teams: [lions, eagles], tier: B, era: ob, source: "https://npb.jp/bis/players/91795114.html", check: auto }
+  - { id: lions-p-hoshino, kind: player, genre: player, text: 星野 智樹, hint: 投手・2000年代, teams: [lions, eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/41043888.html", check: auto }
+  - { id: lions-p-akada, kind: player, genre: player, text: 赤田 将吾, hint: 外野手・2000年代, teams: [lions, buffaloes, fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/51153888.html", check: auto }
+  - { id: lions-p-kaneko, kind: player, genre: player, text: 金子 侑司, hint: 外野手・2010〜20年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/01505137.html", check: auto }
+  - { id: lions-p-sogame, kind: player, genre: player, text: 十亀 剣, hint: 投手・2010年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/91295135.html", check: auto }
+  - { id: lions-p-kumashiro, kind: player, genre: player, text: 熊代 聖人, hint: 外野手・2010年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/21725133.html", check: auto }
+
+  # --- 名物 ---
+  - id: lions-c-leo
+    kind: culture
+    genre: mascot
+    text: レオ
+    hint: 球団マスコット
+    teams: [lions]
+    tier: B
+    source: "https://pacificleague.com/en/news/10041112"
+    check: owner
+  - id: lions-c-raina
+    kind: culture
+    genre: mascot
+    text: ライナ
+    hint: 球団マスコット
+    teams: [lions]
+    tier: C
+    source: "https://pacificleague.com/en/news/10041112"
+    check: owner
+  - id: lions-c-belluna-dome
+    kind: culture
+    genre: stadium
+    text: ベルーナドーム
+    hint: 球場
+    teams: [lions]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/西武ドーム"
+    check: owner
+  - id: lions-c-victory-road
+    kind: culture
+    genre: stadium
+    text: ビクトリーロード
+    hint: 球場
+    teams: [lions]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/西武ドーム"
+    check: owner
+    note: バックネット裏の階段。勝った日に選手がここを通って引き上げ、ファンと触れ合う
+  - id: lions-c-organ
+    kind: culture
+    genre: stadium
+    text: 電子オルガンの生演奏
+    hint: 球場
+    teams: [lions]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/西武ドーム"
+    check: owner
+    note: 本拠地球場で唯一、電子オルガンを常設して奏者が生演奏する（Wikipedia の記述）
+  - id: lions-c-chihei
+    kind: culture
+    genre: cheer
+    text: 地平を駈ける獅子を見た
+    hint: 球場の応援
+    teams: [lions]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/地平を駈ける獅子を見た"
+    check: owner
+    note: 球団歌（1979年、松崎しげる）。5回の攻撃前にファンが合唱し、勝利時にも流れる。歌詞は載せない
+  - id: lions-c-ls-craft-pizza
+    kind: culture
+    genre: food
+    text: L'sクラフトピザ
+    hint: 球場グルメ
+    teams: [lions]
+    tier: C
+    source: "https://sports.yahoo.co.jp/official/detail/2026050900090-spnaviow"
+    check: owner
+    note: 内野3塁側の店のピザ。2026年で店が10周年
+
+  # --- クイズ ---
+  - id: lions-q-1
+    kind: quiz
+    genre: quiz
+    text: 2008年の日本シリーズを制して日本一になったチームの監督は？
+    choices: [渡辺久信, 原辰徳, 伊東勤, 落合博満]
+    answer: 0
+    teams: [lions]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/埼玉西武ライオンズ"
+    check: owner
+  - id: lions-q-2
+    kind: quiz
+    genre: quiz
+    text: 所沢市にあるプロ野球の本拠地球場が、屋根付きのドーム球場として再出発した年は？
+    choices: [1988年, 1993年, 1996年, 1999年]
+    answer: 3
+    teams: [lions]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/西武ドーム"
+    check: owner

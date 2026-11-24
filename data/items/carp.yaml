@@ -1,0 +1,119 @@
+# 広島東洋カープの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp「2026年度 選手一覧」（https://npb.jp/bis/teams/rst_c.html、シーズン終了時点）で在籍を確認。
+# 名物グルメの代表（天ぷらうどん）は品名に球団名が入るので入れていない。
+items:
+  # 選手（現役）
+  - { id: carp-p-kozono, kind: player, genre: player, text: 小園 海斗, hint: 内野手・2020年代, teams: [carp], tier: B, era: current, source: "https://npb.jp/bis/players/01705138.html", check: auto }
+  - { id: carp-p-sakakura, kind: player, genre: player, text: 坂倉 将吾, hint: 捕手・2020年代, teams: [carp], tier: B, era: current, source: "https://npb.jp/bis/players/11915134.html", check: auto }
+  - { id: carp-p-tokoda, kind: player, genre: player, text: 床田 寛樹, hint: 投手・2010〜20年代, teams: [carp], tier: B, era: current, source: "https://npb.jp/bis/players/11415134.html", check: auto }
+  - { id: carp-p-yano, kind: player, genre: player, text: 矢野 雅哉, hint: 内野手・2020年代, teams: [carp], tier: C, era: current, source: "https://npb.jp/bis/players/93395153.html", check: auto }
+  - { id: carp-p-suekane, kind: player, genre: player, text: 末包 昇大, hint: 外野手・2020年代, teams: [carp], tier: C, era: current, source: "https://npb.jp/bis/players/51055155.html", check: auto }
+  - { id: carp-p-shimauchi, kind: player, genre: player, text: 島内 颯太郎, hint: 投手・2020年代, teams: [carp], tier: C, era: current, source: "https://npb.jp/bis/players/31935138.html", check: auto }
+  - id: carp-p-nakamura-shosei
+    kind: player
+    genre: player
+    text: 中村 奨成
+    hint: 外野手・2020年代
+    teams: [carp]
+    tier: C
+    era: current
+    source: "https://npb.jp/bis/players/81285136.html"
+    check: auto
+    note: 入団時は捕手。NPB.jp の現在の守備位置は外野手
+  # 選手（OB）
+  - { id: carp-p-ogata, kind: player, genre: player, text: 緒方 孝市, hint: 外野手・1990〜2000年代, teams: [carp], tier: B, era: ob, source: "https://npb.jp/bis/players/81583866.html", check: auto }
+  - { id: carp-p-sasaoka, kind: player, genre: player, text: 佐々岡 真司, hint: 投手・1990〜2000年代, teams: [carp], tier: B, era: ob, source: "https://npb.jp/bis/players/21723881.html", check: auto }
+  - { id: carp-p-higashide, kind: player, genre: player, text: 東出 輝裕, hint: 内野手・2000年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/21923888.html", check: auto }
+  - { id: carp-p-soyogi, kind: player, genre: player, text: 梵 英心, hint: 内野手・2000〜10年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/21925112.html", check: auto }
+  - { id: carp-p-amaya, kind: player, genre: player, text: 天谷 宗一郎, hint: 外野手・2000〜10年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/01105115.html", check: auto }
+  - { id: carp-p-nagakawa, kind: player, genre: player, text: 永川 勝浩, hint: 投手・2000〜10年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/01205117.html", check: auto }
+
+  # 名物
+  - id: carp-c-slyly
+    kind: culture
+    genre: mascot
+    text: スラィリー
+    hint: 球団マスコット
+    teams: [carp]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%A9%E3%82%A3%E3%83%AA%E3%83%BC"
+    check: owner
+  - id: carp-c-squat
+    kind: culture
+    genre: cheer
+    text: スクワット応援
+    hint: 球場の応援
+    teams: [carp]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%97"
+    check: owner
+  - id: carp-c-shamoji
+    kind: culture
+    genre: cheer
+    text: しゃもじ応援
+    hint: 球場の応援
+    teams: [carp]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%97"
+    check: owner
+    note: 1975年の初優勝のころからの応援。今のスタンドで日常的に見られるかは未確認
+  - id: carp-c-nesoberia
+    kind: culture
+    genre: stadium
+    text: 寝ソベリア
+    hint: 球場
+    teams: [carp]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/MAZDA_Zoom-Zoom_%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0%E5%BA%83%E5%B3%B6"
+    check: owner
+    note: 寝ころんで見られるライト側の席。2025年度に改修され「チルアウトテラス」に改称（知っている人は多いはずだが今は旧名）
+  - id: carp-c-tadami
+    kind: culture
+    genre: stadium
+    text: ただ見エリア
+    hint: 球場
+    teams: [carp]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/MAZDA_Zoom-Zoom_%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0%E5%BA%83%E5%B3%B6"
+    check: owner
+  - id: carp-c-koisajiki
+    kind: culture
+    genre: stadium
+    text: 鯉桟敷
+    hint: 球場
+    teams: [carp]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/MAZDA_Zoom-Zoom_%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0%E5%BA%83%E5%B3%B6"
+    check: owner
+  - id: carp-c-peace-nighter
+    kind: culture
+    genre: event
+    text: ピースナイター
+    hint: 球団のイベント
+    teams: [carp]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%97"
+    check: owner
+    note: 平和を願う夏の主催試合。2009年からこの名前で毎年開催。出典は球団記事の「ピースナイター」節
+
+  # クイズ
+  - id: carp-q-1
+    kind: quiz
+    genre: quiz
+    text: マスコットのスラィリーの背番号は？
+    choices: ["？", "☆", "！", "∞"]
+    answer: 2
+    teams: [carp]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%A9%E3%82%A3%E3%83%AA%E3%83%BC"
+    check: owner
+  - id: carp-q-2
+    kind: quiz
+    genre: quiz
+    text: 本拠地のマツダスタジアムが開場したのは何年？
+    choices: [2005年, 2009年, 2012年, 2015年]
+    answer: 1
+    teams: [carp]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/MAZDA_Zoom-Zoom_%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0%E5%BA%83%E5%B3%B6"
+    check: owner

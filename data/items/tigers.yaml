@@ -1,0 +1,112 @@
+# 阪神タイガースの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
+# 現役（era: current）は NPB.jp「2026年度 選手一覧」（シーズン終了時点）で在籍を確認した。
+items:
+  # --- 選手（現役） ---
+  - { id: tigers-p-itohara, kind: player, genre: player, text: 糸原 健斗, hint: 内野手・2010〜20年代, teams: [tigers], tier: C, era: current, source: "https://npb.jp/bis/players/81185134.html", check: auto }
+  - { id: tigers-p-shimada, kind: player, genre: player, text: 島田 海吏, hint: 外野手・2010〜20年代, teams: [tigers], tier: C, era: current, source: "https://npb.jp/bis/players/91995136.html", check: auto }
+  - { id: tigers-p-kirishiki, kind: player, genre: player, text: 桐敷 拓馬, hint: 投手・2020年代, teams: [tigers], tier: C, era: current, source: "https://npb.jp/bis/players/01705155.html", check: auto }
+  - { id: tigers-p-ishii-daichi, kind: player, genre: player, text: 石井 大智, hint: 投手・2020年代, teams: [tigers], tier: C, era: current, source: "https://npb.jp/bis/players/41145153.html", check: auto }
+  - { id: tigers-p-iwazaki, kind: player, genre: player, text: 岩崎 優, hint: 投手・2010〜20年代, teams: [tigers], tier: B, era: current, source: "https://npb.jp/bis/players/31335139.html", check: auto }
+  - { id: tigers-p-nakano, kind: player, genre: player, text: 中野 拓夢, hint: 内野手・2020年代, teams: [tigers], tier: B, era: current, source: "https://npb.jp/bis/players/41445153.html", check: auto }
+  - { id: tigers-p-umeno, kind: player, genre: player, text: 梅野 隆太郎, hint: 捕手・2010〜20年代, teams: [tigers], tier: B, era: current, source: "https://npb.jp/bis/players/21325139.html", check: auto }
+  # --- 選手（OB） ---
+  - { id: tigers-p-hiyama, kind: player, genre: player, text: 桧山 進次郎, hint: 外野手・1990〜2000年代, teams: [tigers], tier: B, era: ob, source: "https://npb.jp/bis/players/31433885.html", check: auto }
+  - { id: tigers-p-akahoshi, kind: player, genre: player, text: 赤星 憲広, hint: 外野手・2000年代, teams: [tigers], tier: B, era: ob, source: "https://npb.jp/bis/players/91195113.html", check: auto }
+  - { id: tigers-p-yagi, kind: player, genre: player, text: 八木 裕, hint: 内野手・1990年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/11213864.html", check: auto }
+  - { id: tigers-p-kubota, kind: player, genre: player, text: 久保田 智之, hint: 投手・2000年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/61765117.html", check: auto }
+  - { id: tigers-p-sekimoto, kind: player, genre: player, text: 関本 賢太郎, hint: 内野手・2000〜10年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/81783884.html", check: auto }
+  - { id: tigers-p-haraguchi, kind: player, genre: player, text: 原口 文仁, hint: 捕手・2010〜20年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/61065131.html", check: auto, note: 2025年限りで引退（2026年の名簿になし）。2022年から登録は内野手 }
+
+  # --- 名物 ---
+  - id: tigers-c-trackey
+    kind: culture
+    genre: mascot
+    text: トラッキー
+    hint: 球団マスコット
+    teams: [tigers]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%83%83%E3%82%AD%E3%83%BC"
+    check: owner
+  - id: tigers-c-lucky
+    kind: culture
+    genre: mascot
+    text: ラッキー
+    hint: 球団マスコット
+    teams: [tigers]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%83%83%E3%82%AD%E3%83%BC"
+    check: owner
+  - id: tigers-c-keita
+    kind: culture
+    genre: mascot
+    text: キー太
+    hint: 球団マスコット
+    teams: [tigers]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%83%83%E3%82%AD%E3%83%BC"
+    check: owner
+    note: 2011年登場。ラッキーの弟
+  - id: tigers-c-koshien-curry
+    kind: culture
+    genre: food
+    text: 甲子園カレー
+    hint: 球場グルメ
+    teams: [tigers]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E9%98%AA%E7%A5%9E%E7%94%B2%E5%AD%90%E5%9C%92%E7%90%83%E5%A0%B4"
+    check: owner
+    note: 高校野球で甲子園に行った人も知っているので、球団ファン以外にもある程度知られている
+  - id: tigers-c-hamakaze
+    kind: culture
+    genre: stadium
+    text: 甲子園の浜風
+    hint: 球場
+    teams: [tigers]
+    tier: B
+    source: "https://ja.wikipedia.org/wiki/%E9%98%AA%E7%A5%9E%E7%94%B2%E5%AD%90%E5%9C%92%E7%90%83%E5%A0%B4"
+    check: owner
+    note: 右翼後方から左翼方向へ吹く海風。出典の「キーワード」節
+  - id: tigers-c-urutora
+    kind: culture
+    genre: event
+    text: ウル虎の夏
+    hint: 球団のイベント
+    teams: [tigers]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E9%98%AA%E7%A5%9E%E3%82%BF%E3%82%A4%E3%82%AC%E3%83%BC%E3%82%B9"
+    check: owner
+    note: 2013年からの夏の限定ユニフォーム企画。出典の「限定・専用ユニフォーム」節
+  - id: tigers-c-naruohama
+    kind: culture
+    genre: stadium
+    text: 鳴尾浜球場
+    hint: 球場
+    teams: [tigers]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E9%98%AA%E7%A5%9E%E3%82%BF%E3%82%A4%E3%82%AC%E3%83%BC%E3%82%B9"
+    check: owner
+    note: 1995〜2024年の二軍本拠地
+
+  # --- クイズ ---
+  - id: tigers-q-1
+    kind: quiz
+    genre: quiz
+    text: トラのマスコット「トラッキー」の背番号は？
+    choices: ["1935", "1985", "1994", "2003"]
+    answer: 1
+    teams: [tigers]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%83%83%E3%82%AD%E3%83%BC"
+    check: owner
+    note: 1994 はラッキーの胸番号（出典に記載）
+  - id: tigers-q-2
+    kind: quiz
+    genre: quiz
+    text: 2025年から二軍が本拠地にしている新しい球場がある市は？
+    choices: [西宮市, 尼崎市, 伊丹市, 芦屋市]
+    answer: 1
+    teams: [tigers]
+    tier: C
+    source: "https://ja.wikipedia.org/wiki/%E9%98%AA%E7%A5%9E%E3%82%BF%E3%82%A4%E3%82%AC%E3%83%BC%E3%82%B9"
+    check: owner
+    note: 日鉄鋼板SGLスタジアム尼崎。それ以前の鳴尾浜球場は西宮市
