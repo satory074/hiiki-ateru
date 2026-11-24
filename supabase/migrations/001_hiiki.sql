@@ -1,5 +1,6 @@
 -- 001: 12球団当て（hiiki-ateru）の答え合わせの集計。xword の Supabase プロジェクトに同居させる（スキーマ hiiki）。
---   適用: オーナーが xword プロジェクトの SQL Editor でこのファイルを流し、続けて supabase/items.sql（npm run items-sql で作る）を流す。
+--   適用: xword プロジェクトにマイグレーション hiiki_001_counts として 2026-11-25 に適用済み（Supabase MCP）。続けて supabase/items.sql を流した。
+--   作り直すときは SQL Editor か MCP でこのファイルを流し、続けて supabase/items.sql（npm run items-sql で作る）を流す。
 --
 -- 誰が何をできるか（変えるときは scripts/sqltest.ts も直す）:
 --   通す  誰でも（anon・authenticated） public.hiiki_record_result(p jsonb): 値を検査して、人数を 1 足すだけ。何も返さない
