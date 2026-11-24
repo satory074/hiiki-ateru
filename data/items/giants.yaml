@@ -27,6 +27,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%93%E3%83%83%E3%83%88"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: giants-c-vicky
     kind: culture
     genre: mascot
@@ -36,7 +37,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%93%E3%83%83%E3%83%88"
     check: owner
-    note: ウサギのマスコット一家の妹（シスタージャビット）
+    note: "ウサギのマスコット一家の妹（シスタージャビット） 2026-11-25 再確認: 出典で確認（背番号777）"
   - id: giants-c-venus
     kind: culture
     genre: cheer
@@ -44,9 +45,9 @@ items:
     hint: 球場の応援
     teams: [giants]
     tier: C
-    source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
+    source: "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A3%E3%83%BC%E3%83%8A%E3%82%B9_(%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88%E3%82%AC%E3%83%BC%E3%83%AB)"
     check: owner
-    note: 1994年結成の球団公式チア（マスコットガール）。出典の「マスコットガール」節
+    note: "1994年結成の球団公式チア（マスコットガール）。2026-11-25 再確認: 出典を球団の記事の一節から専用の記事に替えた。結成時はファイアーガールで、チームジャビッツ21・チームヴィーナスを経て2016年から今の名前"
   - id: giants-c-toukon-komete
     kind: culture
     genre: cheer
@@ -56,7 +57,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/%E5%B7%A8%E4%BA%BA%E8%BB%8D%E3%81%AE%E6%AD%8C_-%E9%97%98%E9%AD%82%E3%81%93%E3%82%81%E3%81%A6-"
     check: owner
-    note: 1963年制定の球団歌の通称。曲名だけを出し、歌詞は載せない
+    note: "1963年制定の球団歌の通称。曲名だけを出し、歌詞は載せない 2026-11-25 再確認: 出典で確認"
   - id: giants-c-toukon-orange
     kind: culture
     genre: event
@@ -66,7 +67,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
     check: owner
-    note: 2012年からのオレンジ色の限定ユニフォーム企画。出典の「橙魂」の記述。近年も毎年続いているかは未確認
+    note: "2012年からのオレンジ色の限定ユニフォーム企画。出典の「橙魂」の記述。2026-11-25 再確認: 「近年も続いているかは未確認」としていたが、出典に2026年も「橙魂2026」として主催数試合で着用とあるので、その文を消した"
   - id: giants-c-dentou-no-issen
     kind: culture
     genre: event
@@ -76,7 +77,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
     check: owner
-    note: 東京ドームの球団と甲子園の球団の対戦の呼び名。両球団のファンが知っている
+    note: "東京ドームの球団と甲子園の球団の対戦の呼び名。両球団のファンが知っている 2026-11-25 再確認: 出典で確認"
   - id: giants-c-big-egg
     kind: culture
     genre: stadium
@@ -86,7 +87,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%83%89%E3%83%BC%E3%83%A0"
     check: owner
-    note: 東京ドームの開場時の愛称（2000年に施設愛称としては廃止）。当時は北海道に移る前のパ・リーグ球団も本拠地にしていた
+    note: "東京ドームの開場時の愛称（2000年に施設愛称としては廃止）。当時は北海道に移る前のパ・リーグ球団も本拠地にしていた 2026-11-25 再確認: 出典で確認"
 
   # --- クイズ ---
   - id: giants-q-1
@@ -99,6 +100,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認（2025年3月1日に稲城市の TOKYO GIANTS TOWN へ移転）"
   - id: giants-q-2
     kind: quiz
     genre: quiz
@@ -109,4 +111,4 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%93%E3%83%83%E3%83%88"
     check: owner
-    note: 次男ジャバは555（出典の「ミスタージャビット」節）
+    note: "次男ジャバは555（出典の「ミスタージャビット」節） 2026-11-25 再確認: 出典で確認。777 は妹ビッキー"

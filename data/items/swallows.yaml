@@ -37,7 +37,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
     check: owner
-    note: 2025年3月から休止し、2026年3月31日の神宮開幕戦で活動再開
+    note: "2026-11-25 再確認: 休止時期を出典の本文に合わせて直した。2025年2月に活動休止が発表され、2026年3月31日の神宮開幕戦（明治神宮野球場100周年のホーム開幕戦）で活動再開"
   - id: swallows-c-tsubami
     kind: culture
     genre: mascot
@@ -47,6 +47,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: swallows-c-torukuya
     kind: culture
     genre: mascot
@@ -56,6 +57,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: swallows-c-kasa
     kind: culture
     genre: cheer
@@ -65,7 +67,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E9%9F%B3%E9%A0%AD"
     check: owner
-    note: 得点時と神宮の7回裏の前に、広げたビニール傘を振って歌う。曲名だけで歌詞は載せない
+    note: "得点時と神宮の7回裏の前に、広げたビニール傘を振って歌う。曲名だけで歌詞は載せない 2026-11-25 再確認: 出典で確認"
   - id: swallows-c-jinkara
     kind: culture
     genre: food
@@ -75,7 +77,7 @@ items:
     tier: C
     source: "https://baseballking.jp/ns/695726/"
     check: owner
-    note: 神宮球場のからあげ。出典は他球団のからあげイベントへの出店記事で、そこで「神宮球場の名物グルメ」と紹介されている
+    note: "神宮球場のからあげ。出典は他球団のからあげイベントへの出店記事で、そこで「神宮球場の名物グルメ」と紹介されている 2026-11-25 再確認: 出典で確認"
   - id: swallows-c-hanabi
     kind: culture
     genre: event
@@ -85,7 +87,7 @@ items:
     tier: C
     source: "https://www.yakult-swallows.co.jp/news/detail/32246"
     check: owner
-    note: 夏の主催試合で5回裏終了時に花火300発。公式の告知は説明的な題で、この呼び名はイベント情報サイト（walkerplus）のもの
+    note: "夏の主催試合で5回裏終了時に花火300発。公式の告知は説明的な題で、この呼び名はイベント情報サイト（walkerplus）のもの 2026-11-25 再確認: 出典で確認"
 
   # クイズ
   - id: swallows-q-1
@@ -98,6 +100,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: swallows-q-2
     kind: quiz
     genre: quiz
@@ -108,3 +111,4 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE%E9%87%8E%E7%90%83%E5%A0%B4"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"

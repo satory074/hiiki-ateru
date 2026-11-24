@@ -1,4 +1,4 @@
--- 生成物（npm run items-sql）。質問データの版 7932285c・296 問。手で直さない。
+-- 生成物（npm run items-sql）。質問データの版 fec2bdc9・296 問。手で直さない。
 insert into hiiki.items (id, n_options) values
   ('baystars-p-miyazaki', 3),
   ('baystars-p-sano', 3),

@@ -29,6 +29,7 @@ items:
     tier: B
     source: "https://pacificleague.com/en/news/10041112"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: lions-c-raina
     kind: culture
     genre: mascot
@@ -38,6 +39,7 @@ items:
     tier: C
     source: "https://pacificleague.com/en/news/10041112"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: lions-c-belluna-dome
     kind: culture
     genre: stadium
@@ -47,6 +49,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/西武ドーム"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: lions-c-victory-road
     kind: culture
     genre: stadium
@@ -56,7 +59,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/西武ドーム"
     check: owner
-    note: バックネット裏の階段。勝った日に選手がここを通って引き上げ、ファンと触れ合う
+    note: "バックネット裏の階段。勝った日に選手がここを通って引き上げ、ファンと触れ合う 2026-11-25 再確認: 出典で確認"
   - id: lions-c-organ
     kind: culture
     genre: stadium
@@ -66,7 +69,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/西武ドーム"
     check: owner
-    note: 本拠地球場で唯一、電子オルガンを常設して奏者が生演奏する（Wikipedia の記述）
+    note: "本拠地球場で唯一、電子オルガンを常設して奏者が生演奏する（Wikipedia の記述） 2026-11-25 再確認: 出典で確認。「唯一」は 2019年ポストシーズン時点の記述だと追記"
   - id: lions-c-chihei
     kind: culture
     genre: cheer
@@ -76,7 +79,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/地平を駈ける獅子を見た"
     check: owner
-    note: 球団歌（1979年、松崎しげる）。5回の攻撃前にファンが合唱し、勝利時にも流れる。歌詞は載せない
+    note: "球団歌（1979年、松崎しげる）。5回の攻撃前にファンが合唱し、勝利時にも流れる。歌詞は載せない 2026-11-25 再確認: 出典で確認"
   - id: lions-c-ls-craft-pizza
     kind: culture
     genre: food
@@ -86,7 +89,7 @@ items:
     tier: C
     source: "https://sports.yahoo.co.jp/official/detail/2026050900090-spnaviow"
     check: owner
-    note: 内野3塁側の店のピザ。2026年で店が10周年
+    note: "内野3塁側の店のピザ。2026年で店が10周年 2026-11-25 再確認: 出典で確認"
 
   # --- クイズ ---
   - id: lions-q-1
@@ -99,6 +102,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/埼玉西武ライオンズ"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: lions-q-2
     kind: quiz
     genre: quiz
@@ -109,3 +113,4 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/西武ドーム"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"

@@ -27,7 +27,7 @@ items:
     teams: [fighters]
     tier: B
     source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
-    note: 北海道移転の2004年に登場。2018年から球場での活動に区切り
+    note: "北海道移転の2004年に登場。2018年から球場での活動に区切り 2026-11-25 再確認: 出典で確認"
     check: owner
   - id: fighters-c-frep
     kind: culture
@@ -37,6 +37,7 @@ items:
     teams: [fighters]
     tier: C
     source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    note: "2026-11-25 再確認: 出典で確認"
     check: owner
   - id: fighters-c-kitsune-dance
     kind: culture
@@ -46,6 +47,7 @@ items:
     teams: [fighters]
     tier: B
     source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    note: "2026-11-25 再確認: 出典で確認"
     check: owner
   - id: fighters-c-inaba-jump
     kind: culture
@@ -55,6 +57,7 @@ items:
     teams: [fighters]
     tier: B
     source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    note: "2026-11-25 再確認: 出典で確認"
     check: owner
   - id: fighters-c-we-love-hokkaido
     kind: culture
@@ -64,7 +67,7 @@ items:
     teams: [fighters]
     tier: C
     source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
-    note: 2025年からは「WE LOVE HOKKAIDO & FIGHTERS SERIES」の名で開催。球団名を含むので短い名前で出す
+    note: "2025年からは「WE LOVE HOKKAIDO & FIGHTERS SERIES」の名で開催。球団名を含むので短い名前で出す 2026-11-25 再確認: 出典で確認"
     check: owner
   - id: fighters-c-tower11
     kind: culture
@@ -74,7 +77,7 @@ items:
     teams: [fighters]
     tier: C
     source: "https://ja.wikipedia.org/wiki/エスコンフィールドHOKKAIDO"
-    note: 本拠地球場のレフト側にある温泉・サウナ付きの施設
+    note: "本拠地球場のレフト側にある温泉・サウナ付きの施設 2026-11-25 再確認: 出典で確認"
     check: owner
   - id: fighters-c-kamagaya
     kind: culture
@@ -84,7 +87,7 @@ items:
     teams: [fighters]
     tier: C
     source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
-    note: 二軍の本拠地（千葉県鎌ケ谷市）。正式名は球団名を含むので略称で出す。二軍の北海道移転構想あり
+    note: "二軍の本拠地（千葉県鎌ケ谷市）。正式名は球団名を含むので略称で出す。2026-11-25 再確認: 「北海道移転構想あり」を具体化。2026年7月2日に移転先を北海道恵庭市に内定・決定と報道（2030年めど開業。デイリー 2026-07-02）"
     check: owner
 
   # --- クイズ ---
@@ -97,6 +100,7 @@ items:
     teams: [fighters]
     tier: C
     source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
+    note: "2026-11-25 再確認: 出典で確認"
     check: owner
   - id: fighters-q-2
     kind: quiz
@@ -106,6 +110,6 @@ items:
     answer: 1
     teams: [fighters]
     tier: C
-    source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
-    note: 本拠地の市名（北広島市）を問う案は「広島」を含むため検査に掛かるので差し替えた
+    source: "https://baseballking.jp/ns/139275/"
+    note: "本拠地の市名（北広島市）を問う案は「広島」を含むため検査に掛かるので差し替えた 2026-11-25 再確認: 出典を差し替え。Wikipedia は背番号 179 を B・B から引き継いだとだけ書き、179 の意味は書いていない。「北海道の市町村数を表す」と明記した BASEBALL KING の 2017-11-26 の記事にした"
     check: owner

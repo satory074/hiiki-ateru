@@ -29,6 +29,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/千葉ロッテマリーンズ"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: marines-c-reen
     kind: culture
     genre: mascot
@@ -38,6 +39,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/千葉ロッテマリーンズ"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: marines-c-zoo
     kind: culture
     genre: mascot
@@ -47,6 +49,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/千葉ロッテマリーンズ"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: marines-c-zozo-marine
     kind: culture
     genre: stadium
@@ -56,6 +59,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/千葉マリンスタジアム"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: marines-c-marine-wind
     kind: culture
     genre: stadium
@@ -65,7 +69,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/千葉マリンスタジアム"
     check: owner
-    note: 東京湾に近い本拠地球場に吹く強い海風の通称
+    note: "東京湾に近い本拠地球場に吹く強い海風の通称 2026-11-25 再確認: 出典で確認"
   - id: marines-c-kazuchan-motsuni
     kind: culture
     genre: food
@@ -75,7 +79,7 @@ items:
     tier: C
     source: "https://netshop.impress.co.jp/r/prtimes/items/000000003.000111793"
     check: owner
-    note: 1992年から本拠地球場で売られているもつ煮（2026年8月のプレスリリース）
+    note: "1992年から本拠地球場で売られているもつ煮（2026年8月のプレスリリース） 2026-11-25 再確認: 出典で確認"
   - id: marines-c-black-summer-week
     kind: culture
     genre: event
@@ -85,7 +89,7 @@ items:
     tier: C
     source: "https://news.livedoor.com/article/detail/31873948/"
     check: owner
-    note: 夏の本拠地主催試合の企画。2021年から、2026年も開催
+    note: "夏の本拠地主催試合の企画。2021年から、2026年も開催 2026-11-25 再確認: 出典で確認。2021〜22年の名称は「BLACK SUMMER WEEKEND」で、2023年から今の名前になったと追記（ja.wikipedia 千葉ロッテマリーンズ）"
 
   # --- クイズ ---
   - id: marines-q-1
@@ -98,6 +102,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/千葉マリンスタジアム"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: marines-q-2
     kind: quiz
     genre: quiz
@@ -108,3 +113,4 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/千葉ロッテマリーンズ"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"

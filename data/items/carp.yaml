@@ -38,6 +38,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%A9%E3%82%A3%E3%83%AA%E3%83%BC"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: carp-c-squat
     kind: culture
     genre: cheer
@@ -47,6 +48,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%97"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: carp-c-shamoji
     kind: culture
     genre: cheer
@@ -56,7 +58,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%97"
     check: owner
-    note: 1975年の初優勝のころからの応援。今のスタンドで日常的に見られるかは未確認
+    note: "1975年の初優勝のころからの応援。2026-11-25 再確認: 「今も見られるかは未確認」の部分を差し替え。出典（球団記事）によると1980年代半ばで終わり、以後は危険防止のため打ち鳴らす応援はしていない。今は無い昔の応援として残す"
   - id: carp-c-nesoberia
     kind: culture
     genre: stadium
@@ -66,7 +68,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/MAZDA_Zoom-Zoom_%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0%E5%BA%83%E5%B3%B6"
     check: owner
-    note: 寝ころんで見られるライト側の席。2025年度に改修され「チルアウトテラス」に改称（知っている人は多いはずだが今は旧名）
+    note: "寝ころんで見られるライト側の席。2025年度に改修され「チルアウトテラス」に改称（知っている人は多いはずだが今は旧名） 2026-11-25 再確認: 出典で確認"
   - id: carp-c-tadami
     kind: culture
     genre: stadium
@@ -76,6 +78,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/MAZDA_Zoom-Zoom_%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0%E5%BA%83%E5%B3%B6"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: carp-c-koisajiki
     kind: culture
     genre: stadium
@@ -85,6 +88,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/MAZDA_Zoom-Zoom_%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0%E5%BA%83%E5%B3%B6"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: carp-c-peace-nighter
     kind: culture
     genre: event
@@ -94,7 +98,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E5%BA%83%E5%B3%B6%E6%9D%B1%E6%B4%8B%E3%82%AB%E3%83%BC%E3%83%97"
     check: owner
-    note: 平和を願う夏の主催試合。2009年からこの名前で毎年開催。出典は球団記事の「ピースナイター」節
+    note: "平和を願う夏の主催試合。2009年からこの名前で毎年開催。出典は球団記事の「ピースナイター」節 2026-11-25 再確認: 出典で確認"
 
   # クイズ
   - id: carp-q-1
@@ -107,6 +111,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%A9%E3%82%A3%E3%83%AA%E3%83%BC"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: carp-q-2
     kind: quiz
     genre: quiz
@@ -117,3 +122,4 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/MAZDA_Zoom-Zoom_%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0%E5%BA%83%E5%B3%B6"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"

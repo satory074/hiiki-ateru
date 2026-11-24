@@ -28,7 +28,7 @@ items:
     teams: [buffaloes]
     tier: C
     source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
-    note: 1991年のブルーウェーブ時代に登場。いまは復刻試合などに出る
+    note: "1991年のブルーウェーブ時代に登場。いまは復刻試合などに出る 2026-11-25 再確認: 出典で確認（常任は 2010年まで、2011年に引退式、以後は復刻ユニフォーム試合に登場）"
     check: owner
   - id: buffaloes-c-natsunojin
     kind: culture
@@ -38,7 +38,7 @@ items:
     teams: [buffaloes]
     tier: C
     source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
-    note: 2009年の「Bs大坂夏の陣」から続く夏の限定ユニフォーム企画（2026年も開催）
+    note: "2009年の「Bs大坂夏の陣」から続く夏の限定ユニフォーム企画（2026年も開催） 2026-11-25 再確認: 出典で確認（2014年に現在の名前に）"
     check: owner
   - id: buffaloes-c-orihime-day
     kind: culture
@@ -48,6 +48,7 @@ items:
     teams: [buffaloes]
     tier: C
     source: "https://www.daily.co.jp/baseball/2026/05/11/0020341595.shtml"
+    note: "2026-11-25 再確認: 出典で確認（2026年は7月の主催6試合）"
     check: owner
   - id: buffaloes-c-sky
     kind: culture
@@ -57,7 +58,7 @@ items:
     teams: [buffaloes]
     tier: C
     source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
-    note: 7回裏の攻撃前と勝った試合の後に流れる曲。曲名だけを出し歌詞は使わない
+    note: "7回裏の攻撃前と勝った試合の後に流れる曲。曲名だけを出し歌詞は使わない 2026-11-25 再確認: 出典で確認"
     check: owner
   - id: buffaloes-c-bsgirls
     kind: culture
@@ -66,8 +67,8 @@ items:
     hint: 球場の応援
     teams: [buffaloes]
     tier: C
-    source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
-    note: 球団のダンスチーム
+    source: "https://ja.wikipedia.org/wiki/BsGirls"
+    note: "球団公式のダンス＆ヴォーカルユニット（2014年結成）。2026-11-25 再確認: 出典を BsGirls の項目に差し替え。2024年から男性ユニット BsGuys と合わせた「BsGravity」として活動しているが、10年続いた BsGirls の名前のほうが知られているのでそのまま出す"
     check: owner
   - id: buffaloes-c-hotmotto-kobe
     kind: culture
@@ -77,7 +78,7 @@ items:
     teams: [buffaloes]
     tier: B
     source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
-    note: 準本拠地（旧グリーンスタジアム神戸）
+    note: "準本拠地（旧グリーンスタジアム神戸） 2026-11-25 再確認: 出典で確認"
     check: owner
   - id: buffaloes-c-iteme-dog
     kind: culture
@@ -87,7 +88,7 @@ items:
     teams: [buffaloes]
     tier: C
     source: "https://zaikei.co.jp/releases/2853662/"
-    note: 京セラドーム大阪の 3階ライト側の売店。出典は 2025年の発表で、2026年の販売は未確認
+    note: "京セラドーム大阪の 3階ライト側の売店。出典は 2025年の発表で、2026年の販売は未確認 2026-11-25 再確認: 出典で確認（2026年の販売は再確認でも見つからず）"
     check: owner
 
   # --- クイズ ---
@@ -100,15 +101,16 @@ items:
     teams: [buffaloes]
     tier: C
     source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
+    note: "2026-11-25 再確認: 出典で確認"
     check: owner
   - id: buffaloes-q-2
     kind: quiz
     genre: quiz
-    text: 2021年のリーグ優勝は何年ぶりだった？
+    text: 2021年のパ・リーグ優勝は何年ぶりだった？
     choices: [15年ぶり, 20年ぶり, 25年ぶり, 30年ぶり]
     answer: 2
     teams: [buffaloes]
     tier: C
     source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
-    note: 1996年以来 25年ぶり
+    note: "1996年以来 25年ぶり 2026-11-25 再確認: 「2021年のリーグ優勝」だけではセ・リーグ（2021年はヤクルトが優勝）とも取れるので、text に「パ・リーグ」を足した。1996年以来25年ぶりは出典で確認"
     check: owner

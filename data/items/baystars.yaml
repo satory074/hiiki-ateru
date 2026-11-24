@@ -38,6 +38,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/DB.%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%9E%E3%83%B3"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: baystars-c-kirara
     kind: culture
     genre: mascot
@@ -47,6 +48,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/DB.%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%9E%E3%83%B3"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: baystars-c-mikangori
     kind: culture
     genre: food
@@ -56,6 +58,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: baystars-c-hamasta
     kind: culture
     genre: stadium
@@ -65,6 +68,7 @@ items:
     tier: B
     source: "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: baystars-c-wing
     kind: culture
     genre: stadium
@@ -74,7 +78,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0"
     check: owner
-    note: 2019〜20年の増席改修で、一塁側・三塁側から外野にかけての上段に新設された席
+    note: "2019〜20年の増席改修で、一塁側・三塁側から外野にかけての上段に新設された席 2026-11-25 再確認: 出典で確認"
   - id: baystars-c-atsukihoshi
     kind: culture
     genre: cheer
@@ -84,7 +88,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E7%86%B1%E3%81%8D%E6%98%9F%E3%81%9F%E3%81%A1%E3%82%88"
     check: owner
-    note: 球団歌の曲名（歌詞は載せない）。スタンドで応援団のトランペットに合わせて歌われる
+    note: "球団歌の曲名（歌詞は載せない）。スタンドで応援団のトランペットに合わせて歌われる 2026-11-25 再確認: 出典で確認"
   - id: baystars-c-starnight
     kind: culture
     genre: event
@@ -94,7 +98,7 @@ items:
     tier: C
     source: "https://www.baystars.co.jp/news/2026/07/0701_05.php"
     check: owner
-    note: 正式名は頭に都市名が付く（YOKOHAMA STAR☆NIGHT）ので、そこを外した。毎年夏の恒例イベント
+    note: "正式名は頭に都市名が付く（YOKOHAMA STAR☆NIGHT）ので、そこを外した。毎年夏の恒例イベント 2026-11-25 再確認: 出典で確認"
 
   # クイズ
   - id: baystars-q-1
@@ -107,6 +111,7 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/1998%E5%B9%B4%E3%81%AE%E6%97%A5%E6%9C%AC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"
   - id: baystars-q-2
     kind: quiz
     genre: quiz
@@ -117,3 +122,4 @@ items:
     tier: C
     source: "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E3%81%AE%E6%97%A5%E6%9C%AC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA"
     check: owner
+    note: "2026-11-25 再確認: 出典で確認"

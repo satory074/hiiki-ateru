@@ -27,6 +27,7 @@ items:
     teams: [hawks]
     tier: B
     source: "https://ja.wikipedia.org/wiki/ハリーホーク"
+    note: "2026-11-25 再確認: 出典で確認"
     check: owner
   - id: hawks-c-fuusan
     kind: culture
@@ -36,7 +37,7 @@ items:
     teams: [hawks]
     tier: C
     source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
-    note: 勝利後に飛ばす白いジェット風船がモチーフのキャラクター（2015年〜）
+    note: "勝利後に飛ばす白いジェット風船がモチーフのキャラクター（2015年〜） 2026-11-25 再確認: 出典で確認（2015年5月4日初登場）"
     check: owner
   - id: hawks-c-taka-no-saiten
     kind: culture
@@ -46,7 +47,7 @@ items:
     teams: [hawks]
     tier: B
     source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
-    note: 2024年から「鷹祭 SUMMER BOOST」に改称。知られているのは旧称なので旧称で出す
+    note: "2024年から「鷹祭 SUMMER BOOST」に改称。知られているのは旧称なので旧称で出す 2026-11-25 再確認: 出典で確認"
     check: owner
   - id: hawks-c-takagirl-day
     kind: culture
@@ -56,7 +57,7 @@ items:
     teams: [hawks]
     tier: C
     source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
-    note: 女子高生デー→タカガール♡デー（2014〜）→ピンクフルデー（2023〜）
+    note: "女子高生デー→タカガール♡デー（2014〜）→ピンクフルデー（2023〜） 2026-11-25 再確認: 出典で確認"
     check: owner
   - id: hawks-c-izayuke-wakataka
     kind: culture
@@ -66,7 +67,7 @@ items:
     teams: [hawks]
     tier: B
     source: "https://ja.wikipedia.org/wiki/いざゆけ若鷹軍団"
-    note: 球団歌。7回の攻撃前と勝利後に流れる。題名だけを出し歌詞は使わない
+    note: "球団歌。7回の攻撃前と勝利後に流れる。題名だけを出し歌詞は使わない 2026-11-25 再確認: 出典で確認"
     check: owner
   - id: hawks-c-homerun-terrace
     kind: culture
@@ -76,7 +77,7 @@ items:
     teams: [hawks]
     tier: C
     source: "https://ja.wikipedia.org/wiki/福岡ドーム"
-    note: 2015年に外野フェンス前へ増設した観客席
+    note: "2015年に外野フェンス前へ増設した観客席 2026-11-25 再確認: 出典で確認"
     check: owner
   - id: hawks-c-roof-open-show
     kind: culture
@@ -86,7 +87,7 @@ items:
     teams: [hawks]
     tier: C
     source: "https://ja.wikipedia.org/wiki/福岡ドーム"
-    note: 本拠地で勝った日に屋根を開けて花火を上げる演出
+    note: "本拠地で勝った日に屋根を開けて花火を上げる演出 2026-11-25 再確認: 出典で確認"
     check: owner
 
   # --- クイズ ---
@@ -99,6 +100,7 @@ items:
     teams: [hawks]
     tier: C
     source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
+    note: "2026-11-25 再確認: 出典で確認"
     check: owner
   - id: hawks-q-2
     kind: quiz
@@ -109,5 +111,5 @@ items:
     teams: [hawks]
     tier: C
     source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
-    note: 2017〜2020年に4年連続日本一（パ・リーグ初）
+    note: "2017〜2020年に4年連続日本一（パ・リーグ初） 2026-11-25 再確認: 出典で確認"
     check: owner
