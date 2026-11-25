@@ -1,15 +1,16 @@
 # オリックス・バファローズの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
 # 現役（era: current）は NPB.jp の 2026年度 選手一覧（https://npb.jp/bis/teams/rst_b.html）で在籍を確認した。
 # 近鉄は別の系譜なので、近鉄だけで活躍した選手は入れない（阪急・オリックスでの経歴で選ぶ）。
+# 2026-11-25 見直し: 今オフに戦力外（阿部翔太・頓宮）、FA 宣言（中川圭太）になった人を外し、引退を表明した西野・山田修義を OB にした。
+#   紅林・若月を足した（オリックスの 2026 年の退団一覧と FA 宣言の公示に名前が無いこと、NPB の選手ページの所属を確かめた）。
 items:
   # --- 選手：現役 ---
+  - { id: buffaloes-p-kurebayashi, kind: player, genre: player, text: 紅林 弘太郎, hint: 内野手・2020年代, teams: [buffaloes], tier: B, era: current, source: "https://npb.jp/bis/players/91995151.html", check: auto }
+  - { id: buffaloes-p-wakatsuki, kind: player, genre: player, text: 若月 健矢, hint: 捕手・2010〜20年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/41645139.html", check: auto }
   - { id: buffaloes-p-sugimoto, kind: player, genre: player, text: 杉本 裕太郎, hint: 外野手・2020年代, teams: [buffaloes], tier: B, era: current, source: "https://npb.jp/bis/players/61965132.html", check: auto }
-  - { id: buffaloes-p-tongu, kind: player, genre: player, text: 頓宮 裕真, hint: 捕手・2020年代, teams: [buffaloes], tier: B, era: current, source: "https://npb.jp/bis/players/81085138.html", note: 登録は捕手（試合では一塁・指名打者が多い）, check: auto }
-  - { id: buffaloes-p-nakagawa-keita, kind: player, genre: player, text: 中川 圭太, hint: 内野手・2020年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/51255138.html", check: auto }
-  - { id: buffaloes-p-nishino, kind: player, genre: player, text: 西野 真弘, hint: 内野手・2010〜20年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/91495130.html", check: auto }
+  - { id: buffaloes-p-nishino, kind: player, genre: player, text: 西野 真弘, hint: 内野手・2010〜20年代, teams: [buffaloes], tier: C, era: ob, source: "https://npb.jp/bis/players/91495130.html", check: auto }
   - { id: buffaloes-p-oshiro, kind: player, genre: player, text: 大城 滉二, hint: 内野手・2010〜20年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/11515132.html", check: auto }
-  - { id: buffaloes-p-abe-shota, kind: player, genre: player, text: 阿部 翔太, hint: 投手・2020年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/01105153.html", check: auto }
-  - { id: buffaloes-p-yamada-nobuyoshi, kind: player, genre: player, text: 山田 修義, hint: 投手・2010〜20年代, teams: [buffaloes], tier: C, era: current, source: "https://npb.jp/bis/players/61465131.html", check: auto }
+  - { id: buffaloes-p-yamada-nobuyoshi, kind: player, genre: player, text: 山田 修義, hint: 投手・2010〜20年代, teams: [buffaloes], tier: C, era: ob, source: "https://npb.jp/bis/players/61465131.html", check: auto }
   # --- 選手：OB ---
   - { id: buffaloes-p-tani, kind: player, genre: player, text: 谷 佳知, hint: 外野手・1990〜2000年代, teams: [buffaloes, giants], tier: B, era: ob, source: "https://npb.jp/bis/players/91993884.html", check: auto }
   - { id: buffaloes-p-sakaguchi, kind: player, genre: player, text: 坂口 智隆, hint: 外野手・2000〜10年代, teams: [buffaloes, swallows], tier: B, era: ob, source: "https://npb.jp/bis/players/21925117.html", note: 入団は近鉄（2003〜04年）。主な活躍はオリックス（2005〜15年）, check: auto }

@@ -3,7 +3,6 @@
 items:
   # --- 選手（現役） ---
   - { id: tigers-p-itohara, kind: player, genre: player, text: 糸原 健斗, hint: 内野手・2010〜20年代, teams: [tigers], tier: C, era: current, source: "https://npb.jp/bis/players/81185134.html", check: auto }
-  - { id: tigers-p-shimada, kind: player, genre: player, text: 島田 海吏, hint: 外野手・2010〜20年代, teams: [tigers], tier: C, era: current, source: "https://npb.jp/bis/players/91995136.html", check: auto }
   - { id: tigers-p-kirishiki, kind: player, genre: player, text: 桐敷 拓馬, hint: 投手・2020年代, teams: [tigers], tier: C, era: current, source: "https://npb.jp/bis/players/01705155.html", check: auto }
   - { id: tigers-p-ishii-daichi, kind: player, genre: player, text: 石井 大智, hint: 投手・2020年代, teams: [tigers], tier: C, era: current, source: "https://npb.jp/bis/players/41145153.html", check: auto }
   - { id: tigers-p-iwazaki, kind: player, genre: player, text: 岩崎 優, hint: 投手・2010〜20年代, teams: [tigers], tier: B, era: current, source: "https://npb.jp/bis/players/31335139.html", check: auto }
@@ -24,7 +23,7 @@ items:
     text: トラッキー
     hint: 球団マスコット
     teams: [tigers]
-    tier: B
+    tier: A
     source: "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%83%83%E3%82%AD%E3%83%BC"
     check: owner
     note: "2026-11-25 再確認: 出典で確認"
@@ -101,14 +100,3 @@ items:
     source: "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%83%83%E3%82%AD%E3%83%BC"
     check: owner
     note: "1994 はラッキーの胸番号（出典に記載） 2026-11-25 再確認: 出典で確認"
-  - id: tigers-q-2
-    kind: quiz
-    genre: quiz
-    text: 2025年から二軍が本拠地にしている新しい球場がある市は？
-    choices: [西宮市, 尼崎市, 伊丹市, 芦屋市]
-    answer: 1
-    teams: [tigers]
-    tier: C
-    source: "https://ja.wikipedia.org/wiki/%E9%98%AA%E7%A5%9E%E3%82%BF%E3%82%A4%E3%82%AC%E3%83%BC%E3%82%B9"
-    check: owner
-    note: "日鉄鋼板SGLスタジアム尼崎。それ以前の鳴尾浜球場は西宮市 2026-11-25 再確認: 出典で確認"

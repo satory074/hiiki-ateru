@@ -64,10 +64,15 @@ function checkBank(name: string, bank: Bank, runs: number): void {
     const n = session.answers.length;
     assert(n >= p.stop.min && n <= p.stop.max, `${name}: 質問数が ${p.stop.min}〜${p.stop.max}（${n}）`);
     assert(new Set(session.answers.map((a) => a.itemId)).size === n, `${name}: 同じ質問が 2 度出ない`);
-    session.answers.forEach((a, i) => {
-      const item = model.itemById.get(a.itemId)!;
-      if (item.kind === "foil") assert(p.foilAt.includes(i + 1), `${name}: 架空は決めた番手だけ（${i + 1} 問目）`);
-    });
+    // 架空は窓の中だけ・窓ごとに1問まで。最低問数までに終わる窓（3〜5・8〜10）には必ず1問ある
+    const foilPos = session.answers.flatMap((a, i) => (model.itemById.get(a.itemId)!.kind === "foil" ? [i + 1] : []));
+    for (const q of foilPos) assert(p.foilWindows.some(([a, b]) => q >= a && q <= b), `${name}: 架空は窓の中だけ（${q} 問目）`);
+    for (const [a, b] of p.foilWindows) {
+      const k = foilPos.filter((q) => q >= a && q <= b).length;
+      assert(k <= 1, `${name}: 架空は窓ごとに1問まで（${a}〜${b} 問目に ${k} 問）`);
+      if (b <= n) assert(k === 1, `${name}: 通り過ぎた窓には架空が1問ある（${a}〜${b} 問目）`);
+    }
+    if (p.firstItem) assert(session.answers[0]?.itemId === p.firstItem, `${name}: 1問目は ${p.firstItem}`);
     assert(session.answers.filter((a) => a.itemId === "region").length <= 1, `${name}: 地方は 1 回まで`);
 
     const v = verdict(model, session.post);

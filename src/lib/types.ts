@@ -17,7 +17,8 @@ export interface Team {
  * league2 は「2つ目の球団は、いちばんの球団と同じリーグか」（2球団の組を半分に絞る暮らしの質問）
  */
 export type Kind = "player" | "culture" | "quiz" | "life" | "league2" | "foil" | "region";
-export type Tier = "B" | "C";
+/** 知名度。A＝野球を見ない人でも聞いたことがある（名物だけ）／B＝野球好きなら名前は知っている／C＝その球団のファンでないとまず知らない */
+export type Tier = "A" | "B" | "C";
 /** 暮らしの質問で答え方を分ける、仮説の大まかな形 */
 export type LifeClass = "fan1" | "fan2" | "neutral" | "none";
 
@@ -64,7 +65,13 @@ export interface Params {
     elsewhere: { label: string; p: number };
   };
   stop: { min: number; max: number; confidence: number };
-  foilAt: number[];
+  /**
+   * 架空の質問を入れる番手の窓（[はじめ, おわり]、両端を含む）。遊ぶたびに窓の中の1問をくじで選ぶ。
+   * 番手を固定すると「4問目は架空」と広まって意味がなくなり、短く終わると1問しか入らなかったので窓にした（2026-11-25）。
+   */
+  foilWindows: [number, number][];
+  /** 1問目に必ず出す質問の id（見ない人・贔屓なしの人を早く見分けるため、中継を見る頻度を最初に聞く） */
+  firstItem?: string;
   regionFallback: { minQuestions: number; below: number; stallWindow: number; stallGain: number };
   genrePenalty: { streak: number; factor: number };
   pickWithin: number;

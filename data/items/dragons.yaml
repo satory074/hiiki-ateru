@@ -24,7 +24,7 @@ items:
     text: ドアラ
     hint: 球団マスコット
     teams: [dragons]
-    tier: B
+    tier: A
     source: "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A2%E3%83%A9"
     check: owner
     note: "2026-11-25 再確認: 出典で確認"
@@ -101,14 +101,3 @@ items:
     source: "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A2%E3%83%A9"
     check: owner
     note: "デビューした1994年にちなむ 2026-11-25 再確認: 出典で確認。1997 はシャオロンの背番号"
-  - id: dragons-q-2
-    kind: quiz
-    genre: quiz
-    text: 二軍の本拠地「ナゴヤ球場」があるのは名古屋市の何区？
-    choices: [中川区, 熱田区, 港区, 東区]
-    answer: 0
-    teams: [dragons]
-    tier: C
-    source: "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%97%A5%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%BA"
-    check: owner
-    note: "2026-11-25 再確認: 出典で確認（東区は一軍のドームの所在地）"

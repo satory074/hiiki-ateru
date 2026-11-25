@@ -8,7 +8,7 @@
 //       text: 菊池涼介          # 選手名・名物の名前・質問文。球団名は入れない
 //       hint: 内野手・2010年代   # 選手は必須（守備と主な年代）。名物は「球場グルメ」などの分類
 //       teams: [carp]          # player / culture / quiz は 1〜3 球団。life / foil は書かない
-//       tier: C                # B（野球好きなら名前は知っている）/ C（その球団のファンでないとまず知らない）
+//       tier: C                # A（野球を見ない人でも聞いたことがある。culture だけ）/ B（野球好きなら名前は知っている）/ C（その球団のファンでないとまず知らない）
 //       era: current           # player だけ: current（2026年に在籍）/ ob
 //       source: https://...    # 出典。foil 以外は必須
 //       check: auto            # auto（intai-fa と照合して一致）/ owner（オーナー確認待ち）/ ok（オーナー確認済み）
@@ -27,8 +27,9 @@ import type { Bank, Item, Kind, LifeClass, Params, Team, Tier } from "../../src/
 export const ROOT = path.resolve(import.meta.dirname, "../..");
 const DATA = path.join(ROOT, "data");
 
-export const KNOW_OPTIONS = ["よく知ってる", "名前は知ってる", "知らない"];
-export const CULTURE_OPTIONS = ["よく知ってる", "聞いたことはある", "知らない"];
+// 「よく知ってる」と「名前は知ってる」の境目が人によって違わないよう、短い定義を添える（2026-11-25 見直し）
+export const KNOW_OPTIONS = ["よく知ってる（どんな選手か浮かぶ）", "名前は知ってる（名前だけ）", "知らない"];
+export const CULTURE_OPTIONS = ["よく知ってる（どんなものか言える）", "聞いたことはある（名前だけ）", "知らない"];
 export const DONT_KNOW_QUIZ = "わからない";
 export const REGION_TEXT = "子どものころ、いちばん長く住んでいた地方は？";
 
@@ -93,7 +94,9 @@ export function compileBank(src: Source): Bank {
     if (needsTeams && (teams.length < 1 || teams.length > 3)) fail(it, "teams は 1〜3 球団");
     if (!needsTeams && teams.length > 0) fail(it, `${it.kind} に teams は書かない`);
     const tier: Tier = it.tier ?? "C";
-    if (tier !== "B" && tier !== "C") fail(it, `tier が不正: ${tier}`);
+    if (tier !== "A" && tier !== "B" && tier !== "C") fail(it, `tier が不正: ${tier}`);
+    // A は「野球を見ない人でも聞いたことがある」名物だけ。選手は誰でも知っているスターを使わない決まりなので A にしない
+    if (tier === "A" && it.kind !== "culture") fail(it, "tier A は culture（名物）だけ");
 
     let options: string[];
     let correct: number | undefined;

@@ -11,6 +11,25 @@ const url = import.meta.env.PUBLIC_SUPABASE_URL;
 const key = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 const api = url && key ? supabaseApi(url, key) : nullApi;
 
+/** 答え合わせを送った版を覚える。localStorage が使えない（プライベートモードなど）ときは覚えず、毎回送る */
+const SENT_KEY = "hiiki-ateru:sent-version";
+const sentStore = {
+  has(version: string): boolean {
+    try {
+      return localStorage.getItem(SENT_KEY) === version;
+    } catch {
+      return false;
+    }
+  },
+  mark(version: string): void {
+    try {
+      localStorage.setItem(SENT_KEY, version);
+    } catch {
+      /* 覚えられなくてもゲームには影響しない */
+    }
+  },
+};
+
 /** 画像を作り、共有できる端末なら共有シート、できなければ保存・コピーのボタンを出す */
 async function shareImage(card: ShareCard, area: HTMLElement): Promise<boolean> {
   const canvas = document.createElement("canvas");
@@ -64,5 +83,5 @@ const root = document.getElementById("game");
 if (root) {
   const siteUrl = new URL(import.meta.env.BASE_URL.replace(/\/?$/, "/"), location.origin).toString();
   const seed = (crypto.getRandomValues(new Uint32Array(1))[0] ?? Date.now()) >>> 0;
-  mountGame(root, { bank, api, rng: createRng(seed), siteUrl, shareImage });
+  mountGame(root, { bank, api, rng: createRng(seed), siteUrl, shareImage, sentStore });
 }

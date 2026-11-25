@@ -3,7 +3,6 @@
 # OB は 2026-11-25 時点で 12 球団どの 2026年度 選手一覧にも載っていないことを確認した。
 items:
   # --- 選手（現役） ---
-  - { id: eagles-p-ota, kind: player, genre: player, text: 太田 光, hint: 捕手・2020年代, teams: [eagles], tier: C, era: current, source: "https://npb.jp/bis/players/71375138.html", check: auto }
   - { id: eagles-p-kobukata, kind: player, genre: player, text: 小深田 大翔, hint: 内野手・2020年代, teams: [eagles], tier: C, era: current, source: "https://npb.jp/bis/players/61965151.html", check: auto }
   - { id: eagles-p-murabayashi, kind: player, genre: player, text: 村林 一輝, hint: 内野手・2020年代, teams: [eagles], tier: C, era: current, source: "https://npb.jp/bis/players/41845132.html", check: auto }
   - { id: eagles-p-ogo, kind: player, genre: player, text: 小郷 裕哉, hint: 外野手・2020年代, teams: [eagles], tier: C, era: current, source: "https://npb.jp/bis/players/81385138.html", check: auto }
@@ -92,17 +91,6 @@ items:
     note: "球団公式チアリーダー。2026年メンバー発表の記事 2026-11-25 再確認: 出典で確認"
 
   # --- クイズ ---
-  - id: eagles-q-1
-    kind: quiz
-    genre: quiz
-    text: 仙台にあるプロ野球の本拠地球場は、仙台市の何区にある？
-    choices: [青葉区, 宮城野区, 若林区, 太白区]
-    answer: 1
-    teams: [eagles]
-    tier: C
-    source: "https://ja.wikipedia.org/wiki/宮城球場"
-    check: owner
-    note: "2026-11-25 再確認: 出典で確認"
   - id: eagles-q-2
     kind: quiz
     genre: quiz

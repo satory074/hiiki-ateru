@@ -1,7 +1,8 @@
 // 画面のテスト（jsdom。Supabase には接続しない。送り先は偽物を差し込む）。実行: npx tsx scripts/domtest.ts
 //   ⓐ 「はじめる」→ 10〜30 問 → 結果、と進み、質問中の画面に球団名が一度も出ない
 //   ⓑ 「1問もどる」で 1 つ前の質問に戻り、答えの数が 1 つ減る
-//   ⓒ 答え合わせで送るのは v・guess・actual・answers の 4 つだけで、答えは遊んだ質問と一致する。送り先が無ければ送らない
+//   ⓒ 答え合わせで送るのは v・guess・actual・answers の 4 つだけで、答えは遊んだ質問と一致する。送り先が無ければ送らない。
+//      送った記録がある端末からは、同じ版をもう一度送らない
 //   ⓓ X のシェアは結果ページの URL を載せる
 //   ⓔ 当たり判定（本命・2番手・2球団・贔屓なし・見ない）
 import fs from "node:fs";
@@ -36,7 +37,7 @@ const bank = JSON.parse(fs.readFileSync(path.join(ROOT, "src", "generated", "ban
 const teamWords = bank.teams.flatMap((t) => [t.name, t.full]);
 const SITE = "https://satory074.github.io/hiiki-ateru/";
 
-function setup(api: ResultApi, seed: number) {
+function setup(api: ResultApi, seed: number, sentStore?: { has(v: string): boolean; mark(v: string): void }) {
   // 回ごとに新しい要素にする（前の回のクリック処理を残さない）
   const doc = dom.window.document;
   const root = doc.createElement("div");
@@ -44,7 +45,7 @@ function setup(api: ResultApi, seed: number) {
   root.innerHTML = '<button data-action="start">はじめる</button>';
   doc.getElementById("game")!.replaceWith(root);
   const opened: string[] = [];
-  const game = mountGame(root as unknown as HTMLElement, { bank, api, rng: createRng(seed), siteUrl: SITE, openUrl: (u) => opened.push(u) });
+  const game = mountGame(root as unknown as HTMLElement, { bank, api, rng: createRng(seed), siteUrl: SITE, openUrl: (u) => opened.push(u), sentStore });
   const click = (sel: string) => {
     const el = root.querySelector(sel) as HTMLElement | null;
     assert(el, `押すものがある: ${sel}`);
@@ -125,6 +126,26 @@ for (let seed = 1; seed <= 6; seed++) {
   root.querySelector("form")!.dispatchEvent(new dom.window.Event("submit", { bubbles: true, cancelable: true }));
   await new Promise((r) => setTimeout(r, 0));
   assert(called === 0, "ⓒ 送り先が無いときは送らない");
+}
+
+// ⓒ 送った記録がある端末からは、同じ版をもう一度送らない（記録は送れたときだけ付ける）
+{
+  const sent: ResultPayload[] = [];
+  const marked = new Set<string>();
+  const store = { has: (v: string) => marked.has(v), mark: (v: string) => void marked.add(v) };
+  const api: ResultApi = { enabled: true, record: async (p) => (sent.push(p), true) };
+  const { root, click } = setup(api, 7, store);
+  for (let round = 0; round < 2; round++) {
+    if (round === 0) click('[data-action="start"]');
+    else click('[data-action="again"]');
+    while (root.querySelector('[data-view="question"] .opt')) click('[data-view="question"] .opt:last-child');
+    const select = root.querySelector("#check-main") as unknown as HTMLSelectElement;
+    select.value = "nobaseball";
+    root.querySelector("form")!.dispatchEvent(new dom.window.Event("submit", { bubbles: true, cancelable: true }));
+    await new Promise((r) => setTimeout(r, 0));
+  }
+  assert(sent.length === 1 && marked.has(bank.version), "ⓒ 同じ端末・同じ版の答え合わせは 1 回だけ送る");
+  assert((root.querySelector(".thanks")?.textContent ?? "").includes("今回は数えません"), "ⓒ 2回目は数えないと伝える");
 }
 
 // ⓔ 当たり判定

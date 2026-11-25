@@ -1,28 +1,31 @@
 # 架空の質問（実在しない選手・名物）。知ったかぶり（知らないのに「知ってる」と答える）を見抜く。
-# 4・12・20・28問目に1つずつ出し、結果画面で「実は架空でした」と種明かしする。
+# 窓（3〜5・8〜10・14〜18・22〜26問目）ごとにくじで選んだ番手に1つずつ出し、結果画面で「実は架空でした」と種明かしする。
+# 2026-11-25 見直し: 目立つ名字（勅使河原・早乙女・御厨など）は名前の雰囲気で見破れ、鷲尾（鷲）・みそカツ（名古屋）は球団を連想させ、
+#   鬼塚 千尋（実在のネイリスト）・もぐらん（本栖湖の観光船）は実在のものと重なったので、ふつうの雰囲気の名前に替えた。
+#   選手名は「フルネームが intai-fa の名簿に無い」に加えて「同じ名字の選手が、手がかりの年代に在籍していない」ことを確かめ、Web 検索で同名の有名人が出ないことも見た。
 # 選手名は intai-fa の people.jsonl・people-extra.jsonl のどの人とも一致しないことを check-items.ts が毎回確かめる。
 # 名物は 2026-11-25 に Web 検索で同名のものが見つからないことを確かめた（note に記録）。
 items:
-  - { id: foil-p-01, kind: foil, look: player, genre: player, text: 宮之原 拓真, hint: 投手・2010年代 }
-  - { id: foil-p-02, kind: foil, look: player, genre: player, text: 久留島 颯太, hint: 外野手・2020年代 }
+  - { id: foil-p-01, kind: foil, look: player, genre: player, text: 河合 拓真, hint: 投手・2010年代 }
+  - { id: foil-p-02, kind: foil, look: player, genre: player, text: 小谷 颯太, hint: 外野手・2020年代 }
   - { id: foil-p-03, kind: foil, look: player, genre: player, text: 樋渡 恭平, hint: 捕手・2000年代 }
   - { id: foil-p-04, kind: foil, look: player, genre: player, text: 菅生 大河, hint: 内野手・2020年代 }
-  - { id: foil-p-05, kind: foil, look: player, genre: player, text: 鷲尾 慎之介, hint: 投手・1990年代 }
-  - { id: foil-p-06, kind: foil, look: player, genre: player, text: 能登谷 陽向, hint: 投手・2020年代 }
-  - { id: foil-p-07, kind: foil, look: player, genre: player, text: 早乙女 隼, hint: 外野手・2010年代 }
-  - { id: foil-p-08, kind: foil, look: player, genre: player, text: 百武 誠吾, hint: 内野手・2000年代 }
-  - { id: foil-p-09, kind: foil, look: player, genre: player, text: 勅使河原 蓮, hint: 投手・2010年代 }
-  - { id: foil-p-10, kind: foil, look: player, genre: player, text: 東海林 孝太郎, hint: 内野手・1990年代 }
-  - { id: foil-p-11, kind: foil, look: player, genre: player, text: 御厨 聡志, hint: 捕手・2010年代 }
-  - { id: foil-p-12, kind: foil, look: player, genre: player, text: 鬼塚 千尋, hint: 投手・2020年代 }
-  - { id: foil-p-13, kind: foil, look: player, genre: player, text: 日比生 楓真, hint: 外野手・2020年代 }
+  - { id: foil-p-05, kind: foil, look: player, genre: player, text: 西尾 正樹, hint: 投手・1990年代 }
+  - { id: foil-p-06, kind: foil, look: player, genre: player, text: 森川 陽向, hint: 投手・2020年代 }
+  - { id: foil-p-07, kind: foil, look: player, genre: player, text: 島崎 隼也, hint: 外野手・2010年代 }
+  - { id: foil-p-08, kind: foil, look: player, genre: player, text: 水上 誠吾, hint: 内野手・2000年代 }
+  - { id: foil-p-09, kind: foil, look: player, genre: player, text: 坂下 蓮, hint: 投手・2010年代 }
+  - { id: foil-p-10, kind: foil, look: player, genre: player, text: 広田 孝太郎, hint: 内野手・1990年代 }
+  - { id: foil-p-11, kind: foil, look: player, genre: player, text: 竹中 聡志, hint: 捕手・2010年代 }
+  - { id: foil-p-12, kind: foil, look: player, genre: player, text: 岡部 千尋, hint: 投手・2020年代 }
+  - { id: foil-p-13, kind: foil, look: player, genre: player, text: 宮下 楓真, hint: 外野手・2020年代 }
   - id: foil-c-01
     kind: foil
     look: culture
     genre: food
-    text: みそカツ焼きそば
+    text: ダブルチーズ焼きそば丼
     hint: 球場グルメ
-    note: 2026-11-25 の Web 検索で、球場で売られている同名の品は見つからなかった
+    note: 2026-11-25 に「みそカツ焼きそば」（名古屋を連想させる）から替えた。Web 検索で、球場で売られている同名の品は見つからなかった（「焦がし醤油」は千葉の黒焼きそばを連想させるので避けた）
   - id: foil-c-02
     kind: foil
     look: culture
@@ -34,6 +37,6 @@ items:
     kind: foil
     look: culture
     genre: mascot
-    text: もぐらん
+    text: ポルット
     hint: 球団マスコット
-    note: 2026-11-25 の Web 検索で、同名の NPB 球団マスコットは見つからなかった
+    note: 2026-11-25 に「もぐらん」（本栖湖の観光船と同じ名前）から替えた。Web 検索で、同名のマスコット・キャラクターは見つからなかった

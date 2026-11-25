@@ -4,7 +4,7 @@ items:
   # --- 選手：現役 ---
   - { id: fighters-p-miyanishi, kind: player, genre: player, text: 宮西 尚生, hint: 投手・2000〜20年代, teams: [fighters], tier: B, era: current, source: "https://npb.jp/bis/players/41445116.html", check: auto }
   - { id: fighters-p-mannami, kind: player, genre: player, text: 万波 中正, hint: 外野手・2020年代, teams: [fighters], tier: B, era: current, source: "https://npb.jp/bis/players/11815138.html", check: auto }
-  - { id: fighters-p-nakashima-takuya, kind: player, genre: player, text: 中島 卓也, hint: 内野手・2010〜20年代, teams: [fighters], tier: C, era: current, source: "https://npb.jp/bis/players/11215118.html", check: auto }
+  - { id: fighters-p-nakashima-takuya, kind: player, genre: player, text: 中島 卓也, hint: 内野手・2010〜20年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/11215118.html", check: auto }
   - { id: fighters-p-kamikawabata, kind: player, genre: player, text: 上川畑 大悟, hint: 内野手・2020年代, teams: [fighters], tier: C, era: current, source: "https://npb.jp/bis/players/01505155.html", check: auto }
   - { id: fighters-p-isobata, kind: player, genre: player, text: 五十幡 亮汰, hint: 外野手・2020年代, teams: [fighters], tier: C, era: current, source: "https://npb.jp/bis/players/11315153.html", check: auto }
   - { id: fighters-p-tamiya, kind: player, genre: player, text: 田宮 裕涼, hint: 捕手・2020年代, teams: [fighters], tier: C, era: current, source: "https://npb.jp/bis/players/51055138.html", check: auto }
@@ -45,7 +45,7 @@ items:
     text: きつねダンス
     hint: 球場の応援
     teams: [fighters]
-    tier: B
+    tier: A
     source: "https://ja.wikipedia.org/wiki/北海道日本ハムファイターズ"
     note: "2026-11-25 再確認: 出典で確認"
     check: owner

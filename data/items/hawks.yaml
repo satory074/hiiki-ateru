@@ -4,7 +4,6 @@ items:
   # --- 選手：現役 ---
   - { id: hawks-p-imamiya, kind: player, genre: player, text: 今宮 健太, hint: 内野手・2010〜20年代, teams: [hawks], tier: B, era: current, source: "https://npb.jp/bis/players/31335131.html", check: auto }
   - { id: hawks-p-shuto, kind: player, genre: player, text: 周東 佑京, hint: 外野手・2020年代, teams: [hawks], tier: B, era: current, source: "https://npb.jp/bis/players/21925136.html", check: auto }
-  - { id: hawks-p-higashihama, kind: player, genre: player, text: 東浜 巨, hint: 投手・2010〜20年代, teams: [hawks], tier: B, era: current, source: "https://npb.jp/bis/players/01005137.html", check: auto }
   - { id: hawks-p-kawase, kind: player, genre: player, text: 川瀬 晃, hint: 内野手・2010〜20年代, teams: [hawks], tier: C, era: current, source: "https://npb.jp/bis/players/11715132.html", check: auto }
   - { id: hawks-p-tsumori, kind: player, genre: player, text: 津森 宥紀, hint: 投手・2020年代, teams: [hawks], tier: C, era: current, source: "https://npb.jp/bis/players/81285151.html", check: auto }
   - { id: hawks-p-yanagimachi, kind: player, genre: player, text: 柳町 達, hint: 外野手・2020年代, teams: [hawks], tier: C, era: current, source: "https://npb.jp/bis/players/73175151.html", check: auto }

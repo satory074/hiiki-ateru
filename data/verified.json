@@ -43,16 +43,8 @@
     "key": "鈴木尚典|baystars",
     "by": "intai-fa"
   },
-  "baystars-p-tobashira": {
-    "key": "戸柱恭孝|baystars",
-    "by": "intai-fa"
-  },
   "baystars-p-watarai": {
     "key": "度会隆輝|baystars",
-    "by": "intai-fa"
-  },
-  "buffaloes-p-abe-shota": {
-    "key": "阿部翔太|buffaloes",
     "by": "intai-fa"
   },
   "buffaloes-p-adachi": {
@@ -75,8 +67,8 @@
     "key": "海田智行|buffaloes",
     "by": "intai-fa"
   },
-  "buffaloes-p-nakagawa-keita": {
-    "key": "中川圭太|buffaloes",
+  "buffaloes-p-kurebayashi": {
+    "key": "紅林弘太郎|buffaloes",
     "by": "intai-fa"
   },
   "buffaloes-p-nishino": {
@@ -99,8 +91,8 @@
     "key": "谷佳知|buffaloes,giants",
     "by": "intai-fa"
   },
-  "buffaloes-p-tongu": {
-    "key": "頓宮裕真|buffaloes",
+  "buffaloes-p-wakatsuki": {
+    "key": "若月健矢|buffaloes",
     "by": "intai-fa"
   },
   "buffaloes-p-yamada-nobuyoshi": {
@@ -111,12 +103,16 @@
     "key": "天谷宗一郎|carp",
     "by": "intai-fa"
   },
+  "carp-p-futamata": {
+    "key": "二俣翔一|carp",
+    "by": "intai-fa"
+  },
   "carp-p-higashide": {
     "key": "東出輝裕|carp",
     "by": "intai-fa"
   },
-  "carp-p-kozono": {
-    "key": "小園海斗|carp",
+  "carp-p-kuribayashi": {
+    "key": "栗林良吏|carp",
     "by": "intai-fa"
   },
   "carp-p-nagakawa": {
@@ -129,10 +125,6 @@
   },
   "carp-p-ogata": {
     "key": "緒方孝市|carp",
-    "by": "intai-fa"
-  },
-  "carp-p-sakakura": {
-    "key": "坂倉将吾|carp",
     "by": "intai-fa"
   },
   "carp-p-sasaoka": {
@@ -149,14 +141,6 @@
   },
   "carp-p-suekane": {
     "key": "末包昇大|carp",
-    "by": "intai-fa"
-  },
-  "carp-p-tokoda": {
-    "key": "床田寛樹|carp",
-    "by": "intai-fa"
-  },
-  "carp-p-yano": {
-    "key": "矢野雅哉|carp",
     "by": "intai-fa"
   },
   "dragons-p-asao": {
@@ -243,10 +227,6 @@
     "key": "岡島豪郎|eagles",
     "by": "intai-fa"
   },
-  "eagles-p-ota": {
-    "key": "太田光|eagles",
-    "by": "intai-fa"
-  },
   "eagles-p-shima": {
     "key": "嶋基宏|eagles,swallows",
     "by": "intai-fa"
@@ -324,11 +304,11 @@
     "by": "intai-fa"
   },
   "foil-p-01": {
-    "key": "宮之原拓真|",
+    "key": "河合拓真|",
     "by": "absent"
   },
   "foil-p-02": {
-    "key": "久留島颯太|",
+    "key": "小谷颯太|",
     "by": "absent"
   },
   "foil-p-03": {
@@ -340,47 +320,43 @@
     "by": "absent"
   },
   "foil-p-05": {
-    "key": "鷲尾慎之介|",
+    "key": "西尾正樹|",
     "by": "absent"
   },
   "foil-p-06": {
-    "key": "能登谷陽向|",
+    "key": "森川陽向|",
     "by": "absent"
   },
   "foil-p-07": {
-    "key": "早乙女隼|",
+    "key": "島崎隼也|",
     "by": "absent"
   },
   "foil-p-08": {
-    "key": "百武誠吾|",
+    "key": "水上誠吾|",
     "by": "absent"
   },
   "foil-p-09": {
-    "key": "勅使河原蓮|",
+    "key": "坂下蓮|",
     "by": "absent"
   },
   "foil-p-10": {
-    "key": "東海林孝太郎|",
+    "key": "広田孝太郎|",
     "by": "absent"
   },
   "foil-p-11": {
-    "key": "御厨聡志|",
+    "key": "竹中聡志|",
     "by": "absent"
   },
   "foil-p-12": {
-    "key": "鬼塚千尋|",
+    "key": "岡部千尋|",
     "by": "absent"
   },
   "foil-p-13": {
-    "key": "日比生楓真|",
+    "key": "宮下楓真|",
     "by": "absent"
   },
   "giants-p-funabasama": {
     "key": "船迫大雅|giants",
-    "by": "intai-fa"
-  },
-  "giants-p-hagio": {
-    "key": "萩尾匡也|giants",
     "by": "intai-fa"
   },
   "giants-p-kadowaki": {
@@ -437,10 +413,6 @@
   },
   "hawks-p-hasegawa": {
     "key": "長谷川勇也|hawks",
-    "by": "intai-fa"
-  },
-  "hawks-p-higashihama": {
-    "key": "東浜巨|hawks",
     "by": "intai-fa"
   },
   "hawks-p-honda": {
@@ -685,10 +657,6 @@
   },
   "tigers-p-sekimoto": {
     "key": "関本賢太郎|tigers",
-    "by": "intai-fa"
-  },
-  "tigers-p-shimada": {
-    "key": "島田海吏|tigers",
     "by": "intai-fa"
   },
   "tigers-p-umeno": {

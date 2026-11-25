@@ -8,6 +8,8 @@
 //   ⑤表の列は決めたものだけ（一人ひとりの回答・IP・時刻の列が無い）
 //   ⑥SQL の球団一覧が data/teams.yaml と一致し、items.sql が質問データ全部を入れる
 //   ⑦読み出しの hiiki_export_counts は service_role だけが呼べ、その版の人数だけを返す
+//   ⑧受け付けるのは hiiki.versions にある版だけ（items.sql が今の版を入れる。テスト用の 00000000 と最初の版 fec2bdc9 は 002 が入れる）
+//   ⑨その版・その日の行か、集計の表の大きさが hiiki.limits を超えたら、何も足さずに終わる（エラーにしない）
 import fs from "node:fs";
 import path from "node:path";
 import { PGlite } from "@electric-sql/pglite";
@@ -79,7 +81,7 @@ assert(
 
 // ② 表と内部関数
 for (const role of ["anon", "authenticated"]) {
-  for (const t of ["items", "result_counts", "answer_counts"]) {
+  for (const t of ["items", "result_counts", "answer_counts", "versions", "limits"]) {
     assert((await failure(as(role, `select * from hiiki.${t}`))) === DENIED, `② ${role} は hiiki.${t} を読めない`);
     assert((await failure(as(role, `delete from hiiki.${t}`))) === DENIED, `② ${role} は hiiki.${t} を消せない`);
   }
@@ -151,7 +153,9 @@ assert(
   got ===
     "answer_counts.v answer_counts.day answer_counts.item_id answer_counts.answer answer_counts.actual_main answer_counts.actual_others answer_counts.n " +
       "items.id items.n_options " +
-      "result_counts.v result_counts.day result_counts.guess result_counts.actual_main result_counts.n",
+      "limits.id limits.day_rows limits.total_bytes " +
+      "result_counts.v result_counts.day result_counts.guess result_counts.actual_main result_counts.n " +
+      "versions.v versions.added",
   `⑤ 表の列は決めたものだけ（今: ${got}）`,
 );
 
@@ -172,5 +176,32 @@ const exported = (await as<{ r: { result: { n: number }[]; answers: unknown[] } 
 assert(exported.result.reduce((a, r) => a + r.n, 0) === (await total("result_counts")), "⑦ service_role は人数の表を読める");
 const other = (await as<{ r: { result: unknown[] } }>("service_role", "select public.hiiki_export_counts('ffffffff') as r"))[0]!.r;
 assert(other.result.length === 0, "⑦ 別の版の数は混ざらない");
+
+// ⑧ 登録の無い版は受け付けない（形が正しくても）
+{
+  const before8 = [await total("result_counts"), await total("answer_counts")];
+  assert((await failure(record("anon", { ...good, v: "abcdef01" }))) === BAD, "⑧ 登録の無い版は BAD_INPUT");
+  for (const v of ["00000000", "fec2bdc9", bank.version])
+    assert((await db.query("select 1 from hiiki.versions where v = $1", [v])).rows.length === 1, `⑧ 版 ${v} が登録されている`);
+  assert((await total("result_counts")) === before8[0] && (await total("answer_counts")) === before8[1], "⑧ 拒否された版は何も足さない");
+}
+
+// ⑨ 上限を超えたら何も足さない（上限を小さくして試し、元に戻す）
+{
+  const test = { ...good, v: "00000000" };
+  await db.exec("update hiiki.limits set day_rows = 1");
+  await record("anon", test); // その版・その日の行が 0 → 足す
+  const r1 = [await total("result_counts"), await total("answer_counts")];
+  await record("anon", test); // 上限に達している → 何も足さない
+  assert((await total("result_counts")) === r1[0] && (await total("answer_counts")) === r1[1], "⑨ その日の行が上限なら何も足さない（エラーにもしない）");
+  await db.exec("update hiiki.limits set day_rows = 50000, total_bytes = 1");
+  await record("anon", test);
+  assert((await total("result_counts")) === r1[0] && (await total("answer_counts")) === r1[1], "⑨ 表の大きさが上限なら何も足さない");
+  await db.exec("update hiiki.limits set total_bytes = 157286400");
+  await record("anon", test);
+  assert((await total("result_counts")) === r1[0]! + 1, "⑨ 上限を戻せば、また足す");
+  const lim = (await db.query<{ d: number; b: string }>("select day_rows as d, total_bytes::text as b from hiiki.limits")).rows;
+  assert(lim.length === 1 && lim[0]!.d === 50000 && lim[0]!.b === "157286400", "⑨ hiiki.limits は 1 行で、既定は 5万行・150MB");
+}
 
 console.log(`✅ sqltest: 権限・検査・集計の不変条件を満たした（拒否の例 ${bads.length + 1} 件）`);

@@ -6,7 +6,6 @@ items:
   - { id: baystars-p-miyazaki, kind: player, genre: player, text: 宮﨑 敏郎, hint: 内野手・2010〜20年代, teams: [baystars], tier: B, era: current, source: "https://npb.jp/bis/players/51455137.html", check: auto }
   - { id: baystars-p-sano, kind: player, genre: player, text: 佐野 恵太, hint: 外野手・2010〜20年代, teams: [baystars], tier: B, era: current, source: "https://npb.jp/bis/players/91995134.html", check: auto }
   - { id: baystars-p-watarai, kind: player, genre: player, text: 度会 隆輝, hint: 外野手・2020年代, teams: [baystars], tier: B, era: current, source: "https://npb.jp/bis/players/33535159.html", check: auto }
-  - { id: baystars-p-tobashira, kind: player, genre: player, text: 戸柱 恭孝, hint: 捕手・2010〜20年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/41245132.html", check: auto }
   - { id: baystars-p-ise, kind: player, genre: player, text: 伊勢 大夢, hint: 投手・2020年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/41145151.html", check: auto }
   - { id: baystars-p-ishida-kenta, kind: player, genre: player, text: 石田 健大, hint: 投手・2010〜20年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/11315130.html", check: auto }
   - { id: baystars-p-ebina, kind: player, genre: player, text: 蝦名 達夫, hint: 外野手・2020年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/51555151.html", check: auto }

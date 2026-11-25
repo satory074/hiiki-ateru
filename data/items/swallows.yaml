@@ -34,7 +34,7 @@ items:
     text: つば九郎
     hint: 球団マスコット
     teams: [swallows]
-    tier: B
+    tier: A
     source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
     check: owner
     note: "2026-11-25 再確認: 休止時期を出典の本文に合わせて直した。2025年2月に活動休止が発表され、2026年3月31日の神宮開幕戦（明治神宮野球場100周年のホーム開幕戦）で活動再開"
@@ -99,16 +99,5 @@ items:
     teams: [swallows]
     tier: C
     source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
-    check: owner
-    note: "2026-11-25 再確認: 出典で確認"
-  - id: swallows-q-2
-    kind: quiz
-    genre: quiz
-    text: 本拠地の明治神宮野球場があるのは東京都の何区？
-    choices: [港区, 新宿区, 渋谷区, 千代田区]
-    answer: 1
-    teams: [swallows]
-    tier: C
-    source: "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE%E9%87%8E%E7%90%83%E5%A0%B4"
     check: owner
     note: "2026-11-25 再確認: 出典で確認"

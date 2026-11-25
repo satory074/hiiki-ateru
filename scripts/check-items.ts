@@ -4,16 +4,21 @@
 //   ① 形: id が一意で、build-bank が変換できる
 //   ② 各球団の質問（選手・名物・クイズ）が 18〜30 問
 //   ③ 架空・暮らし以外の質問に出典 URL がある
-//   ④ 質問文・手がかり・選択肢に球団名が出ない（出たら答えがばれる）
+//   ④ 質問文・手がかり・選択肢に球団名が出ない（出たら答えがばれる）。からかいの決まり文句（33-4 など）も出ない
+//   ほか: 1問目（firstItem）が暮らしの質問にあり、架空の窓（foilWindows）が重ならず、最低問数までに2つ以上ある
 //   ⑤ 選手の手がかりが「守備・年代」の形
 //   ⑥ 選手の在籍球団が intai-fa の在籍記録と一致する（記録に無い人はオーナー確認に回す）
 //   ⑦ 架空の選手名が、intai-fa の名簿のどの人とも一致しない
+//   ⑧ 現役（era: current）の選手に、intai-fa の最新年度の戦力外・引退・FA 宣言・ポスティング・
+//      ほかの球団へのトレードが無い（古くなった選手を出さない。intai-fa に入っていない球団発表は拾えないので、
+//      10〜12月にウェブでも確かめ直す。CLAUDE.md「運用」）
 //
-// ⑥⑦ は隣の ../intai-fa/data が要る。手元で照合した結果を data/verified.json に書き、
+// ⑥⑦⑧ は隣の ../intai-fa/data が要る。手元で照合した結果を data/verified.json に書き、
 // intai-fa の無い所（GitHub Actions）では「照合の記録が今の内容と一致しているか」だけを見る。
 // 選手や架空の名前を変えたら、手元で npm run check を流して verified.json を更新してコミットすること。
 import fs from "node:fs";
 import path from "node:path";
+import YAML from "yaml";
 import { ROOT, compileBank, loadSource, type RawItem } from "./lib/source";
 
 const errors: string[] = [];
@@ -35,6 +40,23 @@ const TEAM_WORDS = [
   "ホークス", "ファイターズ", "日ハム", "バファローズ", "イーグルス", "ライオンズ", "マリーンズ",
 ];
 const teamIds = new Set(src.teams.map((t) => t.id));
+// NFKC でそろえてから比べる（全角の数字も拾う）
+const TAUNT_WORDS = ["33-4", "なんでや", "暗黒", "ダメ虎", "身売り", "にわか", "アンチ", "老害", "最下位", "借金", "消滅", "蔑称"];
+
+// 当てる仕組みの数字のうち、質問の出し方の決まり（1問目・架空の窓）
+{
+  const p = src.params;
+  const first = p.firstItem ? src.items.find((i) => i.id === p.firstItem) : undefined;
+  if (p.firstItem && first?.kind !== "life") err(null, `firstItem「${p.firstItem}」が暮らしの質問に無い`);
+  let prevEnd = 1; // 1問目は firstItem なので、窓は2問目以降
+  for (const [a, b] of p.foilWindows ?? []) {
+    if (!(Number.isInteger(a) && Number.isInteger(b) && a > prevEnd && a <= b && b <= p.stop.max))
+      err(null, `foilWindows の窓 [${a}, ${b}] が不正（前の窓より後ろ・はじめ≦おわり・${p.stop.max} 問以内）`);
+    prevEnd = b;
+  }
+  if (!(p.foilWindows?.length && p.foilWindows.filter(([, b]) => b <= p.stop.min).length >= 2))
+    err(null, `最低問数（${p.stop.min}）までに架空が2問入るよう、foilWindows の窓を2つ以上 ${p.stop.min} 問目までに置く`);
+}
 
 // ② 各球団の問題数
 const perTeam = new Map(src.teams.map((t) => [t.id, 0]));
@@ -46,9 +68,11 @@ for (const [t, n] of perTeam) if (n < 18 || n > 30) err(null, `② ${t} の質�
 for (const it of src.items) {
   // ③ 出典
   if (it.kind !== "foil" && it.kind !== "life" && it.kind !== "league2" && !/^https?:\/\/\S+$/.test(it.source ?? "")) err(it, "③ 出典 URL がない");
-  // ④ 球団名
+  // ④ 球団名と、からかいの決まり文句（球団・ファン・選手を笑うネタは炎上のもと。2026-11-25 に足した）
   const texts = [it.text, it.hint ?? "", ...(it.choices ?? []), ...(it.options ?? [])];
   for (const w of TEAM_WORDS) if (texts.some((s) => s.includes(w))) err(it, `④ 球団名「${w}」が文に出ている`);
+  const folded = texts.map((s) => s.normalize("NFKC"));
+  for (const w of TAUNT_WORDS) if (folded.some((s) => s.includes(w))) err(it, `④ からかいの決まり文句「${w}」が文に出ている`);
   // ⑤ 選手の手がかり
   if (it.kind === "player" && !/^(投手|捕手|内野手|外野手)・\S*年代$/.test(it.hint ?? ""))
     err(it, `⑤ 手がかりは「投手・2010年代」の形（今: ${it.hint ?? "なし"}）`);
@@ -86,6 +110,22 @@ if (!process.env.HIIKI_SKIP_INTAI && fs.existsSync(path.join(INTAI, "people.json
   for (const s of readJsonl<Stint>("stints.jsonl"))
     if (s.role === "player" || s.role === "ikusei") stints.set(s.person, [...(stints.get(s.person) ?? []), s]);
 
+  // ⑧ 用: intai-fa の最新年度の出来事（NPB 公示と、球団発表の下書き）
+  type Ev = { id: string; season: number; date?: string; type: string; person: string; team?: string; toTeam?: string };
+  const evDir = path.join(INTAI, "events");
+  const season = Math.max(
+    ...fs.readdirSync(path.join(evDir, "npb")).map((f) => Number(f.replace(/\.json$/, ""))).filter(Number.isFinite),
+  );
+  const evs: Ev[] = [];
+  const npbFile = path.join(evDir, "npb", `${season}.json`);
+  const manualFile = path.join(evDir, "manual", `${season}.yaml`);
+  if (fs.existsSync(npbFile)) evs.push(...(JSON.parse(fs.readFileSync(npbFile, "utf8")) as Ev[]));
+  if (fs.existsSync(manualFile)) evs.push(...((YAML.parse(fs.readFileSync(manualFile, "utf8")) as Ev[] | null) ?? []));
+  const STALE = new Set(["release", "retire", "voluntary_retired", "fa_declare", "posting", "ikusei_recontract", "trade"]);
+  const staleByPerson = new Map<string, Ev[]>();
+  for (const e of evs)
+    if (e.season === season && STALE.has(e.type)) staleByPerson.set(e.person, [...(staleByPerson.get(e.person) ?? []), e]);
+
   const verified: Verified = {};
   for (const it of players) {
     const cands = byName.get(fold(it.text)) ?? [];
@@ -98,6 +138,12 @@ if (!process.env.HIIKI_SKIP_INTAI && fs.existsSync(path.join(INTAI, "people.json
       if (missing.length) err(it, `⑥ 在籍した球団 ${missing.join(",")} が teams に無い（移籍先も全部書く）`);
       const last = Math.max(...(stints.get(p.id) ?? []).map((s) => s.to ?? 9999));
       if (it.era === "current" && last < 2025) warn(it, `current だが intai-fa の在籍は ${last} 年まで`);
+      if (it.era === "current")
+        for (const e of staleByPerson.get(p.id) ?? []) {
+          // 載っている球団へのトレードなら teams に入っているので古くない
+          if (e.type === "trade" && e.toTeam && (it.teams ?? []).includes(e.toTeam)) continue;
+          err(it, `⑧ 現役だが ${season} 年に ${e.type}${e.date ? `（${e.date}）` : ""}。外すか era: ob に（intai-fa: ${e.id}）`);
+        }
       verified[it.id] = { key: keyOf(it), by: "intai-fa" };
     } else if (matches.length > 1) {
       err(it, `⑥ 同姓同名が ${matches.length} 人いて決められない（${matches.map((p) => p.id).join(",")}）`);

@@ -4,7 +4,8 @@
 // 一番減る見込みの質問」（期待情報利得）。結果15種類ではなく仮説で測るのは、2球団の人の「どの組か」まで絞るため。
 // そのうえで:
 //   - 同じジャンルで「知らない」が続いたら、そのジャンルの点数を下げる（答えられない質問ばかりにしない）
-//   - 架空の質問（foil）は決めた番手に入れる
+//   - 1問目は firstItem（中継を見る頻度）に固定する
+//   - 架空の質問（foil）は、窓（3〜5・8〜10・14〜18・22〜26問目）ごとにくじで選んだ番手に1問ずつ入れる
 //   - 地方の質問は、行き詰まったときに1回だけ
 //   - 10〜30問。最低問数を超えて、どれかの結果の確信度が基準を超えたら終える
 import { Model, N_G, N_O, hypProbs, initialPosterior, update } from "./model";
@@ -22,9 +23,11 @@ export interface Session {
   /** 各問のあとの一番の確信度（行き詰まりの判定用） */
   topHistory: number[];
   regionAsked: boolean;
+  /** 架空の質問を出す番手（窓ごとに1つ）。最初の nextItem でくじを引く。1問もどるときは引き継ぐ */
+  foilAt: number[] | null;
 }
 
-export function newSession(model: Model): Session {
+export function newSession(model: Model, foilAt: number[] | null = null): Session {
   return {
     post: initialPosterior(model),
     answers: [],
@@ -33,7 +36,13 @@ export function newSession(model: Model): Session {
     genreWeight: new Map(),
     topHistory: [],
     regionAsked: false,
+    foilAt,
   };
+}
+
+/** 窓ごとに、架空の質問を出す番手を1つずつくじで選ぶ */
+export function drawFoilPositions(windows: [number, number][], rng: Rng): number[] {
+  return windows.map(([a, b]) => a + Math.floor(rng() * (b - a + 1)));
 }
 
 function entropy(p: ArrayLike<number>): number {
@@ -112,7 +121,12 @@ export function nextItem(model: Model, s: Session, rng: Rng): Next {
   if (n >= p.stop.min && topConfidence(model, s.post) >= p.stop.confidence) return null;
 
   const qNo = n + 1;
-  if (p.foilAt.includes(qNo)) {
+  if (n === 0 && p.firstItem) {
+    const first = model.itemById.get(p.firstItem);
+    if (first && !s.asked.has(first.id)) return { item: first, reason: "gain" };
+  }
+  s.foilAt ??= drawFoilPositions(p.foilWindows, rng);
+  if (s.foilAt.includes(qNo)) {
     const foils = model.bank.items.filter((i) => i.kind === "foil" && !s.asked.has(i.id));
     if (foils.length > 0) return { item: foils[Math.floor(rng() * foils.length)]!, reason: "foil" };
   }

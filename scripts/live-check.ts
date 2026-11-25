@@ -6,6 +6,8 @@
 //   ③ 匿名で読み出し関数 hiiki_export_counts を呼ぶ → 拒否（401 / 403）
 //   ④ 匿名で不正な答え合わせ（実在しない球団 id）→ 400
 //   ⑤ 匿名で正しい答え合わせ → 成功（版は 00000000 にして本物の集計に混ぜない）
+//   ⑥ 匿名で登録の無い版の答え合わせ → 400（002 の hiiki.versions）
+//   ⑦ 今の版（bank.version）が登録済み＝空の答えで送ると版ではなく答えの検査で 400 になる（items.sql の流し忘れを見つける）
 import fs from "node:fs";
 import path from "node:path";
 import { ROOT, compileBank, loadSource } from "./lib/source";
@@ -38,7 +40,7 @@ const check = (ok: boolean, msg: string, got: string) => {
 const r1 = await post("hiiki_record_result", { p: good }, { "Content-Type": "application/json" });
 check(r1.status === 401, "① キーなしで関数を呼ぶと 401", `HTTP ${r1.status}`);
 
-for (const table of ["result_counts", "answer_counts", "items"]) {
+for (const table of ["result_counts", "answer_counts", "items", "versions", "limits"]) {
   const r = await fetch(`${url}/rest/v1/${table}?select=*&limit=1`, { headers: auth });
   check(r.status >= 400, `② 匿名で ${table} を読めない`, `HTTP ${r.status}`);
 }
@@ -51,6 +53,15 @@ check(r4.status === 400, "④ 実在しない球団 id は 400", `HTTP ${r4.stat
 
 const r5 = await post("hiiki_record_result", { p: good });
 check(r5.ok, "⑤ 正しい答え合わせは通る（版 00000000）", `HTTP ${r5.status}`);
+
+const r6 = await post("hiiki_record_result", { p: { ...good, v: "abcdef01" } });
+const t6 = await r6.text();
+check(r6.status === 400 && t6.includes("version"), "⑥ 登録の無い版は 400", `HTTP ${r6.status} ${t6.slice(0, 80)}`);
+
+// 答えを 0 個にして送ると、版の検査を通ったあと答えの検査で落ちる（何も足さない）。版で落ちたら items.sql の流し忘れ
+const r7 = await post("hiiki_record_result", { p: { ...good, v: bank.version, answers: [] } });
+const t7 = await r7.text();
+check(r7.status === 400 && t7.includes("answers"), `⑦ 今の版 ${bank.version} が登録済み（答えの検査まで進む）`, `HTTP ${r7.status} ${t7.slice(0, 80)}`);
 
 if (failed) {
   console.error(`${failed} 件が決めたとおりではない。公開を止めて SQL を見直す`);

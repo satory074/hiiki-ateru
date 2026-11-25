@@ -1,5 +1,6 @@
 // 結果を 1 枚の画像（1080×1080 PNG）にする。ブラウザの canvas だけで描く（ライブラリも画像も使わない）。
 // 文字は端末の日本語フォント。球団ロゴ・写真は使わない。
+import { UNOFFICIAL_NOTE } from "../lib/notice";
 
 export interface ShareCard {
   headline: string;
@@ -97,6 +98,11 @@ export function drawShareCard(canvas: HTMLCanvasElement, card: ShareCard): void 
   ctx.fillStyle = SOFT;
   ctx.font = `500 28px ${FONT}`;
   ctx.fillText(card.url, 100, H - 100);
+  // 画像だけが広まっても公式と誤解されないように（URL と同じ行の右端）
+  ctx.font = `500 24px ${FONT}`;
+  ctx.textAlign = "right";
+  ctx.fillText(UNOFFICIAL_NOTE, W - 100, H - 100);
+  ctx.textAlign = "left";
 }
 
 export function canvasToBlob(canvas: HTMLCanvasElement): Promise<Blob | null> {

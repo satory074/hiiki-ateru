@@ -1,12 +1,12 @@
 # 広島東洋カープの質問。出典は各項目の source。作成: 2026-11-25（Claude の下書き）
 # 現役（era: current）は NPB.jp「2026年度 選手一覧」（https://npb.jp/bis/teams/rst_c.html、シーズン終了時点）で在籍を確認。
 # 名物グルメの代表（天ぷらうどん）は品名に球団名が入るので入れていない。
+# 2026-11-25 見直し: 今オフに戦力外（小園・矢野）、FA 宣言（坂倉・床田）になった人を外し、栗林・二俣を足した
+#   （広島の 2026 年の戦力外・引退・退団の一覧と FA 宣言の公示に名前が無いこと、NPB の選手ページの所属を確かめた）。
 items:
   # 選手（現役）
-  - { id: carp-p-kozono, kind: player, genre: player, text: 小園 海斗, hint: 内野手・2020年代, teams: [carp], tier: B, era: current, source: "https://npb.jp/bis/players/01705138.html", check: auto }
-  - { id: carp-p-sakakura, kind: player, genre: player, text: 坂倉 将吾, hint: 捕手・2020年代, teams: [carp], tier: B, era: current, source: "https://npb.jp/bis/players/11915134.html", check: auto }
-  - { id: carp-p-tokoda, kind: player, genre: player, text: 床田 寛樹, hint: 投手・2010〜20年代, teams: [carp], tier: B, era: current, source: "https://npb.jp/bis/players/11415134.html", check: auto }
-  - { id: carp-p-yano, kind: player, genre: player, text: 矢野 雅哉, hint: 内野手・2020年代, teams: [carp], tier: C, era: current, source: "https://npb.jp/bis/players/93395153.html", check: auto }
+  - { id: carp-p-kuribayashi, kind: player, genre: player, text: 栗林 良吏, hint: 投手・2020年代, teams: [carp], tier: B, era: current, source: "https://npb.jp/bis/players/91995153.html", check: auto }
+  - { id: carp-p-futamata, kind: player, genre: player, text: 二俣 翔一, hint: 内野手・2020年代, teams: [carp], tier: C, era: current, source: "https://npb.jp/bis/players/91895153.html", check: auto }
   - { id: carp-p-suekane, kind: player, genre: player, text: 末包 昇大, hint: 外野手・2020年代, teams: [carp], tier: C, era: current, source: "https://npb.jp/bis/players/51055155.html", check: auto }
   - { id: carp-p-shimauchi, kind: player, genre: player, text: 島内 颯太郎, hint: 投手・2020年代, teams: [carp], tier: C, era: current, source: "https://npb.jp/bis/players/31935138.html", check: auto }
   - id: carp-p-nakamura-shosei

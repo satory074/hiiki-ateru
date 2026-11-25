@@ -6,7 +6,6 @@ items:
   - { id: giants-p-masuda-daiki, kind: player, genre: player, text: 増田 大輝, hint: 内野手・2010〜20年代, teams: [giants], tier: C, era: current, source: "https://npb.jp/bis/players/51855132.html", check: auto }
   - { id: giants-p-funabasama, kind: player, genre: player, text: 船迫 大雅, hint: 投手・2020年代, teams: [giants], tier: C, era: current, source: "https://npb.jp/bis/players/31835157.html", check: auto }
   - { id: giants-p-nakagawa, kind: player, genre: player, text: 中川 皓太, hint: 投手・2010〜20年代, teams: [giants], tier: C, era: current, source: "https://npb.jp/bis/players/81285132.html", check: auto }
-  - { id: giants-p-hagio, kind: player, genre: player, text: 萩尾 匡也, hint: 外野手・2020年代, teams: [giants], tier: C, era: current, source: "https://npb.jp/bis/players/81485157.html", check: auto }
   - { id: giants-p-yoshikawa, kind: player, genre: player, text: 吉川 尚輝, hint: 内野手・2010〜20年代, teams: [giants], tier: B, era: current, source: "https://npb.jp/bis/players/73375134.html", check: auto }
   - { id: giants-p-oshiro, kind: player, genre: player, text: 大城 卓三, hint: 捕手・2010〜20年代, teams: [giants], tier: B, era: current, source: "https://npb.jp/bis/players/21325136.html", check: auto }
   # --- 選手（OB） ---
@@ -74,7 +73,7 @@ items:
     text: 伝統の一戦
     hint: 球団のイベント
     teams: [giants, tigers]
-    tier: B
+    tier: A
     source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
     check: owner
     note: "東京ドームの球団と甲子園の球団の対戦の呼び名。両球団のファンが知っている 2026-11-25 再確認: 出典で確認"
@@ -90,17 +89,6 @@ items:
     note: "東京ドームの開場時の愛称（2000年に施設愛称としては廃止）。当時は北海道に移る前のパ・リーグ球団も本拠地にしていた 2026-11-25 再確認: 出典で確認"
 
   # --- クイズ ---
-  - id: giants-q-1
-    kind: quiz
-    genre: quiz
-    text: 2025年3月、二軍の本拠地が川崎市から移った先の市は？
-    choices: [八王子市, 稲城市, 町田市, 府中市]
-    answer: 1
-    teams: [giants]
-    tier: C
-    source: "https://ja.wikipedia.org/wiki/%E8%AA%AD%E5%A3%B2%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%84"
-    check: owner
-    note: "2026-11-25 再確認: 出典で確認（2025年3月1日に稲城市の TOKYO GIANTS TOWN へ移転）"
   - id: giants-q-2
     kind: quiz
     genre: quiz

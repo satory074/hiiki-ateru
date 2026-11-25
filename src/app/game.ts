@@ -18,6 +18,11 @@ export interface GameDeps {
   openUrl?: (url: string) => void;
   /** 画像でシェア（テストでは差し替える）。成功したら true */
   shareImage?: (card: ShareCard, preview: HTMLElement) => Promise<boolean>;
+  /**
+   * この端末から、その版の答え合わせを送ったかの記録（同じ人の2回目以降を数えないため。年齢当ても最初の1回だけ数える）。
+   * 無ければ毎回送る。本物は localStorage（real.ts）
+   */
+  sentStore?: { has(version: string): boolean; mark(version: string): void };
 }
 
 type Attrs = Record<string, string | number | boolean | undefined>;
@@ -124,7 +129,8 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
   function back(): void {
     const last = steps.pop();
     if (!last) return;
-    session = newSession(model);
+    // 架空を出す番手は引き継ぐ（引き直すと、同じ窓に2問目の架空が出ることがある）
+    session = newSession(model, session.foilAt);
     for (const s of steps) answer(model, session, s.item, s.answer);
     current = { item: last.item, reason: "gain" };
     showQuestion();
@@ -161,12 +167,13 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
       );
 
     const foilSteps = steps.filter((s) => s.item.kind === "foil");
+    // 架空の質問の種明かし。1問だけでは何も言えないので2問以上のときだけ出す。
+    // 詳しい人ほど「知っている気がする」ものなので（Atir ほか 2015）、責める言い方にしない（2026-11-25 見直し）
     const ocText =
-      oc.asked === 0
-        ? "今回は架空の質問が出る前に終わりました。"
-        : oc.claimed === 0
-          ? `実は、実在しない選手や名物を${oc.asked}問まぜていました。全部「知らない」と答えた、正直な人です。`
-          : `実は、実在しない選手や名物を${oc.asked}問まぜていました。そのうち${oc.claimed}問を「知ってる」と答えています。`;
+      oc.claimed === 0
+        ? `実は、実在しない選手や名物を${oc.asked}問まぜていました。どれにも「知らない」と答えています。`
+        : `実は、実在しない選手や名物を${oc.asked}問まぜていました。そのうち${oc.claimed}問に「知らない」以外で答えています。` +
+          "詳しい人ほど、似た名前を知っている気がするものです。当てるときは、この分を割り引いて考えています。";
 
     const answersList = h("ol", { class: "answers-list" });
     for (const s of steps) {
@@ -206,13 +213,15 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
             h("p", { class: "callout" }, `${describeItem(teams, d.item)}に「${d.item.options[d.answer]}」と答えたこと。`),
           )
         : null,
-      h(
-        "section",
-        { class: "section" },
-        h("h2", {}, "知ったかぶり度"),
-        h("p", {}, ocText),
-        foilSteps.length ? h("ul", { class: "reveal" }, ...foilSteps.map((s) => h("li", {}, `${s.item.text}（${s.item.hint}）→ 「${s.item.options[s.answer]}」`))) : null,
-      ),
+      oc.asked >= 2
+        ? h(
+            "section",
+            { class: "section", "data-section": "foil-check" },
+            h("h2", {}, "架空の名前チェック"),
+            h("p", {}, ocText),
+            h("ul", { class: "reveal" }, ...foilSteps.map((s) => h("li", {}, `${s.item.text}（${s.item.hint}）→ 「${s.item.options[s.answer]}」`))),
+          )
+        : null,
       checkForm(v),
       h(
         "section",
@@ -274,7 +283,9 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
       const j = judge(v, teams, main, others);
       out.textContent = j === "hit" ? "当たりでした！" : j === "near" ? "惜しい！ 2番手の球団でした。" : "はずれでした…。";
       form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLButtonElement>("input, select, button").forEach((el) => (el.disabled = true));
-      if (deps.api.enabled) {
+      if (deps.api.enabled && deps.sentStore?.has(deps.bank.version)) {
+        out.textContent += "（この端末からは、もう答え合わせを送っているので、今回は数えません）";
+      } else if (deps.api.enabled) {
         const payload: ResultPayload = {
           v: deps.bank.version,
           guess: outcomeKey(teams, v.outcome),
@@ -282,6 +293,7 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
           answers: session.answers.map((a) => ({ q: a.itemId, a: a.answer })),
         };
         void deps.api.record(payload).then((ok) => {
+          if (ok) deps.sentStore?.mark(deps.bank.version);
           out.textContent += ok ? " 答え合わせを送りました。ありがとうございます。" : "（送れませんでしたが、ゲームには影響ありません）";
         });
       }
