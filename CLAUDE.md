@@ -6,9 +6,10 @@
 2026-11 に流行った「あなたの年齢を当てます」（KEPIGAME）や「ポケモンを11問で当てる」の流れで作った。
 決め方の記録は `~/.claude/plans/zazzy-fluttering-lark-of-c3cb30a4-3165-4a58-9e03-3c03dc21383a.md`（grilling の決定表）。
 
-- **公開先**: https://satory074.github.io/hiiki-ateru/ （GitHub Pages。**まだ公開していない**）
+- **公開先**: https://satory074.github.io/hiiki-ateru/ （GitHub Pages。**2026-11-25 からテスト公開中**。リポジトリ satory074/hiiki-ateru（public）。
+  `featured-app` の topic は付けていない＝satory074.com/apps には載せていない。robots.txt の Sitemap 行もまだ）
 - **技術**: Astro 7 + TypeScript。画面のフレームワークなし。画像・ウェブフォントなし（ゲーム画面は gzip 後 約24KB）
-- **答え合わせの集計**: xword の Supabase プロジェクトに `hiiki` スキーマを同居させる（**2026-11-25 適用済み**。画面からの送信はまだ公開前）
+- **答え合わせの集計**: xword の Supabase プロジェクトに `hiiki` スキーマを同居させる（**2026-11-25 適用済み**。公開した画面から送られる）
 
 ## コマンド
 
@@ -86,7 +87,8 @@ supabase/items.sql     生成物（npm run items-sql）
 
 - **年1回、3月の開幕前**に現役選手を入れ替える（移籍・引退・新人）。引退した選手は `era: ob` にして残す。
 - **反映（手動）**: `npm run reflect` で実際の的中率・日ごとの数・見込みとずれた質問を見る → 良ければ `npm run reflect -- --write` → `npm test` と `npm run simulate` → コミット → デプロイ。回答 50 件以上の質問だけ、今の見込みを 20 件分混ぜてならして書く（知ったかぶりの補正は逆算して外す）。
-- 公開したら `../satory074.github.io/robots.txt` に `Sitemap: https://satory074.github.io/hiiki-ateru/sitemap-index.xml` を足す。
+- **本公開するとき**: `gh repo edit satory074/hiiki-ateru --add-topic featured-app`（satory074.com/apps に載る）と、`../satory074.github.io/robots.txt` に `Sitemap: https://satory074.github.io/hiiki-ateru/sitemap-index.xml` を足す。
+- デプロイは main への push で自動（`.github/workflows/deploy.yml`。テスト・型・SEO・重さのどれかが落ちたら公開しない）。リポジトリ変数は `PUBLIC_SUPABASE_URL` / `PUBLIC_SUPABASE_ANON_KEY`（xword と同じ公開値）。
 
 ## 数字の読み方
 
