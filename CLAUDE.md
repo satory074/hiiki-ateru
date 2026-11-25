@@ -88,7 +88,9 @@ supabase/items.sql     生成物（npm run items-sql）
 - **年1回、3月の開幕前**に現役選手を入れ替える（移籍・引退・新人）。引退した選手は `era: ob` にして残す。
 - **反映（手動）**: `npm run reflect` で実際の的中率・日ごとの数・見込みとずれた質問を見る → 良ければ `npm run reflect -- --write` → `npm test` と `npm run simulate` → コミット → デプロイ。回答 50 件以上の質問だけ、今の見込みを 20 件分混ぜてならして書く（知ったかぶりの補正は逆算して外す）。
 - **本公開するとき**: `gh repo edit satory074/hiiki-ateru --add-topic featured-app`（satory074.com/apps に載る）と、`../satory074.github.io/robots.txt` に `Sitemap: https://satory074.github.io/hiiki-ateru/sitemap-index.xml` を足す。
-- デプロイは main への push で自動（`.github/workflows/deploy.yml`。テスト・型・SEO・重さのどれかが落ちたら公開しない）。リポジトリ変数は `PUBLIC_SUPABASE_URL` / `PUBLIC_SUPABASE_ANON_KEY`（xword と同じ公開値）。
+- デプロイは main への push で自動（`.github/workflows/deploy.yml`。テスト・型・SEO・重さのどれかが落ちたら公開しない）。リポジトリ変数は `PUBLIC_SUPABASE_URL` / `PUBLIC_SUPABASE_ANON_KEY`（xword と同じ公開値）と
+  `PUBLIC_CF_BEACON_TOKEN`（2026-11-25 に samesaengil から写した。Cloudflare Web Analytics では同じ `satory074.github.io` のサイトに入るので、パス `/hiiki-ateru/` で絞って見る）。
+  about ページに「Cloudflare Web Analytics で閲覧数を数える・Cookie なし」と書いてある。
 
 ## 数字の読み方
 
