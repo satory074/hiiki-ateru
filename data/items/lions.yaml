@@ -18,6 +18,13 @@ items:
   - { id: lions-p-kaneko, kind: player, genre: player, text: 金子 侑司, hint: 外野手・2010〜20年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/01505137.html", check: auto }
   - { id: lions-p-sogame, kind: player, genre: player, text: 十亀 剣, hint: 投手・2010年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/91295135.html", check: auto }
   - { id: lions-p-kumashiro, kind: player, genre: player, text: 熊代 聖人, hint: 外野手・2010年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/21725133.html", check: auto }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（intai-fa の在籍・NPB での最後の年で選んだ）
+  - { id: lions-p-kaku-taigen, kind: player, genre: player, text: 郭 泰源, hint: 投手・1980〜90年代, teams: [lions], tier: B, era: ob, source: "https://npb.jp/bis/players/21323860.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1997） }
+  - { id: lions-p-tomashino-seiji, kind: player, genre: player, text: 笘篠 誠治, hint: 外野手・1980〜90年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/61963867.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1997） }
+  - { id: lions-p-hanyuda, kind: player, genre: player, text: 羽生田 忠克, hint: 外野手・1980〜90年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/91993864.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1997） }
+  - { id: lions-p-shiozaki, kind: player, genre: player, text: 潮崎 哲也, hint: 投手・1990〜2000年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/71973881.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2004） }
+  - { id: lions-p-ishii-takashi, kind: player, genre: player, text: 石井 貴, hint: 投手・1990〜2000年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/31133889.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2007） }
+  - { id: lions-p-takagi-hiroyuki, kind: player, genre: player, text: 高木 浩之, hint: 内野手・2000年代, teams: [lions], tier: C, era: ob, source: "https://npb.jp/bis/players/51753880.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2008） }
 
   # --- 名物 ---
   - id: lions-c-leo

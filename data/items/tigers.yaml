@@ -15,6 +15,13 @@ items:
   - { id: tigers-p-kubota, kind: player, genre: player, text: 久保田 智之, hint: 投手・2000年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/61765117.html", check: auto }
   - { id: tigers-p-sekimoto, kind: player, genre: player, text: 関本 賢太郎, hint: 内野手・2000〜10年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/81783884.html", check: auto }
   - { id: tigers-p-haraguchi, kind: player, genre: player, text: 原口 文仁, hint: 捕手・2010〜20年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/61065131.html", check: auto, note: 2025年限りで引退（2026年の名簿になし）。2022年から登録は内野手 }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（1990年代に引退3・2000年代に引退3。intai-fa の在籍・最後の年で選んだ）
+  - { id: tigers-p-nakanishi-kiyooki, kind: player, genre: player, text: 中西 清起, hint: 投手・1980〜90年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/61963869.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1996） }
+  - { id: tigers-p-kido, kind: player, genre: player, text: 木戸 克彦, hint: 捕手・1980〜90年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/51553867.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1996） }
+  - { id: tigers-p-kameyama, kind: player, genre: player, text: 亀山 努, hint: 外野手・1990年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/53553868.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1997） }
+  - { id: tigers-p-tanaka-shuta, kind: player, genre: player, text: 田中 秀太, hint: 内野手・2000年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/91793880.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2009） }
+  - { id: tigers-p-kasai, kind: player, genre: player, text: 葛西 稔, hint: 投手・1990〜2000年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/51553881.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2002） }
+  - { id: tigers-p-kosaka, kind: player, genre: player, text: 上坂 太一郎, hint: 外野手・2000年代, teams: [tigers], tier: C, era: ob, source: "https://npb.jp/bis/players/91395111.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2007） }
 
   # --- 名物 ---
   - id: tigers-c-trackey

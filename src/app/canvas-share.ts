@@ -4,6 +4,8 @@ import { UNOFFICIAL_NOTE } from "../lib/notice";
 
 export interface ShareCard {
   headline: string;
+  /** 見始めた年代の一文（見ないと言い切ったときは無い） */
+  era?: string;
   sub: string;
   bars: { name: string; color: string; p: number }[];
   url: string;
@@ -68,6 +70,12 @@ export function drawShareCard(canvas: HTMLCanvasElement, card: ShareCard): void 
   for (const line of lines.slice(0, 3)) {
     ctx.fillText(line, 100, y);
     y += Math.round(size * 1.3);
+  }
+  if (card.era) {
+    ctx.fillStyle = LED;
+    ctx.font = `700 40px ${FONT}`;
+    ctx.fillText(card.era, 100, y + 4, W - 200);
+    y += 60;
   }
   ctx.fillStyle = SOFT;
   ctx.font = `500 34px ${FONT}`;

@@ -1,6 +1,6 @@
-// 結果の説明: 結果の名前、決め手（どの答えが一番効いたか）、知ったかぶり度、シェア文。
-import { Model, hypProbs, verdict, type Verdict } from "./model";
-import { OUTCOME_MULTI, OUTCOME_NEUTRAL, OUTCOME_NONE, type Answer, type Item, type Team } from "./types";
+// 結果の説明: 結果の名前、見始めた年代、決め手（どの答えが一番効いたか）、知ったかぶり度、シェア文。
+import { Model, hypProbs, verdict, type EraVerdict, type Verdict } from "./model";
+import { ERA_IDS, ERA_LABELS, OUTCOME_MULTI, OUTCOME_NEUTRAL, OUTCOME_NONE, type Answer, type Item, type Team } from "./types";
 
 /** 結果ページの URL に使うキー（球団 id / multi / neutral / none） */
 export function outcomeKey(teams: Team[], outcome: number): string {
@@ -32,6 +32,20 @@ export function headline(teams: Team[], v: Pick<Verdict, "outcome" | "teams">): 
   }
   if (v.outcome === OUTCOME_NEUTRAL) return "あなたに贔屓の球団はありません。でも、野球は好きですね。";
   return "あなたは、野球をあまり見ませんね。";
+}
+
+const pctText = (p: number) => `${Math.round(p * 100)}%`;
+
+/** 年代の名前（「1990年代以前」など） */
+export const eraLabel = (era: number): string => ERA_LABELS[ERA_IDS[era]!];
+
+/**
+ * 見始めた年代の一文（見出しのすぐ下）。見ないと言い切るときは出さない（null）。
+ * 確信度が低くても言い切って、確信度を添える（2026-11-27 grilling で決めた）
+ */
+export function eraLine(v: Pick<Verdict, "outcome">, ev: EraVerdict): string | null {
+  if (v.outcome === OUTCOME_NONE) return null;
+  return `${eraLabel(ev.era)}から見ていますね（確信度 ${pctText(ev.confidence)}）`;
 }
 
 /** 質問を、種明かし用の一文にする（球団名つき） */
@@ -116,7 +130,7 @@ export function overclaim(model: Model, answers: Answer[]): Overclaim {
   return { asked, claimed };
 }
 
-export function shareText(teams: Team[], v: Verdict, nQuestions: number): string {
+export function shareText(teams: Team[], v: Verdict, nQuestions: number, ev?: EraVerdict): string {
   const pct = Math.round(v.confidence * 100);
   const what =
     v.outcome < teams.length
@@ -126,6 +140,8 @@ export function shareText(teams: Team[], v: Verdict, nQuestions: number): string
         : v.outcome === OUTCOME_NEUTRAL
           ? "「贔屓はないけど、野球は好き」"
           : "「野球はあまり見ない」";
+  if (ev && v.outcome !== OUTCOME_NONE)
+    return `【12球団当て】${nQuestions}問で、${what}、見始めたのは「${eraLabel(ev.era)}」と当てられました（確信度 球団${pct}%・年代${Math.round(ev.confidence * 100)}%）`;
   return `【12球団当て】${nQuestions}問で、${what}と当てられました（確信度${pct}%）`;
 }
 

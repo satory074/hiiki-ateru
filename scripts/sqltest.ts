@@ -10,10 +10,13 @@
 //   ⑦読み出しの hiiki_export_counts は service_role だけが呼べ、その版の人数だけを返す
 //   ⑧受け付けるのは hiiki.versions にある版だけ（items.sql が今の版を入れる。テスト用の 00000000 と最初の版 fec2bdc9 は 002 が入れる）
 //   ⑨その版・その日の行か、集計の表の大きさが hiiki.limits を超えたら、何も足さずに終わる（エラーにしない）
+//   ⑩見始めた年代（003）: 当てた年代・本当の年代は決めた値だけ。無くても通り（古い版の画面）、'' として数える。
+//     見ないと当てた・見ないと答えたのに年代があるものは拒否。SQL の年代の一覧が src/lib/types.ts の ERA_IDS と同じ
 import fs from "node:fs";
 import path from "node:path";
 import { PGlite } from "@electric-sql/pglite";
 import { ROOT, compileBank, loadSource } from "./lib/source";
+import { ERA_IDS } from "../src/lib/types";
 import { itemsSql } from "./gen-items-sql";
 
 const MIGRATIONS = path.join(ROOT, "supabase", "migrations");
@@ -90,6 +93,7 @@ for (const role of ["anon", "authenticated"]) {
     `② ${role} は人数を直接書けない`,
   );
   assert((await failure(as(role, "select hiiki.team_ids()"))) === DENIED, `② ${role} は内部関数を呼べない`);
+  assert((await failure(as(role, "select hiiki.era_ids()"))) === DENIED, `② ${role} は内部関数 era_ids を呼べない`);
 }
 const grants = await db.query<{ n: number }>(`
   select count(*)::int as n from information_schema.role_table_grants
@@ -129,7 +133,7 @@ const bads: [string, unknown][] = [
   ["ほかに好きな球団が 4 つ", { ...good, actual: { main: "carp", others: ["hawks", "lions", "eagles", "marines"] } }],
   ["贔屓なしなのにほかがある", { ...good, actual: { main: "none", others: ["hawks"] } }],
   ["答えが 0 個", { ...good, answers: [] }],
-  ["答えが 31 個", { ...good, answers: Array.from({ length: 31 }, (_, i) => ({ q: bank.items[i % bank.items.length]!.id, a: 0 })) }],
+  ["答えが 41 個", { ...good, answers: Array.from({ length: 41 }, (_, i) => ({ q: bank.items[i]!.id, a: 0 })) }],
   ["同じ質問が 2 回", { ...good, answers: [{ q: someIds[0], a: 0 }, { q: someIds[0], a: 1 }] }],
   ["無い質問 id", { ...good, answers: [{ q: "no-such-item", a: 0 }] }],
   ["選択肢の番号が範囲外", { ...good, answers: [{ q: someIds[0], a: item(someIds[0]!).options.length }] }],
@@ -137,6 +141,13 @@ const bads: [string, unknown][] = [
   ["選択肢の番号が小数", { ...good, answers: [{ q: someIds[0], a: 0.5 }] }],
   ["選択肢の番号が文字", { ...good, answers: [{ q: someIds[0], a: "0" }] }],
   ["大きすぎる", { ...good, pad: "x".repeat(5000) }],
+  ["当てた年代が不正", { ...good, guess_era: "1980" }],
+  ["当てた年代が数", { ...good, guess_era: 2000 }],
+  ["当てた年代が null", { ...good, guess_era: null }],
+  ["見ないと当てたのに年代", { ...good, guess: "none", guess_era: "2000" }],
+  ["本当の年代が不正", { ...good, actual: { ...good.actual, era: "1980s" } }],
+  ["本当の年代が数", { ...good, actual: { ...good.actual, era: 2010 } }],
+  ["見ないと答えたのに年代", { ...good, actual: { main: "nobaseball", others: [], era: "unknown" } }],
 ];
 for (const [name, p] of bads) assert((await failure(record("anon", p))) === BAD, `④ ${name} は BAD_INPUT`);
 assert((await failure(as("anon", "select public.hiiki_record_result(null)"))) === BAD, "④ null は BAD_INPUT");
@@ -145,16 +156,35 @@ assert(
   "④ 拒否されたものは何も足さない",
 );
 
+// ⑩ 見始めた年代
+{
+  const eraRow = async (ge: string, ae: string) =>
+    Number((await db.query<{ n: number }>("select coalesce(sum(n), 0)::int as n from hiiki.result_counts where guess_era = $1 and actual_era = $2", [ge, ae])).rows[0]!.n);
+  const withEra = { ...good, guess_era: "2000", actual: { ...good.actual, era: "2010" } };
+  await record("anon", withEra);
+  await record("anon", withEra);
+  assert((await eraRow("2000", "2010")) === 2, "⑩ 年代つきの答え合わせは、当てた年代・本当の年代ごとに数える（同じものは n=2）");
+  const ansEra = await db.query<{ n: number }>("select coalesce(sum(n), 0)::int as n from hiiki.answer_counts where actual_era = '2010'");
+  assert(ansEra.rows[0]!.n === 2 * someIds.length, "⑩ 質問の答えも本当の年代ごとに数える");
+  await record("anon", { ...good, actual: { ...good.actual, era: "unknown" } });
+  assert((await eraRow("", "unknown")) === 1, "⑩ 覚えていない（unknown）も通り、当てた年代が無ければ '' で数える");
+  assert((await eraRow("", "")) >= 3, "⑩ 年代の無い古い形（③）は '' で数える");
+  await record("anon", { ...good, guess: "none", actual: { main: "nobaseball", others: [] } });
+  assert((await eraRow("", "")) >= 4, "⑩ 見ないと当てて、見ないと答えた人は年代なしで通る");
+  const sqlEras = (await db.query<{ t: string[] }>("select hiiki.era_ids() as t")).rows[0]!.t;
+  assert(JSON.stringify(sqlEras) === JSON.stringify(ERA_IDS), "⑩ SQL の年代の一覧が ERA_IDS と同じ並び");
+}
+
 // ⑤ 表の列
 const cols = await db.query<{ t: string; c: string }>(`
   select table_name as t, column_name as c from information_schema.columns where table_schema = 'hiiki' order by 1, ordinal_position`);
 const got = cols.rows.map((r) => `${r.t}.${r.c}`).join(" ");
 assert(
   got ===
-    "answer_counts.v answer_counts.day answer_counts.item_id answer_counts.answer answer_counts.actual_main answer_counts.actual_others answer_counts.n " +
+    "answer_counts.v answer_counts.day answer_counts.item_id answer_counts.answer answer_counts.actual_main answer_counts.actual_others answer_counts.n answer_counts.actual_era " +
       "items.id items.n_options " +
       "limits.id limits.day_rows limits.total_bytes " +
-      "result_counts.v result_counts.day result_counts.guess result_counts.actual_main result_counts.n " +
+      "result_counts.v result_counts.day result_counts.guess result_counts.actual_main result_counts.n result_counts.guess_era result_counts.actual_era " +
       "versions.v versions.added",
   `⑤ 表の列は決めたものだけ（今: ${got}）`,
 );

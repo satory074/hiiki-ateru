@@ -20,7 +20,7 @@ const base = import.meta.env.BASE_URL;
     <p class="verdict">{copy.headline}</p>
     <p class="q-hint">{copy.sub}</p>
   </section>
-  <p>知っている選手や球場の名物を答えるだけで、あなたの贔屓球団も当てます。10〜30問・約3分。</p>
+  <p>知っている選手や球場の名物を答えるだけで、あなたの贔屓球団と、野球を見始めた年代も当てます。{bank.params.stop.min}〜{bank.params.stop.max}問・約5分。</p>
   <div class="btn-row">
     <a class="btn btn-primary" href={base}>あなたも遊ぶ</a>
   </div>

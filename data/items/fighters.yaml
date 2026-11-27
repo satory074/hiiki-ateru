@@ -17,6 +17,12 @@ items:
   - { id: fighters-p-sugiya, kind: player, genre: player, text: 杉谷 拳士, hint: 内野手・2010年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/81785118.html", check: auto }
   - { id: fighters-p-takeda-hisashi, kind: player, genre: player, text: 武田 久, hint: 投手・2000〜10年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/41045117.html", check: auto }
   - { id: fighters-p-tsuruoka, kind: player, genre: player, text: 鶴岡 慎也, hint: 捕手・2000〜10年代, teams: [fighters, hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/71275117.html", check: auto }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（intai-fa の在籍・NPB での最後の年で選んだ）
+  - { id: fighters-p-hirose-tetsuro, kind: player, genre: player, text: 広瀬 哲朗, hint: 内野手・1980〜90年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/71073862.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1998） }
+  - { id: fighters-p-nishizaki, kind: player, genre: player, text: 西崎 幸広, hint: 投手・1980〜90年代, teams: [fighters, lions], tier: B, era: ob, source: "https://npb.jp/bis/players/11913864.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2001） }
+  - { id: fighters-p-igarashi-shinichi, kind: player, genre: player, text: 五十嵐 信一, hint: 外野手・1980〜90年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/51153861.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1996） }
+  - { id: fighters-p-oda-tomoyuki, kind: player, genre: player, text: 小田 智之, hint: 内野手・2000年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/01303886.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2009） }
+  - { id: fighters-p-sekine-hiroyuki, kind: player, genre: player, text: 関根 裕之, hint: 投手・1990〜2000年代, teams: [fighters], tier: C, era: ob, source: "https://npb.jp/bis/players/31733889.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2004） }
 
   # --- 名物 ---
   - id: fighters-c-bb

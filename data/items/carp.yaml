@@ -27,6 +27,13 @@ items:
   - { id: carp-p-soyogi, kind: player, genre: player, text: 梵 英心, hint: 内野手・2000〜10年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/21925112.html", check: auto }
   - { id: carp-p-amaya, kind: player, genre: player, text: 天谷 宗一郎, hint: 外野手・2000〜10年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/01105115.html", check: auto }
   - { id: carp-p-nagakawa, kind: player, genre: player, text: 永川 勝浩, hint: 投手・2000〜10年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/01205117.html", check: auto }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（intai-fa の在籍・NPB での最後の年で選んだ）
+  - { id: carp-p-shoda, kind: player, genre: player, text: 正田 耕三, hint: 内野手・1980〜90年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/91793860.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1998） }
+  - { id: carp-p-yamasaki-ryuzo, kind: player, genre: player, text: 山崎 隆造, hint: 外野手・1980〜90年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/31033846.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1993） }
+  - { id: carp-p-kobayakawa, kind: player, genre: player, text: 小早川 毅彦, hint: 内野手・1980〜90年代, teams: [carp, swallows], tier: B, era: ob, source: "https://npb.jp/bis/players/01503869.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1999） }
+  - { id: carp-p-asai-itsuki, kind: player, genre: player, text: 浅井 樹, hint: 外野手・1990〜2000年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/51153881.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2006） }
+  - { id: carp-p-seto, kind: player, genre: player, text: 瀬戸 輝信, hint: 捕手・1990〜2000年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/41843883.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2004） }
+  - { id: carp-p-sawasaki, kind: player, genre: player, text: 澤﨑 俊和, hint: 投手・1990〜2000年代, teams: [carp], tier: C, era: ob, source: "https://npb.jp/bis/players/51753884.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2005） }
 
   # 名物
   - id: carp-c-slyly

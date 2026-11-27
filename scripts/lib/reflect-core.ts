@@ -1,5 +1,5 @@
 // reflect.ts の計算部分（ネットにつながずに smoketest から確かめられるよう分けた）。
-import { Model, N_G, N_O } from "../../src/lib/model";
+import { Model, N_E, N_G, N_O } from "../../src/lib/model";
 import type { Hyp, Item, LifeClass, Relation } from "../../src/lib/types";
 
 export type Key = Relation | LifeClass | "sameLeague" | "crossLeague";
@@ -30,8 +30,11 @@ export function makeReflect(model: Model) {
     const c = v[item.correct!]!;
     return [c, v.reduce((a, b) => a + b, 0) - c - dk, dk];
   }
-  /** その関係の人について、今のモデルが見込む答え方（詳しさ・知ったかぶりを事前確率で混ぜたもの。実測と比べる形） */
-  function modelDist(item: Item, rel: Key): number[] {
+  /**
+   * その関係の人について、今のモデルが見込む答え方（詳しさ・知ったかぶり・見始めた年代を事前確率で混ぜたもの。実測と比べる形）。
+   * eras を渡すと、その年代の人だけで混ぜる（見始める前の選手を除いて「見ていた時期の人」の答え方と比べるため）
+   */
+  function modelDist(item: Item, rel: Key, eras?: number[]): number[] {
     const p = bank.params;
     const t0 = item.teams[0] ?? 0;
     const league = bank.teams[t0]?.league;
@@ -52,11 +55,14 @@ export function makeReflect(model: Model) {
               ? { kind: "fan1", teams: [pickTeam(false)] }
               : { kind: rel === "neutral" ? "neutral" : "none", teams: [] };
     const out = new Array(item.options.length).fill(0);
+    const es = eras ?? Array.from({ length: N_E }, (_, e) => e);
+    const eSum = es.reduce((a, e) => a + p.era.prior[e]!, 0);
     for (let g = 0; g < N_G; g++)
-      for (let o = 0; o < N_O; o++) {
-        const w = p.priorG[g]! * p.priorO[o]!;
-        model.answerProbs(item, h, g, o).forEach((x, a) => (out[a] += w * x));
-      }
+      for (let o = 0; o < N_O; o++)
+        for (const e of es) {
+          const w = (p.priorG[g]! * p.priorO[o]! * p.era.prior[e]!) / eSum;
+          model.answerProbs(item, h, g, o, e).forEach((x, a) => (out[a] += w * x));
+        }
     return collapse(item, out);
   }
   /**
@@ -65,7 +71,7 @@ export function makeReflect(model: Model) {
    * 混ざり方は線形（割合 π = 事前の知ったかぶり率）なので、逆に解ける。
    */
   function deOverclaim(item: Item, e: number[]): number[] {
-    if (item.kind === "life" || item.kind === "league2") return e;
+    if (item.kind === "life" || item.kind === "league2" || item.kind === "eralife") return e;
     const p = bank.params;
     const k = p.priorO[1]! * p.overclaimLambda;
     let out: number[];

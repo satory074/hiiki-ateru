@@ -17,6 +17,13 @@ items:
   - { id: eagles-p-shimauchi, kind: player, genre: player, text: 島内 宏明, hint: 外野手・2010〜20年代, teams: [eagles], tier: B, era: ob, source: "https://npb.jp/bis/players/71975135.html", check: auto }
   - { id: eagles-p-okajima, kind: player, genre: player, text: 岡島 豪郎, hint: 外野手・2010〜20年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/21325135.html", check: auto }
   - { id: eagles-p-shiomi, kind: player, genre: player, text: 塩見 貴洋, hint: 投手・2010年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/11015133.html", check: auto }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（intai-fa の在籍・NPB での最後の年で選んだ）
+  - { id: eagles-p-isobe, kind: player, genre: player, text: 礒部 公一, hint: 外野手・2000年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/01103884.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2009） }
+  - { id: eagles-p-rick, kind: player, genre: player, text: リック, hint: 内野手・2000年代, teams: [marines, eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/41845117.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2009） }
+  - { id: eagles-p-aikyo, kind: player, genre: player, text: 愛敬 尚史, hint: 投手・2000年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/51155113.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2009） }
+  - { id: eagles-p-makita, kind: player, genre: player, text: 牧田 明久, hint: 外野手・2000〜10年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/61265113.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2016） }
+  - { id: eagles-p-nagai-satoshi, kind: player, genre: player, text: 永井 怜, hint: 投手・2000〜10年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/21225114.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2015） }
+  - { id: eagles-p-nishimura-wataru, kind: player, genre: player, text: 西村 弥, hint: 内野手・2010年代, teams: [eagles], tier: C, era: ob, source: "https://npb.jp/bis/players/71275112.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2015） }
 
   # --- 名物 ---
   - id: eagles-c-clutch

@@ -18,6 +18,13 @@ items:
   - { id: marines-p-okada, kind: player, genre: player, text: 岡田 幸文, hint: 外野手・2010年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/81385118.html", check: auto }
   - { id: marines-p-ogino, kind: player, genre: player, text: 荻野 貴司, hint: 外野手・2010〜20年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/71575131.html", check: auto }
   - { id: marines-p-ono, kind: player, genre: player, text: 小野 晋吾, hint: 投手・1990〜2000年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/71373889.html", check: auto }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（intai-fa の在籍・NPB での最後の年で選んだ）
+  - { id: marines-p-sonokawa, kind: player, genre: player, text: 園川 一美, hint: 投手・1980〜90年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/71773862.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1999） }
+  - { id: marines-p-hirai-mitsuchika, kind: player, genre: player, text: 平井 光親, hint: 外野手・1990年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/43843868.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2002） }
+  - { id: marines-p-so-katsuo, kind: player, genre: player, text: 荘 勝雄, hint: 投手・1980〜90年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/41743860.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1995） }
+  - { id: marines-p-hatsushiba, kind: player, genre: player, text: 初芝 清, hint: 内野手・1990〜2000年代, teams: [marines], tier: B, era: ob, source: "https://npb.jp/bis/players/13813868.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2005） }
+  - { id: marines-p-kuroki, kind: player, genre: player, text: 黒木 知宏, hint: 投手・1990〜2000年代, teams: [marines], tier: B, era: ob, source: "https://npb.jp/bis/players/31533880.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2007） }
+  - { id: marines-p-morozumi, kind: player, genre: player, text: 諸積 兼司, hint: 外野手・1990〜2000年代, teams: [marines], tier: C, era: ob, source: "https://npb.jp/bis/players/91093889.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2006） }
 
   # --- 名物 ---
   - id: marines-c-makun

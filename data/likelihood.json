@@ -4,7 +4,8 @@
     "know・quiz の並び: 関係（fan=その人の贔屓球団の質問／same=贔屓と同じリーグの他球団／other=別リーグ／neutral=贔屓なしの野球好き／none=野球を見ない）",
     "→ 知名度（A=野球を見ない人でも聞いたことがある。名物だけ／B=野球好きなら名前は知っている／C=その球団のファンでないとまず知らない）→ 詳しさ G（ライト／ふつう／コア）の順。",
     "know の3つ組は [よく知ってる, 名前は知ってる(聞いたことはある), 知らない]、quiz は [正解, 不正解, わからない] の確率。",
-    "regions.population は 2020年国勢調査（総務省統計局）の地方別人口の概数の割合。"
+    "regions.population は 2020年国勢調査（総務省統計局）の地方別人口の概数の割合。",
+    "era は見始めた年代（1990年代以前／2000年代／2010年代／2020年代）。prior は事前確率（4つとも同じ）。retain は、見始める前に活躍を終えた選手をまだ知っている度合いで、区分が1つ離れるごとに掛ける（fan=贔屓球団の選手、other=それ以外）。stopConfidence は年代の確信度がこれに届くまで続ける基準。初期値は手で決めたもの。"
   ],
   "tau": 0.7,
   "prior": { "fan1": 0.6, "fan2": 0.2, "neutral": 0.12, "none": 0.08 },
@@ -52,10 +53,11 @@
     "homeShare": 0.55,
     "elsewhere": { "label": "海外・あちこち移った", "p": 0.03 }
   },
-  "stop": { "min": 10, "max": 30, "confidence": 0.85 },
-  "foilWindows": [[3, 5], [8, 10], [14, 18], [22, 26]],
+  "stop": { "min": 10, "max": 40, "confidence": 0.85 },
+  "foilWindows": [[3, 5], [8, 10], [14, 18], [22, 26], [31, 35]],
   "firstItem": "life-broadcast",
   "regionFallback": { "minQuestions": 15, "below": 0.5, "stallWindow": 5, "stallGain": 0.05 },
   "genrePenalty": { "streak": 3, "factor": 0.5 },
-  "pickWithin": 0.95
+  "pickWithin": 0.95,
+  "era": { "prior": [0.25, 0.25, 0.25, 0.25], "retain": { "fan": 0.4, "other": 0.15 }, "stopConfidence": 0.8 }
 }

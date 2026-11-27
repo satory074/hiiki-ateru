@@ -8,6 +8,8 @@
 //   ⑤ 匿名で正しい答え合わせ → 成功（版は 00000000 にして本物の集計に混ぜない）
 //   ⑥ 匿名で登録の無い版の答え合わせ → 400（002 の hiiki.versions）
 //   ⑦ 今の版（bank.version）が登録済み＝空の答えで送ると版ではなく答えの検査で 400 になる（items.sql の流し忘れを見つける）
+//   ⑧ 匿名で不正な年代（決めた値以外・見ないと答えたのに年代）→ 400（003）
+//   ⑨ 匿名で年代つきの正しい答え合わせ → 成功（版 00000000）
 import fs from "node:fs";
 import path from "node:path";
 import { ROOT, compileBank, loadSource } from "./lib/source";
@@ -62,6 +64,16 @@ check(r6.status === 400 && t6.includes("version"), "⑥ 登録の無い版は 40
 const r7 = await post("hiiki_record_result", { p: { ...good, v: bank.version, answers: [] } });
 const t7 = await r7.text();
 check(r7.status === 400 && t7.includes("answers"), `⑦ 今の版 ${bank.version} が登録済み（答えの検査まで進む）`, `HTTP ${r7.status} ${t7.slice(0, 80)}`);
+
+const r8a = await post("hiiki_record_result", { p: { ...good, guess_era: "1980" } });
+const t8a = await r8a.text();
+check(r8a.status === 400 && t8a.includes("guess_era"), "⑧ 決めた値以外の当てた年代は 400", `HTTP ${r8a.status} ${t8a.slice(0, 80)}`);
+const r8b = await post("hiiki_record_result", { p: { ...good, actual: { main: "nobaseball", others: [], era: "2000" } } });
+const t8b = await r8b.text();
+check(r8b.status === 400 && t8b.includes("era"), "⑧ 見ないと答えたのに年代があると 400", `HTTP ${r8b.status} ${t8b.slice(0, 80)}`);
+
+const r9 = await post("hiiki_record_result", { p: { ...good, guess_era: "2000", actual: { ...good.actual, era: "unknown" } } });
+check(r9.ok, "⑨ 年代つきの正しい答え合わせは通る（版 00000000）", `HTTP ${r9.status}`);
 
 if (failed) {
   console.error(`${failed} 件が決めたとおりではない。公開を止めて SQL を見直す`);

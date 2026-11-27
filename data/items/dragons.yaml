@@ -16,6 +16,13 @@ items:
   - { id: dragons-p-hirata, kind: player, genre: player, text: 平田 良介, hint: 外野手・2010年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/61265112.html", check: auto }
   - { id: dragons-p-dounoue-naomichi, kind: player, genre: player, text: 堂上 直倫, hint: 内野手・2010年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/01205114.html", check: auto }
   - { id: dragons-p-fujii, kind: player, genre: player, text: 藤井 淳志, hint: 外野手・2000〜10年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/51455112.html", check: auto }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（1990年代に引退3・2000年代に引退3。intai-fa の在籍・最後の年で選んだ）
+  - { id: dragons-p-hikono, kind: player, genre: player, text: 彦野 利勝, hint: 外野手・1980〜90年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/31233860.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1998） }
+  - { id: dragons-p-kaku-genji, kind: player, genre: player, text: 郭 源治, hint: 投手・1980〜90年代, teams: [dragons], tier: B, era: ob, source: "https://npb.jp/bis/players/81383863.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1996） }
+  - { id: dragons-p-komatsu-tatsuo, kind: player, genre: player, text: 小松 辰雄, hint: 投手・1980〜90年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/31533846.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1994） }
+  - { id: dragons-p-endo-masataka, kind: player, genre: player, text: 遠藤 政隆, hint: 投手・1990〜2000年代, teams: [dragons, swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/21123889.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2008） }
+  - { id: dragons-p-watanabe-hiroyuki, kind: player, genre: player, text: 渡邉 博幸, hint: 内野手・2000年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/21223882.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2007） }
+  - { id: dragons-p-jinno, kind: player, genre: player, text: 神野 純一, hint: 内野手・1990〜2000年代, teams: [dragons], tier: C, era: ob, source: "https://npb.jp/bis/players/71773887.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2003） }
 
   # --- 名物 ---
   - id: dragons-c-doala

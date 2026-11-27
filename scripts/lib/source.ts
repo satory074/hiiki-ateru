@@ -3,10 +3,11 @@
 // 質問の YAML（data/items/*.yaml）の書き方:
 //   items:
 //     - id: carp-p-kikuchi     # 英小文字・数字・ハイフン。全体で一意
-//       kind: player           # player / culture / quiz / life / foil
+//       kind: player           # player / culture / quiz / life / league2 / eralife / foil
 //       genre: player          # player / mascot / food / cheer / stadium / event / quiz / life
 //       text: 菊池涼介          # 選手名・名物の名前・質問文。球団名は入れない
 //       hint: 内野手・2010年代   # 選手は必須（守備と主な年代）。名物は「球場グルメ」などの分類
+//                              # 選手の年代は見始めた年代の推定に使う（「1990〜2000年代」のおわりより後に見始めた人には、見る前の選手）
 //       teams: [carp]          # player / culture / quiz は 1〜3 球団。life / foil は書かない
 //       tier: C                # A（野球を見ない人でも聞いたことがある。culture だけ）/ B（野球好きなら名前は知っている）/ C（その球団のファンでないとまず知らない）
 //       era: current           # player だけ: current（2026年に在籍）/ ob
@@ -14,15 +15,16 @@
 //       check: auto            # auto（intai-fa と照合して一致）/ owner（オーナー確認待ち）/ ok（オーナー確認済み）
 //       choices: [..4つ]       # quiz だけ
 //       answer: 0              # quiz だけ。正解の位置
-//       options: [..]          # life / league2 だけ
+//       options: [..]          # life / league2 / eralife だけ
 //       probs: { fan1: [..], fan2: [..], neutral: [..], none: [..] }  # life だけ。options と同じ長さ（G 別なら3行）
 //       probs: { sameLeague: [..], crossLeague: [..], fan1: [..], neutral: [..], none: [..] }  # league2 だけ
+//       probs: { "1990": [..], "2000": [..], "2010": [..], "2020": [..], none: [..] }  # eralife だけ（見始めた年代ごと。none は野球を見ない人）
 //       look: player           # foil だけ: player / culture
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import YAML from "yaml";
-import type { Bank, Item, Kind, LifeClass, Params, Team, Tier } from "../../src/lib/types";
+import { ERA_IDS, eraIndexOfDecade, type Bank, type Item, type Kind, type LifeClass, type Params, type Team, type Tier } from "../../src/lib/types";
 
 export const ROOT = path.resolve(import.meta.dirname, "../..");
 const DATA = path.join(ROOT, "data");
@@ -72,7 +74,21 @@ export function loadSource(): Source {
   return { teams, params, items };
 }
 
-const KINDS: Kind[] = ["player", "culture", "quiz", "life", "league2", "foil"];
+const KINDS: Kind[] = ["player", "culture", "quiz", "life", "league2", "eralife", "foil"];
+const ERALIFE_KEYS = [...ERA_IDS, "none"] as const;
+
+/**
+ * 選手の手がかり「投手・1990〜2000年代」から、活躍した年代 [はじめ, おわり]（西暦の10年単位）を読む。
+ * 「2010〜20年代」のような2桁の書き方も読む。読めなければ null
+ */
+export function decadesOfHint(hint: string): [number, number] | null {
+  const m = hint.match(/(\d{4})(?:〜(\d{2}|\d{4}))?年代$/);
+  if (!m) return null;
+  const a = Number(m[1]);
+  let b = m[2] === undefined ? a : m[2].length === 4 ? Number(m[2]) : Math.floor(a / 100) * 100 + Number(m[2]);
+  if (b < a) b += 100;
+  return [a, b];
+}
 const LEAGUE2_KEYS = ["sameLeague", "crossLeague", "fan1", "neutral", "none"] as const;
 const LIFE_CLASSES: LifeClass[] = ["fan1", "fan2", "neutral", "none"];
 
@@ -109,6 +125,13 @@ export function compileBank(src: Source): Bank {
       if (!(Number.isInteger(it.answer) && it.answer! >= 0 && it.answer! < 4)) fail(it, "quiz の answer は 0〜3");
       options = [...it.choices!, DONT_KNOW_QUIZ];
       correct = it.answer;
+    } else if (it.kind === "eralife") {
+      if (!Array.isArray(it.options) || it.options.length < 2) fail(it, "eralife の options は2つ以上");
+      options = it.options!;
+      for (const k of ERALIFE_KEYS) {
+        const row = it.probs?.[k];
+        if (!Array.isArray(row) || row.length !== options.length || (row as number[]).some((x) => !(x >= 0))) fail(it, `probs.${k} が不正`);
+      }
     } else if (it.kind === "league2") {
       if (!Array.isArray(it.options) || it.options.length < 2) fail(it, "league2 の options は2つ以上");
       options = it.options!;
@@ -135,6 +158,12 @@ export function compileBank(src: Source): Bank {
     if (correct !== undefined) item.correct = correct;
     if (life) item.life = life;
     if (it.kind === "league2") item.league2 = it.probs as Item["league2"];
+    if (it.kind === "eralife") item.eralife = it.probs as Item["eralife"];
+    if (it.kind === "player") {
+      const d = decadesOfHint(it.hint ?? "");
+      if (!d) fail(it, `手がかりから年代を読めない: ${it.hint ?? "なし"}`);
+      item.span = [eraIndexOfDecade(d![0]), eraIndexOfDecade(d![1])];
+    }
     if (it.kind === "foil") item.look = it.look === "culture" ? "culture" : "player";
     return item;
   });

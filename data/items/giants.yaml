@@ -15,6 +15,13 @@ items:
   - { id: giants-p-yamaguchi-tetsuya, kind: player, genre: player, text: 山口 鉄也, hint: 投手・2000〜10年代, teams: [giants], tier: B, era: ob, source: "https://npb.jp/bis/players/71875112.html", check: auto }
   - { id: giants-p-motoki, kind: player, genre: player, text: 元木 大介, hint: 内野手・1990〜2000年代, teams: [giants], tier: B, era: ob, source: "https://npb.jp/bis/players/01103883.html", check: auto }
   - { id: giants-p-makihara, kind: player, genre: player, text: 槙原 寛己, hint: 投手・1980〜90年代, teams: [giants], tier: B, era: ob, source: "https://npb.jp/bis/players/31433867.html", check: auto }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（1990年代に引退3・2000年代に引退3。intai-fa の在籍・最後の年で選んだ）
+  - { id: giants-p-shinozuka, kind: player, genre: player, text: 篠塚 和典, hint: 内野手・1980〜90年代, teams: [giants], tier: B, era: ob, source: "https://npb.jp/bis/players/81383844.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1994） }
+  - { id: giants-p-yoshimura-sadaaki, kind: player, genre: player, text: 吉村 禎章, hint: 外野手・1980〜90年代, teams: [giants], tier: C, era: ob, source: "https://npb.jp/bis/players/51253865.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1998） }
+  - { id: giants-p-okazaki-kaoru, kind: player, genre: player, text: 岡崎 郁, hint: 内野手・1980〜90年代, teams: [giants], tier: C, era: ob, source: "https://npb.jp/bis/players/51353865.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1996） }
+  - { id: giants-p-nishi, kind: player, genre: player, text: 仁志 敏久, hint: 内野手・1990〜2000年代, teams: [giants, baystars], tier: B, era: ob, source: "https://npb.jp/bis/players/31933882.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2009） }
+  - { id: giants-p-murata-yoshinori, kind: player, genre: player, text: 村田 善則, hint: 捕手・2000年代, teams: [giants], tier: C, era: ob, source: "https://npb.jp/bis/players/21223887.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2008） }
+  - { id: giants-p-kimura-ryuji, kind: player, genre: player, text: 木村 龍治, hint: 投手・1990〜2000年代, teams: [giants], tier: C, era: ob, source: "https://npb.jp/bis/players/61363887.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2004） }
 
   # --- 名物 ---
   - id: giants-c-jabbit

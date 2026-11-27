@@ -1,7 +1,10 @@
 // 画面のテスト（jsdom。Supabase には接続しない。送り先は偽物を差し込む）。実行: npx tsx scripts/domtest.ts
-//   ⓐ 「はじめる」→ 10〜30 問 → 結果、と進み、質問中の画面に球団名が一度も出ない
+//   ⓐ 「はじめる」→ 10〜40 問 → 結果、と進み、質問中の画面に球団名が一度も出ない
 //   ⓑ 「1問もどる」で 1 つ前の質問に戻り、答えの数が 1 つ減る
-//   ⓒ 答え合わせで送るのは v・guess・actual・answers の 4 つだけで、答えは遊んだ質問と一致する。送り先が無ければ送らない。
+//   ⓐ' 結果の見出しの下に見始めた年代の一文がある（見ないと言い切ったときは無い）
+//   ⓒ 答え合わせで送るのは v・guess・guess_era・actual・answers だけで（guess_era は見ないと言い切ったときは無い）、
+//      actual は main・others・era（年代を選んだときだけ）、答えは遊んだ質問と一致する。送り先が無ければ送らない。
+//      「野球はあまり見ない」を選ぶと年代の欄は使えなくなり、年代を送らない。
 //      送った記録がある端末からは、同じ版をもう一度送らない
 //   ⓓ X のシェアは結果ページの URL を載せる
 //   ⓔ 当たり判定（本命・2番手・2球団・贔屓なし・見ない）
@@ -78,7 +81,7 @@ for (let seed = 1; seed <= 6; seed++) {
     // 種ごとに答え方を変える（全部「知らない」/ 最初の選択肢 / ばらばら）
     const pick = seed % 3 === 0 ? opts.length - 1 : seed % 3 === 1 ? 0 : (n * 7 + seed) % opts.length;
     (opts[pick] as HTMLElement).dispatchEvent(new dom.window.MouseEvent("click", { bubbles: true }));
-    assert(n <= 40, "ⓐ 終わらないことはない");
+    assert(n <= bank.params.stop.max + 5, "ⓐ 終わらないことはない");
   }
   const steps = game.state().steps.length;
   assert(steps >= bank.params.stop.min && steps <= bank.params.stop.max, `ⓐ 質問数が範囲内（${steps}）`);
@@ -87,6 +90,11 @@ for (let seed = 1; seed <= 6; seed++) {
   assert((root.querySelector(".verdict")?.textContent ?? "").startsWith("あなた"), "ⓐ 言い切りの文がある");
   assert(root.querySelectorAll(".bar").length === bank.teams.length, "ⓐ 知識の偏りは 12 球団ぶん");
   assert(root.querySelectorAll(".answers-list li").length === steps, "ⓐ 答えた問題の一覧が答えの数と同じ");
+  const vd = game.state().verdict!;
+  const eraEl = root.querySelector(".verdict-era");
+  if (vd.outcome === OUTCOME_NONE) assert(!eraEl, "ⓐ' 見ないと言い切ったときは年代の一文を出さない");
+  else
+    assert(eraEl && /^(1990年代以前|2000年代|2010年代|2020年代)から見ていますね（確信度 \d+%）$/.test(eraEl.textContent ?? ""), `ⓐ' 年代の一文がある（${eraEl?.textContent}）`);
 
   // ⓒ 答え合わせ
   const select = root.querySelector("#check-main") as unknown as HTMLSelectElement;
@@ -94,12 +102,20 @@ for (let seed = 1; seed <= 6; seed++) {
   select.dispatchEvent(new dom.window.Event("change", { bubbles: true }));
   const hawks = root.querySelector('input[name="others"][value="hawks"]') as unknown as HTMLInputElement;
   hawks.checked = true;
+  const eraSelect = root.querySelector("#check-era") as unknown as HTMLSelectElement;
+  assert(!eraSelect.disabled, "ⓒ 本命を選んだら年代の欄は使える");
+  // 種ごとに、年代を選ぶ・選ばない を変える
+  if (seed % 2 === 0) eraSelect.value = "2000";
   root.querySelector("form")!.dispatchEvent(new dom.window.Event("submit", { bubbles: true, cancelable: true }));
   await new Promise((r) => setTimeout(r, 0));
   assert(sent.length === 1, "ⓒ 答え合わせを 1 回送る");
   const p = sent[0]!;
-  assert(JSON.stringify(Object.keys(p).sort()) === JSON.stringify(["actual", "answers", "guess", "v"]), "ⓒ 送るのは 4 つだけ");
-  assert(JSON.stringify(Object.keys(p.actual).sort()) === JSON.stringify(["main", "others"]), "ⓒ actual は main と others だけ");
+  const wantKeys = vd.outcome === OUTCOME_NONE ? ["actual", "answers", "guess", "v"] : ["actual", "answers", "guess", "guess_era", "v"];
+  assert(JSON.stringify(Object.keys(p).sort()) === JSON.stringify(wantKeys), `ⓒ 送るのは決めたものだけ（${Object.keys(p)}）`);
+  if (p.guess_era !== undefined) assert(["1990", "2000", "2010", "2020"].includes(p.guess_era), "ⓒ 当てた年代は決めた値");
+  const wantActual = seed % 2 === 0 ? ["era", "main", "others"] : ["main", "others"];
+  assert(JSON.stringify(Object.keys(p.actual).sort()) === JSON.stringify(wantActual), `ⓒ actual は main・others（と選んだときだけ era）（${Object.keys(p.actual)}）`);
+  if (seed % 2 === 0) assert(p.actual.era === "2000", "ⓒ 選んだ年代がそのまま入る");
   assert(p.v === bank.version && p.actual.main === "carp" && p.actual.others.join() === "hawks", "ⓒ 版と本当の答えがそのまま入る");
   assert(p.answers.length === steps && p.answers.every((a, i) => a.q === game.state().steps[i]!.item.id), "ⓒ 答えは遊んだ質問と一致");
   assert((root.querySelector(".thanks")?.textContent ?? "").length > 0, "ⓒ 当たり・はずれが出る");
@@ -140,11 +156,16 @@ for (let seed = 1; seed <= 6; seed++) {
     else click('[data-action="again"]');
     while (root.querySelector('[data-view="question"] .opt')) click('[data-view="question"] .opt:last-child');
     const select = root.querySelector("#check-main") as unknown as HTMLSelectElement;
+    const eraSelect = root.querySelector("#check-era") as unknown as HTMLSelectElement;
+    eraSelect.value = "2010";
     select.value = "nobaseball";
+    select.dispatchEvent(new dom.window.Event("change", { bubbles: true }));
+    assert(eraSelect.disabled && eraSelect.value === "", "ⓒ 「野球はあまり見ない」を選ぶと年代の欄は使えず、選んだ値も消える");
     root.querySelector("form")!.dispatchEvent(new dom.window.Event("submit", { bubbles: true, cancelable: true }));
     await new Promise((r) => setTimeout(r, 0));
   }
   assert(sent.length === 1 && marked.has(bank.version), "ⓒ 同じ端末・同じ版の答え合わせは 1 回だけ送る");
+  assert(!("era" in sent[0]!.actual), "ⓒ 見ないと答えた人の年代は送らない");
   assert((root.querySelector(".thanks")?.textContent ?? "").includes("今回は数えません"), "ⓒ 2回目は数えないと伝える");
 }
 

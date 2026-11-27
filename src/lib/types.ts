@@ -14,9 +14,20 @@ export interface Team {
 
 /**
  * 質問の種類。region は行き詰まったときに1回だけ出す「子どものころの地方」。
- * league2 は「2つ目の球団は、いちばんの球団と同じリーグか」（2球団の組を半分に絞る暮らしの質問）
+ * league2 は「2つ目の球団は、いちばんの球団と同じリーグか」（2球団の組を半分に絞る暮らしの質問）。
+ * eralife は「見始めたころはどうだったか」を聞く暮らしの質問（見始めた年代を見分ける）
  */
-export type Kind = "player" | "culture" | "quiz" | "life" | "league2" | "foil" | "region";
+export type Kind = "player" | "culture" | "quiz" | "life" | "league2" | "eralife" | "foil" | "region";
+
+/**
+ * 野球を見始めた年代の4区分（2026-11-27 grilling）。並び順がモデル内の年代番号。
+ * 答え合わせで送る値もこの id（ほかに「覚えていない」= unknown）
+ */
+export const ERA_IDS = ["1990", "2000", "2010", "2020"] as const;
+export type EraId = (typeof ERA_IDS)[number];
+export const ERA_LABELS: Record<EraId, string> = { "1990": "1990年代以前", "2000": "2000年代", "2010": "2010年代", "2020": "2020年代" };
+/** 年代（1990 など、西暦の10年単位）→ 4区分の番号。1990年代より前も「1990年代以前」に入れる */
+export const eraIndexOfDecade = (decade: number): number => (decade <= 1990 ? 0 : decade >= 2020 ? 3 : (decade - 1990) / 10);
 /** 知名度。A＝野球を見ない人でも聞いたことがある（名物だけ）／B＝野球好きなら名前は知っている／C＝その球団のファンでないとまず知らない */
 export type Tier = "A" | "B" | "C";
 /** 暮らしの質問で答え方を分ける、仮説の大まかな形 */
@@ -45,6 +56,13 @@ export interface Item {
   league2?: Record<"sameLeague" | "crossLeague" | "fan1" | "neutral" | "none", number[]>;
   /** foil が何に見えるか（player / culture）。種明かしまで画面上は本物と同じに見せる */
   look?: "player" | "culture";
+  /**
+   * 選手が活躍した時期を、見始めた年代の区分で表したもの [はじめ, おわり]（手がかりの「1990〜2000年代」から build で作る）。
+   * 「おわり」より後の区分に見始めた人には、見る前の選手として扱う（model.ts の answerProbs）
+   */
+  span?: [number, number];
+  /** eralife の答え方の確率。見始めた年代（ERA_IDS）ごとと、野球を見ない人（none） */
+  eralife?: Record<EraId | "none", number[]>;
 }
 
 export interface Params {
@@ -75,6 +93,12 @@ export interface Params {
   regionFallback: { minQuestions: number; below: number; stallWindow: number; stallGain: number };
   genrePenalty: { streak: number; factor: number };
   pickWithin: number;
+  /**
+   * 見始めた年代（2026-11-27）。prior は4区分の事前確率。
+   * retain は「見始める前に活躍を終えた選手」を、まだ知っている度合い（区分が1つ離れるごとに掛ける）。fan＝贔屓球団の選手、other＝それ以外。
+   * stopConfidence は年代の確信度がこれに届くまで質問を続ける基準（見ないと言い切る人は問わない）
+   */
+  era: { prior: number[]; retain: { fan: number; other: number }; stopConfidence: number };
   /**
    * 答え合わせから直した、質問ごとの答え方（scripts/reflect.ts --write が書く）。
    * 選手・名物・架空は関係ごとの [よく知ってる, 名前は知ってる, 知らない]、クイズは [正解, 不正解, わからない]、

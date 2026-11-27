@@ -1,9 +1,9 @@
 // 画面の層（DOM を触るのはここだけ）。当てる仕組みは src/lib、送り先は api.ts。
 // 本物の依存は real.ts が差し込み、テスト（scripts/domtest.ts）は偽物を差し込む。
-import { Model, fanShare, verdict, type Verdict } from "../lib/model";
-import { answer, newSession, nextItem, topConfidence, type Next, type Session } from "../lib/select";
-import { decisive, describeItem, headline, hypLabel, outcomeKey, overclaim, rankedHyps, shareText } from "../lib/explain";
-import { OUTCOME_MULTI, OUTCOME_NEUTRAL, type Bank, type Item, type Team } from "../lib/types";
+import { Model, eraVerdict, fanShare, verdict, type EraVerdict, type Verdict } from "../lib/model";
+import { answer, eraConfidence, newSession, nextItem, topConfidence, type Next, type Session } from "../lib/select";
+import { decisive, describeItem, eraLine, headline, hypLabel, outcomeKey, overclaim, rankedHyps, shareText } from "../lib/explain";
+import { ERA_IDS, ERA_LABELS, OUTCOME_MULTI, OUTCOME_NEUTRAL, OUTCOME_NONE, type Bank, type Item, type Team } from "../lib/types";
 import type { Rng } from "../lib/rng";
 import type { ResultApi, ResultPayload } from "./api";
 import type { ShareCard } from "./canvas-share";
@@ -76,11 +76,13 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
   let steps: { item: Item; answer: number }[] = [];
   let current: Next = null;
   let finalVerdict: Verdict | null = null;
+  let finalEra: EraVerdict | null = null;
 
   function start(): void {
     session = newSession(model);
     steps = [];
     finalVerdict = null;
+    finalEra = null;
     current = nextItem(model, session, deps.rng);
     showQuestion();
   }
@@ -89,7 +91,12 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
     if (!current) return finish();
     const item = current.item;
     const n = steps.length + 1;
-    const conf = topConfidence(model, session.post);
+    // 球団と年代の両方が基準に届くまで続けるので、メーターは低いほうに合わせる（見ないらしいときは球団だけ）
+    const teamConf = topConfidence(model, session.post);
+    const watching = steps.length > 0 && verdict(model, session.post).outcome !== OUTCOME_NONE;
+    const eraConf = eraConfidence(model, session.post);
+    const conf = watching ? Math.min(teamConf, eraConf) : teamConf;
+    const confLabel = watching ? `確信度 ${pct(teamConf)}・年代 ${pct(eraConf)}` : `確信度 ${pct(teamConf)}`;
     const on = Math.round(conf * 20);
     const meter = h("span", { class: "meter", "aria-hidden": "true" });
     for (let i = 0; i < 20; i++) meter.append(h("i", { class: i < on ? "on" : undefined }));
@@ -101,7 +108,7 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
       h(
         "section",
         { class: "board", "data-view": "question", "data-item": item.id },
-        h("div", { class: "board-row" }, h("span", { class: "qno" }, `Q.${String(n).padStart(2, "0")}`), meter, h("span", { class: "meter-label" }, `確信度 ${pct(conf)}`)),
+        h("div", { class: "board-row" }, h("span", { class: "qno" }, `Q.${String(n).padStart(2, "0")}`), meter, h("span", { class: "meter-label" }, confLabel)),
         h("p", { class: "q-kind" }, kindLabel(item)),
         title,
         showHint ? h("p", { class: "q-hint" }, item.hint!) : null,
@@ -139,6 +146,9 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
   function finish(): void {
     const v = verdict(model, session.post);
     finalVerdict = v;
+    const ev = eraVerdict(model, session.post);
+    finalEra = ev;
+    const eraText = eraLine(v, ev);
     const n = steps.length;
     const shares = fanShare(model, session.post);
     const order = teams.map((t, i) => ({ t, i, p: shares[i]! })).sort((a, b) => b.p - a.p);
@@ -196,6 +206,7 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
         { class: "board", "data-view": "result", "data-outcome": key },
         h("div", { class: "board-row" }, h("span", { class: "qno" }, "RESULT"), h("span", {}, `${n}問・確信度 ${pct(v.confidence)}`)),
         verdictEl,
+        eraText ? h("p", { class: "verdict-era", "data-era": ERA_IDS[ev.era] }, eraText) : null,
         runners.length ? h("p", { class: "q-hint" }, `次にありそう: ${runners.map((r) => `${hypLabel(model, r.hyp)} ${pct(r.p)}`).join("、")}`) : null,
       ),
       h(
@@ -222,7 +233,7 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
             h("ul", { class: "reveal" }, ...foilSteps.map((s) => h("li", {}, `${s.item.text}（${s.item.hint}）→ 「${s.item.options[s.answer]}」`))),
           )
         : null,
-      checkForm(v),
+      checkForm(v, ev),
       h(
         "section",
         { class: "section" },
@@ -243,8 +254,12 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
     verdictEl.focus({ preventScroll: true });
   }
 
-  function checkForm(v: Verdict): HTMLElement {
+  function checkForm(v: Verdict, ev: EraVerdict): HTMLElement {
     const select = h("select", { id: "check-main", name: "main", required: true }, h("option", { value: "" }, "選んでください"));
+    // 見始めた年代（2026-11-27）。「野球はあまり見ない」を選んだ人には聞かない
+    const eraSelect = h("select", { id: "check-era", name: "era" }, h("option", { value: "" }, "選んでください"));
+    for (const id of ERA_IDS) eraSelect.append(h("option", { value: id }, ERA_LABELS[id]));
+    eraSelect.append(h("option", { value: "unknown" }, "覚えていない"));
     for (const t of teams) select.append(h("option", { value: t.id }, t.full));
     select.append(h("option", { value: "none" }, "贔屓の球団はない（野球は見る）"), h("option", { value: "nobaseball" }, "野球はあまり見ない"));
     const checks = h("div", { class: "checks" });
@@ -257,6 +272,7 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
       { class: "form-grid", "data-form": "check" },
       h("div", { class: "field" }, h("label", { for: "check-main" }, "本当の本命は？"), select),
       h("fieldset", { class: "field" }, h("legend", {}, "ほかにも好きな球団があれば（3つまで）"), checks),
+      h("div", { class: "field" }, h("label", { for: "check-era" }, "野球を見始めたのはいつごろ？（初めてよく見るようになったころ）"), eraSelect),
       h("p", { class: "small" }, note),
       h("div", {}, h("button", { class: "btn btn-primary", type: "submit" }, "答え合わせする")),
     );
@@ -267,6 +283,8 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
         c.disabled = disableAll || c.value === select.value;
         if (c.disabled) c.checked = false;
       });
+      eraSelect.disabled = select.value === "nobaseball";
+      if (eraSelect.disabled) eraSelect.value = "";
     });
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -280,8 +298,11 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
         out.textContent = "ほかに好きな球団は3つまでにしてください。";
         return;
       }
+      const era = main === "nobaseball" ? "" : eraSelect.value;
       const j = judge(v, teams, main, others);
       out.textContent = j === "hit" ? "当たりでした！" : j === "near" ? "惜しい！ 2番手の球団でした。" : "はずれでした…。";
+      if (v.outcome !== OUTCOME_NONE && ERA_IDS.includes(era as (typeof ERA_IDS)[number]))
+        out.textContent += era === ERA_IDS[ev.era] ? " 見始めた年代も当たりでした。" : ` 見始めた年代は${ERA_LABELS[era as (typeof ERA_IDS)[number]]}でした。`;
       form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLButtonElement>("input, select, button").forEach((el) => (el.disabled = true));
       if (deps.api.enabled && deps.sentStore?.has(deps.bank.version)) {
         out.textContent += "（この端末からは、もう答え合わせを送っているので、今回は数えません）";
@@ -289,9 +310,11 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
         const payload: ResultPayload = {
           v: deps.bank.version,
           guess: outcomeKey(teams, v.outcome),
-          actual: { main, others },
+          actual: { main, others, ...(era ? { era } : {}) },
           answers: session.answers.map((a) => ({ q: a.itemId, a: a.answer })),
         };
+        // 見ないと言い切ったときは年代を推定していないので送らない
+        if (v.outcome !== OUTCOME_NONE) payload.guess_era = ERA_IDS[ev.era];
         void deps.api.record(payload).then((ok) => {
           if (ok) deps.sentStore?.mark(deps.bank.version);
           out.textContent += ok ? " 答え合わせを送りました。ありがとうございます。" : "（送れませんでしたが、ゲームには影響ありません）";
@@ -304,8 +327,10 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
   async function shareImage(preview: HTMLElement): Promise<void> {
     if (!finalVerdict) return;
     const shares = fanShare(model, session.post);
+    const eraText = finalEra ? eraLine(finalVerdict, finalEra) : null;
     const card: ShareCard = {
       headline: headline(teams, finalVerdict),
+      ...(eraText ? { era: eraText } : {}),
       sub: `${steps.length}問・確信度 ${pct(finalVerdict.confidence)}`,
       // 画像の盤面は暗い緑なので、暗い背景用の球団カラーを使う
       bars: teams.map((t, i) => ({ name: t.name, color: t.colorDark, p: shares[i]! })).sort((a, b) => b.p - a.p),
@@ -322,7 +347,7 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
     else if (action === "answer") choose(Number(target.dataset.a));
     else if (action === "back") back();
     else if (action === "share-x" && finalVerdict) {
-      const text = shareText(teams, finalVerdict, steps.length);
+      const text = shareText(teams, finalVerdict, steps.length, finalEra ?? undefined);
       openUrl(
         `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(root.dataset.resultUrl ?? deps.siteUrl)}&hashtags=${encodeURIComponent("12球団当て")}`,
       );
@@ -335,6 +360,6 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
   return {
     start,
     /** テスト用: 今の状態 */
-    state: () => ({ session, current, steps, verdict: finalVerdict }),
+    state: () => ({ session, current, steps, verdict: finalVerdict, era: finalEra }),
   };
 }

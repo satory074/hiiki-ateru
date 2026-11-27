@@ -1,306 +1,442 @@
 {
   "baystars-p-aranami": {
-    "key": "荒波翔|baystars",
+    "key": "荒波翔|baystars|外野手・2010年代",
     "by": "intai-fa"
   },
   "baystars-p-ebina": {
-    "key": "蝦名達夫|baystars",
+    "key": "蝦名達夫|baystars|外野手・2020年代",
+    "by": "intai-fa"
+  },
+  "baystars-p-ichikawa-kazumasa": {
+    "key": "市川和正|baystars|捕手・1980〜90年代",
     "by": "intai-fa"
   },
   "baystars-p-ise": {
-    "key": "伊勢大夢|baystars",
+    "key": "伊勢大夢|baystars|投手・2020年代",
     "by": "intai-fa"
   },
   "baystars-p-ishida-kenta": {
-    "key": "石田健大|baystars",
+    "key": "石田健大|baystars|投手・2010〜20年代",
     "by": "intai-fa"
   },
   "baystars-p-ishikawa-takehiro": {
-    "key": "石川雄洋|baystars",
+    "key": "石川雄洋|baystars|内野手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "baystars-p-kawahara-ryuichi": {
+    "key": "河原隆一|baystars|投手・1990〜2000年代",
+    "by": "intai-fa"
+  },
+  "baystars-p-kawamura-takeo": {
+    "key": "川村丈夫|baystars|投手・2000年代",
     "by": "intai-fa"
   },
   "baystars-p-kinjo": {
-    "key": "金城龍彦|baystars,giants",
+    "key": "金城龍彦|baystars,giants|外野手・2000年代",
+    "by": "intai-fa"
+  },
+  "baystars-p-mannaga": {
+    "key": "万永貴司|baystars|内野手・2000年代",
     "by": "intai-fa"
   },
   "baystars-p-miyazaki": {
-    "key": "宮﨑敏郎|baystars",
+    "key": "宮﨑敏郎|baystars|内野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "baystars-p-nomura-hiroki": {
+    "key": "野村弘樹|baystars|投手・1990年代",
+    "by": "intai-fa"
+  },
+  "baystars-p-saito-akio": {
+    "key": "斉藤明夫|baystars|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "baystars-p-sano": {
-    "key": "佐野恵太|baystars",
+    "key": "佐野恵太|baystars|外野手・2010〜20年代",
     "by": "intai-fa"
   },
   "baystars-p-shimozono": {
-    "key": "下園辰哉|baystars",
+    "key": "下園辰哉|baystars|外野手・2000〜10年代",
     "by": "intai-fa"
   },
   "baystars-p-shindo": {
-    "key": "進藤達哉|baystars,buffaloes",
+    "key": "進藤達哉|baystars,buffaloes|内野手・1990年代",
     "by": "intai-fa"
   },
   "baystars-p-suzuki-takanori": {
-    "key": "鈴木尚典|baystars",
+    "key": "鈴木尚典|baystars|外野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "baystars-p-watarai": {
-    "key": "度会隆輝|baystars",
+    "key": "度会隆輝|baystars|外野手・2020年代",
     "by": "intai-fa"
   },
   "buffaloes-p-adachi": {
-    "key": "安達了一|buffaloes",
+    "key": "安達了一|buffaloes|内野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-fujii-yasuo": {
+    "key": "藤井康雄|buffaloes|外野手・1980〜90年代",
     "by": "intai-fa"
   },
   "buffaloes-p-goto-mitsutaka": {
-    "key": "後藤光尊|buffaloes,eagles",
+    "key": "後藤光尊|buffaloes,eagles|内野手・2000〜10年代",
     "by": "intai-fa"
   },
   "buffaloes-p-higa": {
-    "key": "比嘉幹貴|buffaloes",
+    "key": "比嘉幹貴|buffaloes|投手・2010〜20年代",
     "by": "intai-fa"
   },
   "buffaloes-p-hoshino": {
-    "key": "星野伸之|buffaloes,tigers",
+    "key": "星野伸之|buffaloes,tigers|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "buffaloes-p-kaida": {
-    "key": "海田智行|buffaloes",
+    "key": "海田智行|buffaloes|投手・2010年代",
     "by": "intai-fa"
   },
   "buffaloes-p-kurebayashi": {
-    "key": "紅林弘太郎|buffaloes",
+    "key": "紅林弘太郎|buffaloes|内野手・2020年代",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-miwa": {
+    "key": "三輪隆|buffaloes|捕手・1990〜2000年代",
     "by": "intai-fa"
   },
   "buffaloes-p-nishino": {
-    "key": "西野真弘|buffaloes",
+    "key": "西野真弘|buffaloes|内野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-ogawa-hirofumi": {
+    "key": "小川博文|baystars,buffaloes|内野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "buffaloes-p-oshiro": {
-    "key": "大城滉二|buffaloes",
+    "key": "大城滉二|buffaloes|内野手・2010〜20年代",
     "by": "intai-fa"
   },
   "buffaloes-p-sakaguchi": {
-    "key": "坂口智隆|buffaloes,swallows",
+    "key": "坂口智隆|buffaloes,swallows|外野手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-sato-yoshinori": {
+    "key": "佐藤義則|buffaloes|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "buffaloes-p-sugimoto": {
-    "key": "杉本裕太郎|buffaloes",
+    "key": "杉本裕太郎|buffaloes|外野手・2020年代",
     "by": "intai-fa"
   },
   "buffaloes-p-tani": {
-    "key": "谷佳知|buffaloes,giants",
+    "key": "谷佳知|buffaloes,giants|外野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "buffaloes-p-wakatsuki": {
-    "key": "若月健矢|buffaloes",
+    "key": "若月健矢|buffaloes|捕手・2010〜20年代",
     "by": "intai-fa"
   },
   "buffaloes-p-yamada-nobuyoshi": {
-    "key": "山田修義|buffaloes",
+    "key": "山田修義|buffaloes|投手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "buffaloes-p-yamamori": {
+    "key": "山森雅文|buffaloes|外野手・1980〜90年代",
     "by": "intai-fa"
   },
   "carp-p-amaya": {
-    "key": "天谷宗一郎|carp",
+    "key": "天谷宗一郎|carp|外野手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "carp-p-asai-itsuki": {
+    "key": "浅井樹|carp|外野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "carp-p-futamata": {
-    "key": "二俣翔一|carp",
+    "key": "二俣翔一|carp|内野手・2020年代",
     "by": "intai-fa"
   },
   "carp-p-higashide": {
-    "key": "東出輝裕|carp",
+    "key": "東出輝裕|carp|内野手・2000年代",
+    "by": "intai-fa"
+  },
+  "carp-p-kobayakawa": {
+    "key": "小早川毅彦|carp,swallows|内野手・1980〜90年代",
     "by": "intai-fa"
   },
   "carp-p-kuribayashi": {
-    "key": "栗林良吏|carp",
+    "key": "栗林良吏|carp|投手・2020年代",
     "by": "intai-fa"
   },
   "carp-p-nagakawa": {
-    "key": "永川勝浩|carp",
+    "key": "永川勝浩|carp|投手・2000〜10年代",
     "by": "intai-fa"
   },
   "carp-p-nakamura-shosei": {
-    "key": "中村奨成|carp",
+    "key": "中村奨成|carp|外野手・2020年代",
     "by": "intai-fa"
   },
   "carp-p-ogata": {
-    "key": "緒方孝市|carp",
+    "key": "緒方孝市|carp|外野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "carp-p-sasaoka": {
-    "key": "佐々岡真司|carp",
+    "key": "佐々岡真司|carp|投手・1990〜2000年代",
+    "by": "intai-fa"
+  },
+  "carp-p-sawasaki": {
+    "key": "澤﨑俊和|carp|投手・1990〜2000年代",
+    "by": "intai-fa"
+  },
+  "carp-p-seto": {
+    "key": "瀬戸輝信|carp|捕手・1990〜2000年代",
     "by": "intai-fa"
   },
   "carp-p-shimauchi": {
-    "key": "島内颯太郎|carp",
+    "key": "島内颯太郎|carp|投手・2020年代",
+    "by": "intai-fa"
+  },
+  "carp-p-shoda": {
+    "key": "正田耕三|carp|内野手・1980〜90年代",
     "by": "intai-fa"
   },
   "carp-p-soyogi": {
-    "key": "梵英心|carp",
+    "key": "梵英心|carp|内野手・2000〜10年代",
     "by": "intai-fa"
   },
   "carp-p-suekane": {
-    "key": "末包昇大|carp",
+    "key": "末包昇大|carp|外野手・2020年代",
+    "by": "intai-fa"
+  },
+  "carp-p-yamasaki-ryuzo": {
+    "key": "山崎隆造|carp|外野手・1980〜90年代",
     "by": "intai-fa"
   },
   "dragons-p-asao": {
-    "key": "浅尾拓也|dragons",
+    "key": "浅尾拓也|dragons|投手・2000〜10年代",
     "by": "intai-fa"
   },
   "dragons-p-dounoue-naomichi": {
-    "key": "堂上直倫|dragons",
+    "key": "堂上直倫|dragons|内野手・2010年代",
+    "by": "intai-fa"
+  },
+  "dragons-p-endo-masataka": {
+    "key": "遠藤政隆|dragons,swallows|投手・1990〜2000年代",
     "by": "intai-fa"
   },
   "dragons-p-fujii": {
-    "key": "藤井淳志|dragons",
+    "key": "藤井淳志|dragons|外野手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "dragons-p-hikono": {
+    "key": "彦野利勝|dragons|外野手・1980〜90年代",
     "by": "intai-fa"
   },
   "dragons-p-hirata": {
-    "key": "平田良介|dragons",
+    "key": "平田良介|dragons|外野手・2010年代",
     "by": "intai-fa"
   },
   "dragons-p-imanaka": {
-    "key": "今中慎二|dragons",
+    "key": "今中慎二|dragons|投手・1990年代",
+    "by": "intai-fa"
+  },
+  "dragons-p-jinno": {
+    "key": "神野純一|dragons|内野手・1990〜2000年代",
+    "by": "intai-fa"
+  },
+  "dragons-p-kaku-genji": {
+    "key": "郭源治|dragons|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "dragons-p-kinoshita-takuya": {
-    "key": "木下拓哉|dragons",
+    "key": "木下拓哉|dragons|捕手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "dragons-p-komatsu-tatsuo": {
+    "key": "小松辰雄|dragons|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "dragons-p-matsuyama": {
-    "key": "松山晋也|dragons",
+    "key": "松山晋也|dragons|投手・2020年代",
     "by": "intai-fa"
   },
   "dragons-p-morino": {
-    "key": "森野将彦|dragons",
+    "key": "森野将彦|dragons|内野手・2000〜10年代",
     "by": "intai-fa"
   },
   "dragons-p-muramatsu": {
-    "key": "村松開人|dragons",
+    "key": "村松開人|dragons|内野手・2020年代",
     "by": "intai-fa"
   },
   "dragons-p-okabayashi": {
-    "key": "岡林勇希|dragons",
+    "key": "岡林勇希|dragons|外野手・2020年代",
     "by": "intai-fa"
   },
   "dragons-p-shimizu-tatsuya": {
-    "key": "清水達也|dragons",
+    "key": "清水達也|dragons|投手・2020年代",
     "by": "intai-fa"
   },
   "dragons-p-tanaka-mikiya": {
-    "key": "田中幹也|dragons",
+    "key": "田中幹也|dragons|内野手・2020年代",
+    "by": "intai-fa"
+  },
+  "dragons-p-watanabe-hiroyuki": {
+    "key": "渡邉博幸|dragons|内野手・2000年代",
     "by": "intai-fa"
   },
   "dragons-p-yanagi": {
-    "key": "柳裕也|dragons",
+    "key": "柳裕也|dragons|投手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "eagles-p-aikyo": {
+    "key": "愛敬尚史|eagles|投手・2000年代",
     "by": "intai-fa"
   },
   "eagles-p-aoyama": {
-    "key": "青山浩二|eagles",
+    "key": "青山浩二|eagles|投手・2000〜10年代",
     "by": "intai-fa"
   },
   "eagles-p-hayakawa": {
-    "key": "早川隆久|eagles",
+    "key": "早川隆久|eagles|投手・2020年代",
     "by": "intai-fa"
   },
   "eagles-p-hijirisawa": {
-    "key": "聖澤諒|eagles",
+    "key": "聖澤諒|eagles|外野手・2010年代",
+    "by": "intai-fa"
+  },
+  "eagles-p-isobe": {
+    "key": "礒部公一|eagles|外野手・2000年代",
     "by": "intai-fa"
   },
   "eagles-p-kobukata": {
-    "key": "小深田大翔|eagles",
+    "key": "小深田大翔|eagles|内野手・2020年代",
+    "by": "intai-fa"
+  },
+  "eagles-p-makita": {
+    "key": "牧田明久|eagles|外野手・2000〜10年代",
     "by": "intai-fa"
   },
   "eagles-p-muneyama": {
-    "key": "宗山塁|eagles",
+    "key": "宗山塁|eagles|内野手・2020年代",
     "by": "intai-fa"
   },
   "eagles-p-murabayashi": {
-    "key": "村林一輝|eagles",
+    "key": "村林一輝|eagles|内野手・2020年代",
+    "by": "intai-fa"
+  },
+  "eagles-p-nagai-satoshi": {
+    "key": "永井怜|eagles|投手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "eagles-p-nishimura-wataru": {
+    "key": "西村弥|eagles|内野手・2010年代",
     "by": "intai-fa"
   },
   "eagles-p-ogo": {
-    "key": "小郷裕哉|eagles",
+    "key": "小郷裕哉|eagles|外野手・2020年代",
     "by": "intai-fa"
   },
   "eagles-p-okajima": {
-    "key": "岡島豪郎|eagles",
+    "key": "岡島豪郎|eagles|外野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "eagles-p-rick": {
+    "key": "リック|eagles,marines|内野手・2000年代",
     "by": "intai-fa"
   },
   "eagles-p-shima": {
-    "key": "嶋基宏|eagles,swallows",
+    "key": "嶋基宏|eagles,swallows|捕手・2000〜10年代",
     "by": "intai-fa"
   },
   "eagles-p-shimauchi": {
-    "key": "島内宏明|eagles",
+    "key": "島内宏明|eagles|外野手・2010〜20年代",
     "by": "intai-fa"
   },
   "eagles-p-shiomi": {
-    "key": "塩見貴洋|eagles",
+    "key": "塩見貴洋|eagles|投手・2010年代",
     "by": "intai-fa"
   },
   "eagles-p-suzuki-shoma": {
-    "key": "鈴木翔天|eagles",
+    "key": "鈴木翔天|eagles|投手・2020年代",
     "by": "intai-fa"
   },
   "eagles-p-tatsumi": {
-    "key": "辰己涼介|eagles",
+    "key": "辰己涼介|eagles|外野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "fighters-p-hirose-tetsuro": {
+    "key": "広瀬哲朗|fighters|内野手・1980〜90年代",
+    "by": "intai-fa"
+  },
+  "fighters-p-igarashi-shinichi": {
+    "key": "五十嵐信一|fighters|外野手・1980〜90年代",
     "by": "intai-fa"
   },
   "fighters-p-isobata": {
-    "key": "五十幡亮汰|fighters",
+    "key": "五十幡亮汰|fighters|外野手・2020年代",
     "by": "intai-fa"
   },
   "fighters-p-kamikawabata": {
-    "key": "上川畑大悟|fighters",
+    "key": "上川畑大悟|fighters|内野手・2020年代",
     "by": "intai-fa"
   },
   "fighters-p-kaneko-makoto": {
-    "key": "金子誠|fighters",
+    "key": "金子誠|fighters|内野手・1990〜2010年代",
     "by": "intai-fa"
   },
   "fighters-p-koyano": {
-    "key": "小谷野栄一|buffaloes,fighters",
+    "key": "小谷野栄一|buffaloes,fighters|内野手・2000〜10年代",
     "by": "intai-fa"
   },
   "fighters-p-mannami": {
-    "key": "万波中正|fighters",
+    "key": "万波中正|fighters|外野手・2020年代",
     "by": "intai-fa"
   },
   "fighters-p-miyanishi": {
-    "key": "宮西尚生|fighters",
+    "key": "宮西尚生|fighters|投手・2000〜20年代",
     "by": "intai-fa"
   },
   "fighters-p-nakashima-takuya": {
-    "key": "中島卓也|fighters",
+    "key": "中島卓也|fighters|内野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "fighters-p-nishizaki": {
+    "key": "西崎幸広|fighters,lions|投手・1980〜90年代",
+    "by": "intai-fa"
+  },
+  "fighters-p-oda-tomoyuki": {
+    "key": "小田智之|fighters|内野手・2000年代",
+    "by": "intai-fa"
+  },
+  "fighters-p-sekine-hiroyuki": {
+    "key": "関根裕之|fighters|投手・1990〜2000年代",
     "by": "intai-fa"
   },
   "fighters-p-sugiya": {
-    "key": "杉谷拳士|fighters",
+    "key": "杉谷拳士|fighters|内野手・2010年代",
     "by": "intai-fa"
   },
   "fighters-p-takeda-hisashi": {
-    "key": "武田久|fighters",
+    "key": "武田久|fighters|投手・2000〜10年代",
     "by": "intai-fa"
   },
   "fighters-p-tamai": {
-    "key": "玉井大翔|fighters",
+    "key": "玉井大翔|fighters|投手・2010〜20年代",
     "by": "intai-fa"
   },
   "fighters-p-tamiya": {
-    "key": "田宮裕涼|fighters",
+    "key": "田宮裕涼|fighters|捕手・2020年代",
     "by": "intai-fa"
   },
   "fighters-p-tanaka-kensuke": {
-    "key": "田中賢介|fighters",
+    "key": "田中賢介|fighters|内野手・2000〜10年代",
     "by": "intai-fa"
   },
   "fighters-p-tsuruoka": {
-    "key": "鶴岡慎也|fighters,hawks",
+    "key": "鶴岡慎也|fighters,hawks|捕手・2000〜10年代",
     "by": "intai-fa"
   },
   "fighters-p-yo-daikan": {
-    "key": "陽岱鋼|fighters,giants",
+    "key": "陽岱鋼|fighters,giants|外野手・2000〜10年代",
     "by": "intai-fa"
   },
   "foil-p-01": {
@@ -356,315 +492,459 @@
     "by": "absent"
   },
   "giants-p-funabasama": {
-    "key": "船迫大雅|giants",
+    "key": "船迫大雅|giants|投手・2020年代",
     "by": "intai-fa"
   },
   "giants-p-kadowaki": {
-    "key": "門脇誠|giants",
+    "key": "門脇誠|giants|内野手・2020年代",
+    "by": "intai-fa"
+  },
+  "giants-p-kimura-ryuji": {
+    "key": "木村龍治|giants|投手・1990〜2000年代",
     "by": "intai-fa"
   },
   "giants-p-makihara": {
-    "key": "槙原寛己|giants",
+    "key": "槙原寛己|giants|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "giants-p-masuda-daiki": {
-    "key": "増田大輝|giants",
+    "key": "増田大輝|giants|内野手・2010〜20年代",
     "by": "intai-fa"
   },
   "giants-p-motoki": {
-    "key": "元木大介|giants",
+    "key": "元木大介|giants|内野手・1990〜2000年代",
+    "by": "intai-fa"
+  },
+  "giants-p-murata-yoshinori": {
+    "key": "村田善則|giants|捕手・2000年代",
     "by": "intai-fa"
   },
   "giants-p-nakagawa": {
-    "key": "中川皓太|giants",
+    "key": "中川皓太|giants|投手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "giants-p-nishi": {
+    "key": "仁志敏久|baystars,giants|内野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "giants-p-ochi": {
-    "key": "越智大祐|giants",
+    "key": "越智大祐|giants|投手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "giants-p-okazaki-kaoru": {
+    "key": "岡崎郁|giants|内野手・1980〜90年代",
     "by": "intai-fa"
   },
   "giants-p-oshiro": {
-    "key": "大城卓三|giants",
+    "key": "大城卓三|giants|捕手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "giants-p-shinozuka": {
+    "key": "篠塚和典|giants|内野手・1980〜90年代",
     "by": "intai-fa"
   },
   "giants-p-suzuki-takahiro": {
-    "key": "鈴木尚広|giants",
+    "key": "鈴木尚広|giants|外野手・2000〜10年代",
     "by": "intai-fa"
   },
   "giants-p-terauchi": {
-    "key": "寺内崇幸|giants",
+    "key": "寺内崇幸|giants|内野手・2000〜10年代",
     "by": "intai-fa"
   },
   "giants-p-yamaguchi-tetsuya": {
-    "key": "山口鉄也|giants",
+    "key": "山口鉄也|giants|投手・2000〜10年代",
     "by": "intai-fa"
   },
   "giants-p-yoshikawa": {
-    "key": "吉川尚輝|giants",
+    "key": "吉川尚輝|giants|内野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "giants-p-yoshimura-sadaaki": {
+    "key": "吉村禎章|giants|外野手・1980〜90年代",
     "by": "intai-fa"
   },
   "hawks-p-akashi": {
-    "key": "明石健志|hawks",
+    "key": "明石健志|hawks|内野手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "hawks-p-bonishi": {
+    "key": "坊西浩嗣|hawks|捕手・1990〜2000年代",
     "by": "intai-fa"
   },
   "hawks-p-fujii-masao": {
-    "key": "藤井将雄|hawks",
+    "key": "藤井将雄|hawks|投手・1990年代",
     "by": "intai-fa"
   },
   "hawks-p-hasegawa": {
-    "key": "長谷川勇也|hawks",
+    "key": "長谷川勇也|hawks|外野手・2010年代",
     "by": "intai-fa"
   },
   "hawks-p-honda": {
-    "key": "本多雄一|hawks",
+    "key": "本多雄一|hawks|内野手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "hawks-p-honma-mitsuru": {
+    "key": "本間満|hawks|内野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "hawks-p-imamiya": {
-    "key": "今宮健太|hawks",
+    "key": "今宮健太|hawks|内野手・2010〜20年代",
     "by": "intai-fa"
   },
   "hawks-p-kawase": {
-    "key": "川瀬晃|hawks",
+    "key": "川瀬晃|hawks|内野手・2010〜20年代",
     "by": "intai-fa"
   },
   "hawks-p-morifuku": {
-    "key": "森福允彦|giants,hawks",
+    "key": "森福允彦|giants,hawks|投手・2000〜10年代",
     "by": "intai-fa"
   },
   "hawks-p-settsu": {
-    "key": "攝津正|hawks",
+    "key": "攝津正|hawks|投手・2000〜10年代",
     "by": "intai-fa"
   },
   "hawks-p-shibahara": {
-    "key": "柴原洋|hawks",
+    "key": "柴原洋|hawks|外野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "hawks-p-shuto": {
-    "key": "周東佑京|hawks",
+    "key": "周東佑京|hawks|外野手・2020年代",
+    "by": "intai-fa"
+  },
+  "hawks-p-tanoue": {
+    "key": "田之上慶三郎|hawks|投手・1990〜2000年代",
     "by": "intai-fa"
   },
   "hawks-p-tsumori": {
-    "key": "津森宥紀|hawks",
+    "key": "津森宥紀|hawks|投手・2020年代",
     "by": "intai-fa"
   },
   "hawks-p-umino": {
-    "key": "海野隆司|hawks",
+    "key": "海野隆司|hawks|捕手・2020年代",
+    "by": "intai-fa"
+  },
+  "hawks-p-wakai": {
+    "key": "若井基安|hawks|内野手・1990年代",
+    "by": "intai-fa"
+  },
+  "hawks-p-yamauchi-takanori": {
+    "key": "山内孝徳|hawks|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "hawks-p-yanagimachi": {
-    "key": "柳町達|hawks",
+    "key": "柳町達|hawks|外野手・2020年代",
+    "by": "intai-fa"
+  },
+  "hawks-p-yugami": {
+    "key": "湯上谷竑志|hawks|内野手・1980〜90年代",
     "by": "intai-fa"
   },
   "lions-p-akada": {
-    "key": "赤田将吾|buffaloes,fighters,lions",
+    "key": "赤田将吾|buffaloes,fighters,lions|外野手・2000年代",
     "by": "intai-fa"
   },
   "lions-p-genda": {
-    "key": "源田壮亮|lions",
+    "key": "源田壮亮|lions|内野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "lions-p-hanyuda": {
+    "key": "羽生田忠克|lions|外野手・1980〜90年代",
     "by": "intai-fa"
   },
   "lions-p-hasegawa": {
-    "key": "長谷川信哉|lions",
+    "key": "長谷川信哉|lions|外野手・2020年代",
     "by": "intai-fa"
   },
   "lions-p-hoshino": {
-    "key": "星野智樹|eagles,lions",
+    "key": "星野智樹|eagles,lions|投手・2000年代",
+    "by": "intai-fa"
+  },
+  "lions-p-ishii-takashi": {
+    "key": "石井貴|lions|投手・1990〜2000年代",
+    "by": "intai-fa"
+  },
+  "lions-p-kaku-taigen": {
+    "key": "郭泰源|lions|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "lions-p-kaneko": {
-    "key": "金子侑司|lions",
+    "key": "金子侑司|lions|外野手・2010〜20年代",
     "by": "intai-fa"
   },
   "lions-p-kishi": {
-    "key": "岸孝之|eagles,lions",
+    "key": "岸孝之|eagles,lions|投手・2000〜10年代",
     "by": "intai-fa"
   },
   "lions-p-koga": {
-    "key": "古賀悠斗|lions",
+    "key": "古賀悠斗|lions|捕手・2020年代",
     "by": "intai-fa"
   },
   "lions-p-kumashiro": {
-    "key": "熊代聖人|lions",
+    "key": "熊代聖人|lions|外野手・2010年代",
     "by": "intai-fa"
   },
   "lions-p-nishiguchi": {
-    "key": "西口文也|lions",
+    "key": "西口文也|lions|投手・1990〜2000年代",
     "by": "intai-fa"
   },
   "lions-p-nishikawa": {
-    "key": "西川愛也|lions",
+    "key": "西川愛也|lions|外野手・2020年代",
+    "by": "intai-fa"
+  },
+  "lions-p-shiozaki": {
+    "key": "潮崎哲也|lions|投手・1990〜2000年代",
     "by": "intai-fa"
   },
   "lions-p-sogame": {
-    "key": "十亀剣|lions",
+    "key": "十亀剣|lions|投手・2010年代",
     "by": "intai-fa"
   },
   "lions-p-sumida": {
-    "key": "隅田知一郎|lions",
+    "key": "隅田知一郎|lions|投手・2020年代",
+    "by": "intai-fa"
+  },
+  "lions-p-takagi-hiroyuki": {
+    "key": "高木浩之|lions|内野手・2000年代",
     "by": "intai-fa"
   },
   "lions-p-takizawa": {
-    "key": "滝澤夏央|lions",
+    "key": "滝澤夏央|lions|内野手・2020年代",
+    "by": "intai-fa"
+  },
+  "lions-p-tomashino-seiji": {
+    "key": "笘篠誠治|lions|外野手・1980〜90年代",
     "by": "intai-fa"
   },
   "lions-p-tonosaki": {
-    "key": "外崎修汰|lions",
+    "key": "外崎修汰|lions|内野手・2010〜20年代",
     "by": "intai-fa"
   },
   "marines-p-fujioka": {
-    "key": "藤岡裕大|marines",
+    "key": "藤岡裕大|marines|内野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "marines-p-hatsushiba": {
+    "key": "初芝清|marines|内野手・1990〜2000年代",
+    "by": "intai-fa"
+  },
+  "marines-p-hirai-mitsuchika": {
+    "key": "平井光親|marines|外野手・1990年代",
     "by": "intai-fa"
   },
   "marines-p-hori": {
-    "key": "堀幸一|marines",
+    "key": "堀幸一|marines|内野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "marines-p-kakunaka": {
-    "key": "角中勝也|marines",
+    "key": "角中勝也|marines|外野手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "marines-p-kuroki": {
+    "key": "黒木知宏|marines|投手・1990〜2000年代",
     "by": "intai-fa"
   },
   "marines-p-masuda": {
-    "key": "益田直也|marines",
+    "key": "益田直也|marines|投手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "marines-p-morozumi": {
+    "key": "諸積兼司|marines|外野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "marines-p-ogino": {
-    "key": "荻野貴司|marines",
+    "key": "荻野貴司|marines|外野手・2010〜20年代",
     "by": "intai-fa"
   },
   "marines-p-okada": {
-    "key": "岡田幸文|marines",
+    "key": "岡田幸文|marines|外野手・2010年代",
     "by": "intai-fa"
   },
   "marines-p-ono": {
-    "key": "小野晋吾|marines",
+    "key": "小野晋吾|marines|投手・1990〜2000年代",
     "by": "intai-fa"
   },
   "marines-p-sato-toshiya": {
-    "key": "佐藤都志也|marines",
+    "key": "佐藤都志也|marines|捕手・2020年代",
     "by": "intai-fa"
   },
   "marines-p-satozaki": {
-    "key": "里崎智也|marines",
+    "key": "里崎智也|marines|捕手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "marines-p-so-katsuo": {
+    "key": "荘勝雄|marines|投手・1980〜90年代",
+    "by": "intai-fa"
+  },
+  "marines-p-sonokawa": {
+    "key": "園川一美|marines|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "marines-p-takabe": {
-    "key": "髙部瑛斗|marines",
+    "key": "髙部瑛斗|marines|外野手・2020年代",
     "by": "intai-fa"
   },
   "marines-p-taneichi": {
-    "key": "種市篤暉|marines",
+    "key": "種市篤暉|marines|投手・2010〜20年代",
     "by": "intai-fa"
   },
   "marines-p-wada": {
-    "key": "和田康士朗|marines",
+    "key": "和田康士朗|marines|外野手・2020年代",
     "by": "intai-fa"
   },
   "marines-p-watanabe-shunsuke": {
-    "key": "渡辺俊介|marines",
+    "key": "渡辺俊介|marines|投手・2000年代",
     "by": "intai-fa"
   },
   "marines-p-yabuta": {
-    "key": "薮田安彦|marines",
+    "key": "薮田安彦|marines|投手・2000年代",
     "by": "intai-fa"
   },
   "swallows-p-dobashi": {
-    "key": "土橋勝征|swallows",
+    "key": "土橋勝征|swallows|内野手・1990年代",
     "by": "intai-fa"
   },
   "swallows-p-hatakeyama": {
-    "key": "畠山和洋|swallows",
+    "key": "畠山和洋|swallows|内野手・2010年代",
     "by": "intai-fa"
   },
   "swallows-p-ishiyama": {
-    "key": "石山泰稚|swallows",
+    "key": "石山泰稚|swallows|投手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "swallows-p-ito-akimitsu": {
+    "key": "伊東昭光|swallows|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "swallows-p-ito-tomohito": {
-    "key": "伊藤智仁|swallows",
+    "key": "伊藤智仁|swallows|投手・1990年代",
     "by": "intai-fa"
   },
   "swallows-p-kawabata": {
-    "key": "川端慎吾|swallows",
+    "key": "川端慎吾|swallows|内野手・2010年代",
     "by": "intai-fa"
   },
   "swallows-p-kizawa": {
-    "key": "木澤尚文|swallows",
+    "key": "木澤尚文|swallows|投手・2020年代",
     "by": "intai-fa"
   },
   "swallows-p-manaka": {
-    "key": "真中満|swallows",
+    "key": "真中満|swallows|外野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "swallows-p-nagaoka": {
-    "key": "長岡秀樹|swallows",
+    "key": "長岡秀樹|swallows|内野手・2020年代",
     "by": "intai-fa"
   },
   "swallows-p-nakamura-yuhei": {
-    "key": "中村悠平|swallows",
+    "key": "中村悠平|swallows|捕手・2010〜20年代",
     "by": "intai-fa"
   },
   "swallows-p-namiki": {
-    "key": "並木秀尊|swallows",
+    "key": "並木秀尊|swallows|外野手・2020年代",
+    "by": "intai-fa"
+  },
+  "swallows-p-okabayashi": {
+    "key": "岡林洋一|swallows|投手・1990年代",
+    "by": "intai-fa"
+  },
+  "swallows-p-ono-kosei": {
+    "key": "小野公誠|swallows|捕手・2000年代",
+    "by": "intai-fa"
+  },
+  "swallows-p-sato-shinichi": {
+    "key": "佐藤真一|hawks,swallows|外野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "swallows-p-shimizu": {
-    "key": "清水昇|swallows",
+    "key": "清水昇|swallows|投手・2020年代",
     "by": "intai-fa"
   },
   "swallows-p-shiomi": {
-    "key": "塩見泰隆|swallows",
+    "key": "塩見泰隆|swallows|外野手・2020年代",
+    "by": "intai-fa"
+  },
+  "swallows-p-sumi": {
+    "key": "角富士夫|swallows|内野手・1980〜90年代",
     "by": "intai-fa"
   },
   "swallows-p-tateyama": {
-    "key": "館山昌平|swallows",
+    "key": "館山昌平|swallows|投手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "swallows-p-yamabe": {
+    "key": "山部太|swallows|投手・1990〜2000年代",
     "by": "intai-fa"
   },
   "tigers-p-akahoshi": {
-    "key": "赤星憲広|tigers",
+    "key": "赤星憲広|tigers|外野手・2000年代",
     "by": "intai-fa"
   },
   "tigers-p-haraguchi": {
-    "key": "原口文仁|tigers",
+    "key": "原口文仁|tigers|捕手・2010〜20年代",
     "by": "intai-fa"
   },
   "tigers-p-hiyama": {
-    "key": "桧山進次郎|tigers",
+    "key": "桧山進次郎|tigers|外野手・1990〜2000年代",
     "by": "intai-fa"
   },
   "tigers-p-ishii-daichi": {
-    "key": "石井大智|tigers",
+    "key": "石井大智|tigers|投手・2020年代",
     "by": "intai-fa"
   },
   "tigers-p-itohara": {
-    "key": "糸原健斗|tigers",
+    "key": "糸原健斗|tigers|内野手・2010〜20年代",
     "by": "intai-fa"
   },
   "tigers-p-iwazaki": {
-    "key": "岩崎優|tigers",
+    "key": "岩崎優|tigers|投手・2010〜20年代",
+    "by": "intai-fa"
+  },
+  "tigers-p-kameyama": {
+    "key": "亀山努|tigers|外野手・1990年代",
+    "by": "intai-fa"
+  },
+  "tigers-p-kasai": {
+    "key": "葛西稔|tigers|投手・1990〜2000年代",
+    "by": "intai-fa"
+  },
+  "tigers-p-kido": {
+    "key": "木戸克彦|tigers|捕手・1980〜90年代",
     "by": "intai-fa"
   },
   "tigers-p-kirishiki": {
-    "key": "桐敷拓馬|tigers",
+    "key": "桐敷拓馬|tigers|投手・2020年代",
+    "by": "intai-fa"
+  },
+  "tigers-p-kosaka": {
+    "key": "上坂太一郎|tigers|外野手・2000年代",
     "by": "intai-fa"
   },
   "tigers-p-kubota": {
-    "key": "久保田智之|tigers",
+    "key": "久保田智之|tigers|投手・2000年代",
+    "by": "intai-fa"
+  },
+  "tigers-p-nakanishi-kiyooki": {
+    "key": "中西清起|tigers|投手・1980〜90年代",
     "by": "intai-fa"
   },
   "tigers-p-nakano": {
-    "key": "中野拓夢|tigers",
+    "key": "中野拓夢|tigers|内野手・2020年代",
     "by": "intai-fa"
   },
   "tigers-p-sekimoto": {
-    "key": "関本賢太郎|tigers",
+    "key": "関本賢太郎|tigers|内野手・2000〜10年代",
+    "by": "intai-fa"
+  },
+  "tigers-p-tanaka-shuta": {
+    "key": "田中秀太|tigers|内野手・2000年代",
     "by": "intai-fa"
   },
   "tigers-p-umeno": {
-    "key": "梅野隆太郎|tigers",
+    "key": "梅野隆太郎|tigers|捕手・2010〜20年代",
     "by": "intai-fa"
   },
   "tigers-p-yagi": {
-    "key": "八木裕|tigers",
+    "key": "八木裕|tigers|内野手・1990年代",
     "by": "intai-fa"
   }
 }

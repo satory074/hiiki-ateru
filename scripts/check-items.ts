@@ -12,6 +12,8 @@
 //   ⑧ 現役（era: current）の選手に、intai-fa の最新年度の戦力外・引退・FA 宣言・ポスティング・
 //      ほかの球団へのトレードが無い（古くなった選手を出さない。intai-fa に入っていない球団発表は拾えないので、
 //      10〜12月にウェブでも確かめ直す。CLAUDE.md「運用」）
+//   ⑨ 選手の手がかりの年代（「1990〜2000年代」）が、intai-fa の在籍年（最初の年〜最後の年）の年代の中に収まる。
+//      見始めた年代の推定は、この年代の「おわり」を「その選手を見られた最後の年代」として使うので、ずれると推定がずれる（2026-11-27）
 //
 // ⑥⑦⑧ は隣の ../intai-fa/data が要る。手元で照合した結果を data/verified.json に書き、
 // intai-fa の無い所（GitHub Actions）では「照合の記録が今の内容と一致しているか」だけを見る。
@@ -19,7 +21,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import YAML from "yaml";
-import { ROOT, compileBank, loadSource, type RawItem } from "./lib/source";
+import { ROOT, compileBank, decadesOfHint, loadSource, type RawItem } from "./lib/source";
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -86,7 +88,8 @@ const VERIFIED = path.join(ROOT, "data", "verified.json");
 const INTAI = path.resolve(ROOT, "..", "intai-fa", "data");
 type Verified = Record<string, { key: string; by: "intai-fa" | "owner" | "absent" }>;
 const fold = (s: string) => s.normalize("NFKC").replace(/\s+/g, "");
-const keyOf = (it: RawItem) => `${fold(it.text)}|${[...(it.teams ?? [])].sort().join(",")}`;
+// 選手は手がかり（年代）も照合する（⑨）ので、手がかりを変えたら照合し直す
+const keyOf = (it: RawItem) => `${fold(it.text)}|${[...(it.teams ?? [])].sort().join(",")}${it.kind === "player" ? `|${it.hint ?? ""}` : ""}`;
 const players = src.items.filter((i) => i.kind === "player");
 const foils = src.items.filter((i) => i.kind === "foil" && i.look !== "culture");
 
@@ -138,6 +141,12 @@ if (!process.env.HIIKI_SKIP_INTAI && fs.existsSync(path.join(INTAI, "people.json
       if (missing.length) err(it, `⑥ 在籍した球団 ${missing.join(",")} が teams に無い（移籍先も全部書く）`);
       const last = Math.max(...(stints.get(p.id) ?? []).map((s) => s.to ?? 9999));
       if (it.era === "current" && last < 2025) warn(it, `current だが intai-fa の在籍は ${last} 年まで`);
+      // ⑨ 手がかりの年代が在籍年の中に収まる（現役で to が無い人は今年まで在籍とみなす）
+      const first = Math.min(...(stints.get(p.id) ?? []).map((s) => s.from));
+      const decade = (y: number) => Math.floor(Math.min(y, 2026) / 10) * 10;
+      const d = decadesOfHint(it.hint ?? "");
+      if (d && (d[0] < decade(first) || d[1] > decade(last)))
+        err(it, `⑨ 手がかりの年代 ${d[0]}〜${d[1]} が intai-fa の在籍 ${first}〜${last === 9999 ? "" : last} 年の年代に収まらない`);
       if (it.era === "current")
         for (const e of staleByPerson.get(p.id) ?? []) {
           // 載っている球団へのトレードなら teams に入っているので古くない

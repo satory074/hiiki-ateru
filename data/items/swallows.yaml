@@ -11,6 +11,13 @@ items:
   - { id: swallows-p-ishiyama, kind: player, genre: player, text: 石山 泰稚, hint: 投手・2010〜20年代, teams: [swallows], tier: C, era: current, source: "https://npb.jp/bis/players/21125137.html", check: auto }
   # 選手（OB）
   - { id: swallows-p-ito-tomohito, kind: player, genre: player, text: 伊藤 智仁, hint: 投手・1990年代, teams: [swallows], tier: B, era: ob, source: "https://npb.jp/bis/players/21123887.html", check: auto }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（intai-fa の在籍・NPB での最後の年で選んだ）
+  - { id: swallows-p-ito-akimitsu, kind: player, genre: player, text: 伊東 昭光, hint: 投手・1980〜90年代, teams: [swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/91193862.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1998） }
+  - { id: swallows-p-sumi, kind: player, genre: player, text: 角 富士夫, hint: 内野手・1980〜90年代, teams: [swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/51553842.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1994） }
+  - { id: swallows-p-okabayashi, kind: player, genre: player, text: 岡林 洋一, hint: 投手・1990年代, teams: [swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/11513883.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2000） }
+  - { id: swallows-p-yamabe, kind: player, genre: player, text: 山部 太, hint: 投手・1990〜2000年代, teams: [swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/61063889.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2006） }
+  - { id: swallows-p-ono-kosei, kind: player, genre: player, text: 小野 公誠, hint: 捕手・2000年代, teams: [swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/61363884.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2008） }
+  - { id: swallows-p-sato-shinichi, kind: player, genre: player, text: 佐藤 真一, hint: 外野手・1990〜2000年代, teams: [hawks, swallows], tier: C, era: ob, source: "https://npb.jp/bis/players/61563887.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2005） }
   - id: swallows-p-kawabata
     kind: player
     genre: player

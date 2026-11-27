@@ -2,13 +2,17 @@
 //
 // 基本は「答えを聞いたあと、仮説 80 個（本命の球団・2球団の組・贔屓なし・見ない）の迷い（エントロピー）が
 // 一番減る見込みの質問」（期待情報利得）。結果15種類ではなく仮説で測るのは、2球団の人の「どの組か」まで絞るため。
+// 見始めた年代も当てるので（2026-11-27）、点数には「見る人に限った年代 4 区分の迷いが減る見込み × 見る人である確率」を足す。
+// 見る人である確率を掛けるのは、見ない人らしいときに年代の質問を無駄に出さないため。
 // そのうえで:
 //   - 同じジャンルで「知らない」が続いたら、そのジャンルの点数を下げる（答えられない質問ばかりにしない）
 //   - 1問目は firstItem（中継を見る頻度）に固定する
 //   - 架空の質問（foil）は、窓（3〜5・8〜10・14〜18・22〜26問目）ごとにくじで選んだ番手に1問ずつ入れる
 //   - 地方の質問は、行き詰まったときに1回だけ
-//   - 10〜30問。最低問数を超えて、どれかの結果の確信度が基準を超えたら終える
-import { Model, N_G, N_O, hypProbs, initialPosterior, update } from "./model";
+//   - 10〜30問。最低問数を超えて、言い切る仮説の確信度が基準（85%）を超え、
+//     さらに見始めた年代の確信度も基準（80%）を超えたら終える（見ないと言い切るときは年代を問わない）
+import { Model, N_E, PER_HYP, eOfState, eraProbs, hypProbs, initialPosterior, update, verdict, watchProb } from "./model";
+import { OUTCOME_NONE } from "./types";
 import type { Answer, Item } from "./types";
 import type { Rng } from "./rng";
 
@@ -60,40 +64,72 @@ const maxOf = (p: ArrayLike<number>): number => {
   return m;
 };
 
-/** 質問 item を聞いたときに、仮説の迷いがどれだけ減る見込みか（ビット） */
+/**
+ * 質問 item を聞いたときに、迷いがどれだけ減る見込みか（ビット）。
+ * 仮説 80 個の迷いの減り ＋ 見る人である確率 × 見る人に限った年代 4 区分の迷いの減り
+ */
 export function expectedGain(model: Model, post: Float64Array, item: Item): number {
   const nA = item.options.length;
   const nH = model.hyps.length;
-  const per = N_G * N_O;
   const L = model.lik(item);
   const T = model.likTau(item);
   const pa = new Float64Array(nA);
   const mass = new Float64Array(nA * nH);
+  const eraMass = new Float64Array(nA * N_E);
+  const none = model.outcomeOfState;
   for (let s = 0; s < post.length; s++) {
     const ps = post[s]!;
     if (ps === 0) continue;
-    const h = Math.floor(s / per);
+    const h = Math.floor(s / PER_HYP);
+    const watching = none[s] !== OUTCOME_NONE;
+    const e = eOfState(s);
     for (let a = 0; a < nA; a++) {
       pa[a]! += ps * L[s * nA + a]!;
-      mass[a * nH + h]! += ps * T[s * nA + a]!;
+      const t = ps * T[s * nA + a]!;
+      mass[a * nH + h]! += t;
+      if (watching) eraMass[a * N_E + e]! += t;
     }
   }
+  const eraNow = entropy(eraProbs(model, post));
   let after = 0;
+  let eraAfter = 0;
   const row = new Float64Array(nH);
+  const eraRow = new Float64Array(N_E);
   for (let a = 0; a < nA; a++) {
     let sum = 0;
     for (let h = 0; h < nH; h++) sum += mass[a * nH + h]!;
     if (!(sum > 0)) continue;
     for (let h = 0; h < nH; h++) row[h] = mass[a * nH + h]! / sum;
     after += pa[a]! * entropy(row);
+    let esum = 0;
+    for (let e = 0; e < N_E; e++) esum += eraMass[a * N_E + e]!;
+    if (esum > 0) {
+      for (let e = 0; e < N_E; e++) eraRow[e] = eraMass[a * N_E + e]! / esum;
+      eraAfter += pa[a]! * entropy(eraRow);
+    } else eraAfter += pa[a]! * eraNow;
   }
   const pasum = pa.reduce((x, y) => x + y, 0);
-  return entropy(hypProbs(model, post)) - after / pasum;
+  const hypGain = entropy(hypProbs(model, post)) - after / pasum;
+  const eraGain = eraNow - eraAfter / pasum;
+  return hypGain + watchProb(model, post) * eraGain;
 }
 
 /** 言い切る仮説の確信度（＝一番ありそうな仮説の確率） */
 export function topConfidence(model: Model, post: Float64Array): number {
   return maxOf(hypProbs(model, post));
+}
+
+/** 見始めた年代の確信度（見る人に限った、一番ありそうな年代の確率） */
+export function eraConfidence(model: Model, post: Float64Array): number {
+  return maxOf(eraProbs(model, post));
+}
+
+/** 終えてよい確かさか: 仮説が基準に届き、見ないと言い切るのでなければ年代も基準に届いている */
+export function settled(model: Model, post: Float64Array): boolean {
+  const p = model.bank.params;
+  if (topConfidence(model, post) < p.stop.confidence) return false;
+  if (verdict(model, post).outcome === OUTCOME_NONE) return true;
+  return eraConfidence(model, post) >= p.era.stopConfidence;
 }
 
 /** 「知らない」にあたる選択肢か（選手・名物・架空は最後、クイズは「わからない」） */
@@ -118,7 +154,7 @@ export function nextItem(model: Model, s: Session, rng: Rng): Next {
   const p = model.bank.params;
   const n = s.answers.length; // ここまでに答えた数
   if (n >= p.stop.max) return null;
-  if (n >= p.stop.min && topConfidence(model, s.post) >= p.stop.confidence) return null;
+  if (n >= p.stop.min && settled(model, s.post)) return null;
 
   const qNo = n + 1;
   if (n === 0 && p.firstItem) {

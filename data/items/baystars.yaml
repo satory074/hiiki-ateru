@@ -10,6 +10,13 @@ items:
   - { id: baystars-p-ishida-kenta, kind: player, genre: player, text: 石田 健大, hint: 投手・2010〜20年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/11315130.html", check: auto }
   - { id: baystars-p-ebina, kind: player, genre: player, text: 蝦名 達夫, hint: 外野手・2020年代, teams: [baystars], tier: C, era: current, source: "https://npb.jp/bis/players/51555151.html", check: auto }
   # 選手（OB）
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（intai-fa の在籍・NPB での最後の年で選んだ）
+  - { id: baystars-p-nomura-hiroki, kind: player, genre: player, text: 野村 弘樹, hint: 投手・1990年代, teams: [baystars], tier: C, era: ob, source: "https://npb.jp/bis/players/01503866.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2002） }
+  - { id: baystars-p-saito-akio, kind: player, genre: player, text: 斉藤 明夫, hint: 投手・1980〜90年代, teams: [baystars], tier: C, era: ob, source: "https://npb.jp/bis/players/01303844.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1993） }
+  - { id: baystars-p-ichikawa-kazumasa, kind: player, genre: player, text: 市川 和正, hint: 捕手・1980〜90年代, teams: [baystars], tier: C, era: ob, source: "https://npb.jp/bis/players/31333863.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1993） }
+  - { id: baystars-p-kawamura-takeo, kind: player, genre: player, text: 川村 丈夫, hint: 投手・2000年代, teams: [baystars], tier: C, era: ob, source: "https://npb.jp/bis/players/51553884.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2008） }
+  - { id: baystars-p-mannaga, kind: player, genre: player, text: 万永 貴司, hint: 内野手・2000年代, teams: [baystars], tier: C, era: ob, source: "https://npb.jp/bis/players/31033889.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2006） }
+  - { id: baystars-p-kawahara-ryuichi, kind: player, genre: player, text: 河原 隆一, hint: 投手・1990〜2000年代, teams: [baystars], tier: C, era: ob, source: "https://npb.jp/bis/players/81383889.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2004） }
   - id: baystars-p-suzuki-takanori
     kind: player
     genre: player

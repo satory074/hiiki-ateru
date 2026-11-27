@@ -16,6 +16,13 @@ items:
   - { id: hawks-p-morifuku, kind: player, genre: player, text: 森福 允彦, hint: 投手・2000〜10年代, teams: [hawks, giants], tier: C, era: ob, source: "https://npb.jp/bis/players/61665114.html", check: auto }
   - { id: hawks-p-hasegawa, kind: player, genre: player, text: 長谷川 勇也, hint: 外野手・2010年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/21425114.html", check: auto }
   - { id: hawks-p-fujii-masao, kind: player, genre: player, text: 藤井 将雄, hint: 投手・1990年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/61963880.html", check: auto }
+  # 2026-11-27 grilling: 見始めた年代を見分ける OB（intai-fa の在籍・NPB での最後の年で選んだ）
+  - { id: hawks-p-yugami, kind: player, genre: player, text: 湯上谷 竑志, hint: 内野手・1980〜90年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/81483860.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2000） }
+  - { id: hawks-p-yamauchi-takanori, kind: player, genre: player, text: 山内 孝徳, hint: 投手・1980〜90年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/81283863.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1992） }
+  - { id: hawks-p-wakai, kind: player, genre: player, text: 若井 基安, hint: 内野手・1990年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/01203866.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 1999） }
+  - { id: hawks-p-tanoue, kind: player, genre: player, text: 田之上 慶三郎, hint: 投手・1990〜2000年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/91093881.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2007） }
+  - { id: hawks-p-honma-mitsuru, kind: player, genre: player, text: 本間 満, hint: 内野手・1990〜2000年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/81983880.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2009） }
+  - { id: hawks-p-bonishi, kind: player, genre: player, text: 坊西 浩嗣, hint: 捕手・1990〜2000年代, teams: [hawks], tier: C, era: ob, source: "https://npb.jp/bis/players/91493883.html", check: auto, note: 2026-11-27 見始めた年代を見分けるために足した（NPB での最後の年は 2003） }
 
   # --- 名物 ---
   - id: hawks-c-harry-hawk

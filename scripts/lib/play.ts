@@ -1,7 +1,7 @@
 // 仮想の回答者に1回遊ばせる（smoketest と simulate で共有）。
-// 回答者は「真の状態（仮説 h・詳しさ g・知ったかぶり o）」を持ち、モデル自身の確率表どおりに答える。
+// 回答者は「真の状態（仮説 h・詳しさ g・知ったかぶり o・見始めた年代 e）」を持ち、モデル自身の確率表どおりに答える。
 // だからここで出る的中率は「モデルが自分の前提どおりに動くか」の確認であって、実際の人の的中率ではない。
-import { Model, verdict, type Verdict } from "../../src/lib/model";
+import { Model, eOfState, gOfState, hypOfState, oOfState, verdict, type Verdict } from "../../src/lib/model";
 import { answer, newSession, nextItem, type Session } from "../../src/lib/select";
 import type { Rng } from "../../src/lib/rng";
 
@@ -9,6 +9,8 @@ export interface Truth {
   h: number;
   g: number;
   o: number;
+  /** 見始めた年代の番号（ERA_IDS の並び）。見ない人にもあるが、答え方には効かない */
+  e: number;
 }
 
 function sample(probs: number[], rng: Rng): number {
@@ -32,7 +34,7 @@ export function playOnce(model: Model, truth: Truth, rng: Rng, onStep?: (s: Sess
   for (;;) {
     const next = nextItem(model, s, rng);
     if (!next) break;
-    const a = sample(model.answerProbs(next.item, h, truth.g, truth.o), rng);
+    const a = sample(model.answerProbs(next.item, h, truth.g, truth.o, truth.e), rng);
     answer(model, s, next.item, a);
     onStep?.(s);
   }
@@ -42,6 +44,5 @@ export function playOnce(model: Model, truth: Truth, rng: Rng, onStep?: (s: Sess
 /** 事前確率どおりに真の状態を引く */
 export function sampleTruth(model: Model, rng: Rng): Truth {
   const s = sample(Array.from(model.prior), rng);
-  const per = 3 * 2;
-  return { h: Math.floor(s / per), g: Math.floor((s % per) / 2), o: s % 2 };
+  return { h: hypOfState(s), g: gOfState(s), o: oOfState(s), e: eOfState(s) };
 }
