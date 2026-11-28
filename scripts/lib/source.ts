@@ -10,6 +10,8 @@
 //                              # 選手の年代は見始めた年代の推定に使う（「1990〜2000年代」のおわりより後に見始めた人には、見る前の選手）
 //       teams: [carp]          # player / culture / quiz は 1〜3 球団。life / foil は書かない
 //       tier: C                # A（野球を見ない人でも聞いたことがある。culture だけ）/ B（野球好きなら名前は知っている）/ C（その球団のファンでないとまず知らない）
+//                              # / D（その球団の詳しいファンしか知らない。culture だけ）
+//       （現役 era: current の選手には、build が気持ちの質問「この選手が試合で活躍したら？」（id は <選手の id>-feel）を自動で足す）
 //       era: current           # player だけ: current（2026年に在籍）/ ob
 //       source: https://...    # 出典。foil 以外は必須
 //       check: auto            # auto（intai-fa と照合して一致）/ owner（オーナー確認待ち）/ ok（オーナー確認済み）
@@ -33,6 +35,8 @@ const DATA = path.join(ROOT, "data");
 export const KNOW_OPTIONS = ["よく知ってる（どんな選手か浮かぶ）", "名前は知ってる（名前だけ）", "知らない"];
 export const CULTURE_OPTIONS = ["よく知ってる（どんなものか言える）", "聞いたことはある（名前だけ）", "知らない"];
 export const DONT_KNOW_QUIZ = "わからない";
+// 気持ちの質問（2026-11-28）。最後は「知らない」（isDontKnow が最後の選択肢を知らないとみなす）
+export const FEEL_OPTIONS = ["うれしい", "ちょっとくやしい", "どちらでもない", "この選手を知らない"];
 export const REGION_TEXT = "子どものころ、いちばん長く住んでいた地方は？";
 
 export interface RawItem {
@@ -99,7 +103,7 @@ export function compileBank(src: Source): Bank {
   const fail = (it: RawItem, msg: string): never => {
     throw new Error(`${it.file} ${it.id ?? "(id なし)"}: ${msg}`);
   };
-  const items: Item[] = src.items.map((it) => {
+  const items: Item[] = src.items.flatMap((it) => {
     if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(it.id ?? "")) fail(it, "id は英小文字・数字・ハイフン");
     if (seen.has(it.id)) fail(it, "id が重複");
     seen.add(it.id);
@@ -110,9 +114,11 @@ export function compileBank(src: Source): Bank {
     if (needsTeams && (teams.length < 1 || teams.length > 3)) fail(it, "teams は 1〜3 球団");
     if (!needsTeams && teams.length > 0) fail(it, `${it.kind} に teams は書かない`);
     const tier: Tier = it.tier ?? "C";
-    if (tier !== "A" && tier !== "B" && tier !== "C") fail(it, `tier が不正: ${tier}`);
+    if (tier !== "A" && tier !== "B" && tier !== "C" && tier !== "D") fail(it, `tier が不正: ${tier}`);
     // A は「野球を見ない人でも聞いたことがある」名物だけ。選手は誰でも知っているスターを使わない決まりなので A にしない
     if (tier === "A" && it.kind !== "culture") fail(it, "tier A は culture（名物）だけ");
+    // D は「その球団の詳しいファンしか知らない」名物だけ（応援の決まりごと・2軍の球場・球団の行事）
+    if (tier === "D" && it.kind !== "culture") fail(it, "tier D は culture（名物）だけ");
 
     let options: string[];
     let correct: number | undefined;
@@ -165,7 +171,13 @@ export function compileBank(src: Source): Bank {
       item.span = [eraIndexOfDecade(d![0]), eraIndexOfDecade(d![1])];
     }
     if (it.kind === "foil") item.look = it.look === "culture" ? "culture" : "player";
-    return item;
+    // 現役の選手には気持ちの質問を足す（OB は「活躍したら？」と聞けないので足さない）
+    if (it.kind === "player" && it.era === "current") {
+      const feel: Item = { ...item, id: `${it.id}-feel`, kind: "feel", genre: "feel", options: FEEL_OPTIONS, twin: it.id };
+      item.twin = feel.id;
+      return [item, feel];
+    }
+    return [item];
   });
 
   const r = src.params.regions;

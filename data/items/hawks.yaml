@@ -119,3 +119,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/福岡ソフトバンクホークス"
     note: "2017〜2020年に4年連続日本一（パ・リーグ初） 2026-11-25 再確認: 出典で確認"
     check: owner
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: hawks-c-acchan
+    kind: culture
+    genre: cheer
+    text: アッチャン
+    hint: チャンステーマ
+    teams: [hawks]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%B3%E3%82%B9%E3%83%86%E3%83%BC%E3%83%9E"
+    check: owner
+    note: "2026-11-28 下書き: 関東・北日本の球場で使ってきたチャンステーマで、2013年途中に「ガッチャン」の名で入り、2015年に今の名前になった（原曲は、はなわの「伝説の男 〜ビバ・ガッツ〜」）。2024年の本拠地での夏の企画試合と日本シリーズで使われ、その後は関東・関西でもよく使われる（出典の記事）。曲名まで知るのは応援席に通う人だけ。出典の記事には「出典の明記」「独自研究」の注意書きがあり、公式の応援歌ページはチャンステーマを番号だけで載せている"
+  - id: hawks-c-tamasta
+    kind: culture
+    genre: stadium
+    text: タマスタ筑後
+    hint: 2軍の本拠地球場
+    teams: [hawks]
+    tier: D
+    source: "https://www.softbankhawks.co.jp/farm/stadium.html"
+    check: owner
+    note: "2026-11-28 下書き: 福岡県筑後市にある2軍・3軍の本拠地（命名権の名前はタマホーム スタジアム筑後）の略称で、公式サイトもこの略称を使う。2軍戦を見に行く人でないと略称までは知らない。名前は地名と命名権の会社名なので、筑後周辺の人は球団と関係なく知っている。"
+  - id: hawks-c-fight-kyushu
+    kind: culture
+    genre: event
+    text: ファイト！九州
+    hint: 球団の行事
+    teams: [hawks]
+    tier: D
+    source: "https://www.softbankhawks.co.jp/event/special/"
+    check: owner
+    note: "2026-11-28 下書き: 2016年の熊本・大分地震をきっかけに始まった「ファイト！九州」の主催試合で、2026年は北九州・熊本・鹿児島などで5試合あった（発足10年）。九州で球場に行く人には知られるが、中継を見るだけの人や他球団のファンはまず知らない。公式は「ファイト！九州」、日本語版ウィキペディアは「ファイト!!九州」と表記が揺れている。"
+  - id: hawks-c-ikime
+    kind: culture
+    genre: stadium
+    text: 生目の杜
+    hint: 春季キャンプ地
+    teams: [hawks]
+    tier: D
+    source: "https://npb.jp/camp/2026/spr_h.html"
+    check: owner
+    note: "2026-11-28 下書き: 2026年の春季キャンプの球場は「アイビースタジアム（宮崎市生目の杜運動公園）」（出典の NPB 春季キャンプガイド）。キャンプの便りを追うファンでないと場所までは知らない。地名と公園の名前なので、宮崎の人は球団と関係なく知っている。メガホンダンス（2024年時点でかなり廃れていると出典の記事にある）の代わりに入れた"

@@ -119,3 +119,45 @@ items:
     source: "https://baseballking.jp/ns/139275/"
     note: "本拠地の市名（北広島市）を問う案は「広島」を含むため検査に掛かるので差し替えた 2026-11-25 再確認: 出典を差し替え。Wikipedia は背番号 179 を B・B から引き継いだとだけ書き、179 の意味は書いていない。「北海道の市町村数を表す」と明記した BASEBALL KING の 2017-11-26 の記事にした"
     check: owner
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: fighters-c-chance-ichigeki
+    kind: culture
+    genre: cheer
+    text: チャンス一撃！
+    hint: チャンステーマ
+    teams: [fighters]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%B3%E3%82%B9%E3%83%86%E3%83%BC%E3%83%9E"
+    check: owner
+    note: "2026-11-28 下書き: 2012年に関西限定で入ったチャンステーマで、2023年後半から全国で使い、選手名を叫ぶ部分が地域で変わる（北海道は「けっぱれ」）。曲名まで知るのは応援席に通う人だけ。出典の記事には「出典の明記」「独自研究」の注意書きがあり、公式の応援歌ページは選手の曲と汎用テーマだけでチャンステーマを載せていない。"
+  - id: fighters-c-yoidore-march
+    kind: culture
+    genre: cheer
+    text: 酔いどれマーチ
+    hint: チャンステーマ
+    teams: [fighters]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%B3%E3%82%B9%E3%83%86%E3%83%BC%E3%83%9E"
+    check: owner
+    note: "2026-11-28 下書き: 2012年に関東限定で入ったチャンステーマで、2023年後半から全国で使う（原曲はザ50回転ズの同名曲）。男女に分かれて叫ぶ部分がある。曲名まで知るのは応援席に通う人だけ。出典はチャンス一撃！と同じ記事（注意書きあり）。"
+  - id: fighters-c-yushoryo
+    kind: culture
+    genre: stadium
+    text: 勇翔寮
+    hint: 若手選手の寮
+    teams: [fighters]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%82%BF%E3%83%BC%E3%82%BA%E9%8E%8C%E3%82%B1%E8%B0%B7%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0"
+    check: owner
+    note: "2026-11-28 下書き: 千葉県鎌ケ谷市の2軍の球場の外野側にある合宿所兼独身寮で、1997年にできた（川崎の多摩川グランドの時代から同じ名前の寮があった）。新人の入寮のニュースを追うファンでないと名前を知らない。2軍は2026年7月に北海道恵庭市への移転が決まり2030年の開業を目指すので、寮も移るとき名前が変わるかもしれない。既存の「鎌ケ谷スタジアム」と同じ場所で、知っている人が重なる。"
+  - id: fighters-c-kunigami
+    kind: culture
+    genre: stadium
+    text: かいぎんスタジアム国頭
+    hint: 2軍のキャンプ地
+    teams: [fighters]
+    tier: D
+    source: "https://npb.jp/camp/2026/spr_f.html"
+    check: owner
+    note: "2026-11-28 下書き: 2026年の2軍の春季キャンプ地（出典の NPB 春季キャンプガイドに「かいぎんスタジアム国頭」）。Wikipedia「くにがみ球場」では、本来の名前はくにがみ球場で、2006年から2軍のキャンプ地、2016年から地元の銀行の命名権の名前。キャンプの便りを追うファンでないと知らない。命名権の名前は契約しだいで変わる。地名なので沖縄本島北部の人は球団と関係なく知っている"

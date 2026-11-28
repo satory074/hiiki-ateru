@@ -110,3 +110,35 @@ items:
     source: "https://ja.wikipedia.org/wiki/千葉ロッテマリーンズ"
     check: owner
     note: "2026-11-25 再確認: 出典で確認"
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: marines-c-shirokuro-no-otokotachi
+    kind: culture
+    genre: cheer
+    text: 白黒の男たち
+    hint: 応援歌
+    teams: [marines]
+    tier: D
+    source: "https://www.marines.co.jp/fans/supportersong/"
+    check: owner
+    note: "2026-11-28 下書き: 球団公式の応援歌ページに載るチーム全体の応援歌（ページは2026年3月に更新され、2026年の選手の写真が載っている）。曲名まで知っているのは応援歌を覚えて歌うファンだけ。歌詞は載せない"
+  - id: marines-c-msplash
+    kind: culture
+    genre: cheer
+    text: M☆Splash!!
+    hint: 公式チアチーム
+    teams: [marines]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/M%E2%98%86Splash!!"
+    check: owner
+    note: "2026-11-28 下書き: 本拠地の試合や遠征先で踊る球団公式のチア・パフォーマーチームで、2004年に結成された（Wikipedia）。名前を知っているのは球場に通うファン。2軍の球場は正式名に球団名が入って使えず、応援の道具「バンデーラ」は今も使っているか確かめられず外したので、この球団の深い質問は3問"
+  - id: marines-c-keisei-hanabi
+    kind: culture
+    genre: event
+    text: 京成グループ花火ナイター
+    hint: 球団の行事
+    teams: [marines]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E5%8D%83%E8%91%89%E3%83%AD%E3%83%83%E3%83%86%E3%83%9E%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%BA"
+    check: owner
+    note: "2026-11-28 下書き: 夏休みの本拠地の試合の途中で花火を打ち上げる毎年恒例の試合で、鉄道会社のグループが協賛する（出典の記事）。夏に球場へ通うファンでないと名前までは知らない。沿線の駅や電車の広告で見て知っている人がいる"

@@ -121,3 +121,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/西武ドーム"
     check: owner
     note: "2026-11-25 再確認: 出典で確認"
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: lions-c-wasshoi
+    kind: culture
+    genre: cheer
+    text: 得点のあとのワッショイ
+    hint: 応援の決まりごと
+    teams: [lions]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E5%9F%BC%E7%8E%89%E8%A5%BF%E6%AD%A6%E3%83%A9%E3%82%A4%E3%82%AA%E3%83%B3%E3%82%BA"
+    check: owner
+    note: "2026-11-28 下書き: 点が入ると球団歌に合わせて小旗を振り、万歳三唱のあと「ワッショイ」を3回、「1・2・3・ダー」と続ける決まり（1992年から変わらない、と Wikipedia）。球場で応援に加わる人でないと知らない。祭りの掛け声と同じ言葉なので、知らない人が「聞いたことはある」と答える恐れがある。ほかの球団のチャンステーマにも「ワッショイ」の掛け声があるので、そちらのファンも「聞いたことはある」と答えやすい"
+  - id: lions-c-tankobushi
+    kind: culture
+    genre: cheer
+    text: 勝った日の炭坑節
+    hint: 応援の決まりごと
+    teams: [lions]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E5%9F%BC%E7%8E%89%E8%A5%BF%E6%AD%A6%E3%83%A9%E3%82%A4%E3%82%AA%E3%83%B3%E3%82%BA"
+    check: owner
+    note: "2026-11-28 下書き: 勝った試合のあとに「炭坑節」を演奏する決まりで、本拠地が九州にあった時代からの名残（Wikipedia）。勝った日に最後まで球場に残るファンしか知らない。炭坑節そのものは全国で知られた民謡なので、文に「勝った日の」を付けて習わしとして問う。歌詞は載せない"
+  - id: lions-c-car3219
+    kind: culture
+    genre: stadium
+    text: CAR3219フィールド
+    hint: 2軍の本拠地球場
+    teams: [lions]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E8%A5%BF%E6%AD%A6%E7%AC%AC%E4%BA%8C%E7%90%83%E5%A0%B4"
+    check: owner
+    note: "2026-11-28 下書き: 本拠地のドームと同じ敷地にある2軍の本拠地球場（もとの名前は第二球場）の命名権名で、2020年3月から、2025年に更新して2030年2月まで。2軍の試合や練習を見に行くファンしか知らない。照明を付ける工事で2026年9月から2027年6月末まで使えない（Wikipedia）が、名前は残る"
+  - id: lions-c-nango-stadium
+    kind: culture
+    genre: stadium
+    text: 南郷スタジアム
+    hint: 春季キャンプの球場
+    teams: [lions]
+    tier: D
+    source: "https://npb.jp/camp/2026/"
+    check: owner
+    note: "2026-11-28 下書き: 宮崎県日南市にある1軍の春季キャンプの球場（NPB の2026年キャンプ地一覧）。キャンプ地の球場名は、キャンプのニュースを追うか現地へ行くファンしか知らない。名前はほぼ地名で、日南の人は野球と関係なく知っている。日南市はほかの球団のキャンプ地でもあるので、そちらのファンが「聞いたことはある」と答えることがある"

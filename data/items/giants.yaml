@@ -107,3 +107,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%93%E3%83%83%E3%83%88"
     check: owner
     note: "次男ジャバは555（出典の「ミスタージャビット」節） 2026-11-25 再確認: 出典で確認。777 は妹ビッキー"
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: giants-c-cyclone
+    kind: culture
+    genre: cheer
+    text: サイクロン
+    hint: 投手交代のときの応援歌
+    teams: [giants]
+    tier: D
+    source: "https://www.giants.jp/players/music/team/"
+    check: owner
+    note: "2026-11-28 下書き: 相手の投手が代わるときに応援団の先導で歌い、タオルを回す曲。球場に通う人でないと曲名までは知らない。公式サイトの「チーム応援歌」に2026年も載っている。言葉自体はありふれている（掃除機など）ので、名前だけで「聞いたことはある」を選ぶ人が出るかもしれない"
+  - id: giants-c-g-flare
+    kind: culture
+    genre: cheer
+    text: Gフレア
+    hint: チャンステーマ
+    teams: [giants]
+    tier: D
+    source: "https://www.giants.jp/players/music/chance/"
+    check: owner
+    note: "2026-11-28 下書き: 試合中盤以降の大きなチャンスで演奏する応援団の曲（Wikipedia「チャンステーマ」では2009年から）。テレビで見るだけの人は曲名までは知らないことが多い。公式サイトの「チャンステーマ曲」に2026年も載っている。頭の G で球団の見当はつく"
+  - id: giants-c-g-town
+    kind: culture
+    genre: stadium
+    text: Gタウン
+    hint: 2軍の本拠地球場
+    teams: [giants]
+    tier: D
+    source: "https://www.giants.jp/news/23987/"
+    check: owner
+    note: "2026-11-28 下書き: 2025年3月に開業した2軍の本拠地球場（東京都稲城市）の略称で、正式名には球団名が入るので略称にした。2軍の試合を追う人でないとまず知らない。出典（2024-07-25 の球団発表）に「略称：Gタウン」とある。近くに住む人は野球を見なくても知っている可能性がある"
+  - id: giants-c-black-diamond
+    kind: culture
+    genre: event
+    text: BLACK DIAMOND SERIES
+    hint: 球団の行事
+    teams: [giants]
+    tier: D
+    source: "https://www.giants.jp/column/events2026/events2026/"
+    check: owner
+    note: "2026-11-28 下書き: 選手が黒の3rdユニホームを着る本拠地の主催試合の企画で、2026年が3年目（5月と7月の計6試合）。球場に通う人向けの企画で、外からはほとんど知られない。名前の似た他球団の企画（BLACK SUMMER WEEK）が既に質問にあるので、取り違えて答える人がいるかもしれない"

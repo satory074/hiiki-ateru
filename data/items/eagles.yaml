@@ -109,3 +109,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/東北楽天ゴールデンイーグルス"
     check: owner
     note: "2026-11-25 再確認: 出典で確認"
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: eagles-c-imoni-ranger
+    kind: culture
+    genre: cheer
+    text: イモニレンジャー
+    hint: チャンステーマ
+    teams: [eagles]
+    tier: D
+    source: "https://www.rakuteneagles.jp/team/rooterssong/"
+    check: owner
+    note: "2026-11-28 下書き: 球団公式の応援歌ページ（2026年）のチャンステーマ欄に載る曲で、原曲は山形のご当地ヒーロー「大鍋宣隊イモニレンジャー」のテーマ（Wikipedia）。チャンステーマを名前で呼べるのは応援歌を覚えて歌うファン。山形の人はご当地ヒーローとして野球と関係なく知っていることがある（オーナー判断）"
+  - id: eagles-c-tatakai-no-toki
+    kind: culture
+    genre: cheer
+    text: 戦いのとき
+    hint: チャンステーマ
+    teams: [eagles]
+    tier: D
+    source: "https://www.rakuteneagles.jp/team/rooterssong/"
+    check: owner
+    note: "2026-11-28 下書き: 球団公式の応援歌ページ（2026年）のチャンステーマ欄に載る曲。曲名まで知っているのは応援歌を覚えて歌うファンだけ。応援歌は毎年入れ替わることがあるので、2027年も残るかは開幕前に確かめる"
+  - id: eagles-c-shinrindori-izumi
+    kind: culture
+    genre: stadium
+    text: 森林どりスタジアム泉
+    hint: 2軍の本拠地球場
+    teams: [eagles]
+    tier: D
+    source: "https://www.rakuteneagles.jp/farm/stadium/"
+    check: owner
+    note: "2026-11-28 下書き: 仙台市泉区にある2軍の本拠地球場の命名権名で、球団公式のファーム球場の案内に載っている。2軍の試合を見に行くか、ファームの記事を追うファンしか知らない。「泉」は区の名前で、仙台の人は野球と関係なく知っていることがある（オーナー判断）。命名権名なので変わる可能性がある"
+  - id: eagles-c-natsusuta
+    kind: culture
+    genre: event
+    text: 夏スタ!
+    hint: 球団の行事
+    teams: [eagles]
+    tier: D
+    source: "https://www.rakuteneagles.jp/special/natsusuta/"
+    check: owner
+    note: "2026-11-28 下書き: 夏休みの時期に本拠地で開く夏のイベントで、2026年のテーマは「STARLIGHT GALAXY」（球団公式の特設ページ）。毎年テーマが変わるので、名前を知っているのは夏に球場へ通うファン。仙台の人は街の広告で見て知っていることがある"

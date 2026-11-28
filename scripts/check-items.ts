@@ -2,7 +2,7 @@
 // 実行: npm run check（npm test にも入っている）。破ったら exit 1。
 //
 //   ① 形: id が一意で、build-bank が変換できる
-//   ② 各球団の質問（選手・名物・クイズ）が 18〜30 問
+//   ② 各球団の質問（選手・名物・クイズ）が 18〜34 問（2026-11-28 に深い質問を各球団 4 問足すため 30 → 34。気持ちの質問は build が作るので数えない）
 //   ③ 架空・暮らし以外の質問に出典 URL がある
 //   ④ 質問文・手がかり・選択肢に球団名が出ない（出たら答えがばれる）。からかいの決まり文句（33-4 など）も出ない
 //   ほか: 1問目（firstItem）が暮らしの質問にあり、架空の窓（foilWindows）が重ならず、最低問数までに2つ以上ある
@@ -65,7 +65,7 @@ const perTeam = new Map(src.teams.map((t) => [t.id, 0]));
 for (const it of src.items)
   if (it.kind === "player" || it.kind === "culture" || it.kind === "quiz")
     for (const t of it.teams ?? []) if (perTeam.has(t)) perTeam.set(t, perTeam.get(t)! + 1);
-for (const [t, n] of perTeam) if (n < 18 || n > 30) err(null, `② ${t} の質問が ${n} 問（18〜30 問にする）`);
+for (const [t, n] of perTeam) if (n < 18 || n > 34) err(null, `② ${t} の質問が ${n} 問（18〜34 問にする）`);
 
 for (const it of src.items) {
   // ③ 出典

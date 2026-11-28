@@ -108,3 +108,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A2%E3%83%A9"
     check: owner
     note: "デビューした1994年にちなむ 2026-11-25 再確認: 出典で確認。1997 はシャオロンの背番号"
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: dragons-c-kimetekure
+    kind: culture
+    genre: cheer
+    text: チャンス決めてくれ
+    hint: チャンステーマ
+    teams: [dragons]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%B3%E3%82%B9%E3%83%86%E3%83%BC%E3%83%9E"
+    check: owner
+    note: "2026-11-28 下書き: 試合終盤のチャンスで演奏する応援団の曲（Wikipedia では2019年から）。球場に通う人でないと曲名は知らない。公式サイトに応援歌の一覧が無く、出典は Wikipedia だけ（記事に「出典の明記」の注意書きがある）"
+  - id: dragons-c-uchikudake
+    kind: culture
+    genre: cheer
+    text: チャンス打ち砕け
+    hint: チャンステーマ
+    teams: [dragons]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%B3%E3%82%B9%E3%83%86%E3%83%BC%E3%83%9E"
+    check: owner
+    note: "2026-11-28 下書き: 2025年に当時の監督の求めで作られた、威圧感のあるチャンステーマ。新しい曲なので球場に通う人しか知らない。公式サイトに応援歌の一覧が無いので、曲名の表記は Wikipedia に従った。その監督は2026年9月に退任を表明したので、2027年も使うかは開幕前に必ず確かめる"
+  - id: dragons-c-shoryukan
+    kind: culture
+    genre: stadium
+    text: 昇竜館
+    hint: 若手選手の寮
+    teams: [dragons]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%82%B4%E3%83%A4%E7%90%83%E5%A0%B4"
+    check: owner
+    note: "2026-11-28 下書き: 2軍の本拠地球場の隣にある若手選手の寮（合宿所）で、2003年に今の場所へ移った。入寮の話題を追う熱心なファンでないと名前までは知らない。2軍の本拠地を移す計画があり、いずれ寮も移る見込み。「竜」の字で球団の見当がつく（ほかに使える候補が無いので残した）"
+  - id: dragons-c-drakoi
+    kind: culture
+    genre: event
+    text: ドラ恋ユニホーム
+    hint: 球団の行事
+    teams: [dragons]
+    tier: D
+    source: "https://dragons.jp/special/drakoi/2026/"
+    check: owner
+    note: "2026-11-28 下書き: 本拠地の主催試合で女性の来場者に限定ユニホームを配る企画で、公式サイトに2023〜2026年の特集ページがある。球場に通う人でないと知らない。「ドラ」で球団の見当がつく（ほかに使える候補が無いので残した）"

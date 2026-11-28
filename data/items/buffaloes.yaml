@@ -121,3 +121,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/オリックス・バファローズ"
     note: "1996年以来 25年ぶり 2026-11-25 再確認: 「2021年のリーグ優勝」だけではセ・リーグ（2021年はヤクルトが優勝）とも取れるので、text に「パ・リーグ」を足した。1996年以来25年ぶりは出典で確認"
     check: owner
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: buffaloes-c-ushiotoko
+    kind: culture
+    genre: cheer
+    text: 丑男　-COW BOY-
+    hint: 応援歌
+    teams: [buffaloes]
+    tier: D
+    source: "https://www.buffaloes.co.jp/team/teamsong.html"
+    check: owner
+    note: "2026-11-28 下書き: 球団公式の応援歌ページ（その他応援歌）に載るチーム全体の応援歌（公式の表記は全角の空白）。曲名まで言えるのは応援歌を覚えて歌い込むファン。公式ページに年の表記がないので、2026年も演奏しているかはオーナー確認。歌詞は載せない"
+  - id: buffaloes-c-ushiou
+    kind: culture
+    genre: cheer
+    text: 丑王　-Bs history-
+    hint: 応援歌
+    teams: [buffaloes]
+    tier: D
+    source: "https://www.buffaloes.co.jp/team/teamsong.html"
+    check: owner
+    note: "2026-11-28 下書き: 球団公式の応援歌ページ（その他応援歌）に載るチーム全体の応援歌（公式の表記は全角の空白）。Wikipedia「チャンステーマ」では2019年から。曲名まで言えるのは応援歌を歌い込むファンだけ。「Bs」は球団の略称で、知っている人には球団が分かる。2026年も演奏しているかはオーナー確認"
+  - id: buffaloes-c-seitokan
+    kind: culture
+    genre: stadium
+    text: 青濤館
+    hint: 若手選手の寮
+    teams: [buffaloes]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E8%88%9E%E6%B4%B2%E3%83%99%E3%83%BC%E3%82%B9%E3%83%9C%E3%83%BC%E3%83%AB%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0"
+    check: owner
+    note: "2026-11-28 下書き: 2軍の球場の隣にある若手の選手寮の名前で、初代は1991年に神戸、2代目は2016年に大阪・舞洲に建てて2017年から使う。寮の名前は入寮やファームのニュースを追うファンしか知らない。建物は移ったが名前は引き継いでいる"
+  - id: buffaloes-c-sugimoto-bs
+    kind: culture
+    genre: stadium
+    text: 杉本商事BS
+    hint: 2軍の本拠地球場
+    teams: [buffaloes]
+    tier: D
+    source: "https://www.buffaloes.co.jp/stadium/buffaloes_stadium/"
+    check: owner
+    note: "2026-11-28 下書き: 大阪・舞洲にある2軍の本拠地球場の命名権名の略称で、球団公式のファームの案内と NPB の2026年ファームの試合結果がこの略称を使う。正式名には球団名が入るので略称にした。2軍の試合を見に行くか、ファームの結果を追うファンしか知らない。命名権名は2017年から何度か変わっていて、また変わる可能性がある"

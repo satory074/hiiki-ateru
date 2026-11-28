@@ -6,6 +6,7 @@
 //      actual は main・others・era（年代を選んだときだけ）、答えは遊んだ質問と一致する。送り先が無ければ送らない。
 //      「野球はあまり見ない」を選ぶと年代の欄は使えなくなり、年代を送らない。
 //      送った記録がある端末からは、同じ版をもう一度送らない
+//   ⓐ'' 気持ちの質問は「この選手が試合で活躍したら？」の見出しと 4 つの選択肢で出し、1 回に feel.maxPerGame 問まで
 //   ⓓ X のシェアは結果ページの URL を載せる
 //   ⓔ 当たり判定（本命・2番手・2球団・贔屓なし・見ない）
 import fs from "node:fs";
@@ -58,16 +59,24 @@ function setup(api: ResultApi, seed: number, sentStore?: { has(v: string): boole
 }
 
 // ⓐ ⓑ
+let feelSeen = 0;
 for (let seed = 1; seed <= 6; seed++) {
   const sent: ResultPayload[] = [];
   const api: ResultApi = { enabled: true, record: async (p) => (sent.push(p), true) };
   const { root, game, click, opened } = setup(api, seed);
   click('[data-action="start"]');
   let n = 0;
+  let feelShown = 0;
   while (root.querySelector('[data-view="question"]')) {
     const board = root.querySelector('[data-view="question"]')!;
     const text = board.textContent ?? "";
     for (const w of teamWords) assert(!text.includes(w), `ⓐ 質問中の画面に球団名「${w}」が出ない（${text}）`);
+    if ((board.getAttribute("data-item") ?? "").endsWith("-feel")) {
+      feelShown++;
+      assert(board.querySelector(".q-kind")?.textContent === "この選手が試合で活躍したら？", "ⓐ'' 気持ちの質問の見出し");
+      assert([...board.querySelectorAll(".opt")].map((o) => o.textContent).join("／") === "うれしい／ちょっとくやしい／どちらでもない／この選手を知らない", "ⓐ'' 気持ちの質問の選択肢");
+      assert(board.querySelector(".q-hint"), "ⓐ'' 気持ちの質問にも手がかり（守備・年代）を出す");
+    }
     n++;
     if (n === 3) {
       const before = game.state().steps.length;
@@ -85,6 +94,8 @@ for (let seed = 1; seed <= 6; seed++) {
   }
   const steps = game.state().steps.length;
   assert(steps >= bank.params.stop.min && steps <= bank.params.stop.max, `ⓐ 質問数が範囲内（${steps}）`);
+  assert(feelShown <= bank.params.feel.maxPerGame, `ⓐ'' 気持ちの質問は ${bank.params.feel.maxPerGame} 問まで（${feelShown}）`);
+  feelSeen += feelShown;
   const result = root.querySelector('[data-view="result"]');
   assert(result, "ⓐ 結果の画面になる");
   assert((root.querySelector(".verdict")?.textContent ?? "").startsWith("あなた"), "ⓐ 言い切りの文がある");
@@ -129,6 +140,8 @@ for (let seed = 1; seed <= 6; seed++) {
   click('[data-action="again"]');
   assert(root.querySelector('[data-view="question"]') && game.state().steps.length === 0, "ⓐ もう一度で最初の質問に戻る");
 }
+
+assert(feelSeen > 0, "ⓐ'' 6 回遊ばせて、気持ちの質問が 1 問は出る（見出し・選択肢の確かめが空回りしない）");
 
 // ⓒ 送り先が無いときは送らない
 {

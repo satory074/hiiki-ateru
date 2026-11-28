@@ -1,10 +1,12 @@
 // 当てる仕組みの不変条件。実行: npx tsx scripts/smoketest.ts（npm test にも入っている）
 //   Ⓐ 事前確率と、どの質問・どの状態（1920）の答えの確率も合計 1・0 以上
 //   Ⓐ' 見始めた年代: 見ない人の答え方は年代で変わらない。活躍を終えた選手は、見始めたのが後の人ほど「知らない」が減らない
+//   Ⓐ'' 気持ちの質問: 「知らない」の確率は、同じ選手の知識の質問の「知らない」とどの状態でも同じ
 //   Ⓑ どんな答え方をしても、毎問のあとで 1920 状態と結果 15 種類・年代 4 区分の確率が合計 1・0 以上・有限
 //   Ⓒ 質問は 10〜40 問で終わり、同じ質問は 2 度出ない。架空は決めた番手だけ、地方は 1 回まで
 //   Ⓓ 結果の球団の数が形と合う（本命 1・複数 2・それ以外 0）。決め手は答えた質問から選ばれる
 //      上限（40問）より前に終わったなら、仮説の確信度が基準に届き、見ないと言い切る以外は年代の確信度も基準に届いている
+//   Ⓖ 気持ちの質問は 1 回に feel.maxPerGame 問まで。同じ選手を知識と気持ちの両方で聞かない
 //   Ⓕ 次の質問を選ぶ計算が、1問あたり 200ms 以内（状態が 4 倍になったので測る）
 //   Ⓔ reflect の逆算: モデル自身の答え方（知ったかぶりの人も混ざった形）を読ませると、モデルの元の数字（知ったかぶりでない人の形）に戻る
 // 本物の質問（src/generated/bank.json）と、仮の質問（scripts/lib/synthetic.ts）の両方で確かめる。
@@ -43,6 +45,15 @@ function checkBank(name: string, bank: Bank, runs: number): void {
             assert(probs.length === item.options.length, `${name}: ${item.id} の確率の数 = 選択肢の数`);
             assert(probs.every((x) => x >= 0 && Number.isFinite(x)), `${name}: ${item.id} の確率が 0 以上`);
             assert(close(probs.reduce((a, b) => a + b, 0), 1), `${name}: ${item.id} の確率の合計が 1`);
+          }
+          // Ⓐ'' 気持ちの「知らない」= 同じ選手の知識の「知らない」
+          if (item.kind === "feel" && item.twin) {
+            const twin = model.itemById.get(item.twin)!;
+            for (let e = 0; e < N_E; e++) {
+              const a = byEra[e]!;
+              const b = model.answerProbs(twin, h, g, o, e);
+              assert(close(a[a.length - 1]!, b[b.length - 1]!), `${name}: ${item.id} の「知らない」が ${twin.id} と同じ`);
+            }
           }
           // Ⓐ' 見ない人は年代を問わない
           if (h.kind === "none")
@@ -99,6 +110,10 @@ function checkBank(name: string, bank: Bank, runs: number): void {
       if (b <= n) assert(k === 1, `${name}: 通り過ぎた窓には架空が1問ある（${a}〜${b} 問目）`);
     }
     if (p.firstItem) assert(session.answers[0]?.itemId === p.firstItem, `${name}: 1問目は ${p.firstItem}`);
+    // Ⓖ 気持ちの質問の上限と、同じ選手を二度聞かないこと
+    const askedItems = session.answers.map((a) => model.itemById.get(a.itemId)!);
+    assert(askedItems.filter((i) => i.kind === "feel").length <= p.feel.maxPerGame, `${name}: 気持ちの質問は ${p.feel.maxPerGame} 問まで`);
+    for (const i of askedItems) if (i.twin) assert(!session.asked.has(i.twin), `${name}: ${i.id} と ${i.twin} を両方聞いていない`);
     assert(session.answers.filter((a) => a.itemId === "region").length <= 1, `${name}: 地方は 1 回まで`);
 
     const v = verdict(model, session.post);
@@ -131,7 +146,7 @@ function checkReflect(name: string, bank: Bank): void {
   const model = new Model(bank);
   const { modelDist, deOverclaim, collapse } = makeReflect(model);
   const pick = (kind: string) => bank.items.filter((i) => i.kind === kind).slice(0, 3);
-  for (const item of [...pick("player"), ...pick("culture"), ...pick("quiz"), ...pick("life")]) {
+  for (const item of [...pick("player"), ...pick("culture"), ...pick("quiz"), ...pick("life"), ...pick("feel")]) {
     const rels: Key[] = item.kind === "life" ? ["fan1", "fan2", "neutral", "none"] : ["fan", "same", "other", "neutral", "none"];
     for (const rel of rels) {
       const back = deOverclaim(item, modelDist(item, rel));

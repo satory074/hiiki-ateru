@@ -130,3 +130,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/MAZDA_Zoom-Zoom_%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0%E5%BA%83%E5%B3%B6"
     check: owner
     note: "2026-11-25 再確認: 出典で確認"
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: carp-c-tobasu-chance
+    kind: culture
+    genre: cheer
+    text: 飛ばすチャンス
+    hint: チャンステーマ
+    teams: [carp]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%B3%E3%82%B9%E3%83%86%E3%83%BC%E3%83%9E"
+    check: owner
+    note: "2026-11-28 下書き: 私設応援団のチャンステーマ3の曲名で、2009年から試合中盤以降の大チャンスで演奏される。曲は球場で耳にしても、曲名まで言えるのは応援席に通う人くらい。出典の記事には「出典の明記」「独自研究」の注意書きがあり、球団公式サイトには応援歌の一覧がない（1・2は欠番と出典にある）。"
+  - id: carp-c-kiwami-chance
+    kind: culture
+    genre: cheer
+    text: 極チャンス
+    hint: チャンステーマ
+    teams: [carp]
+    tier: D
+    source: "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%B3%E3%82%B9%E3%83%86%E3%83%BC%E3%83%9E"
+    check: owner
+    note: "2026-11-28 下書き: チャンステーマ4の曲名で、2012年から終盤の同点・逆転・勝ち越しの大チャンスで演奏される。曲名で呼ぶのは応援席に通う人くらい。出典は飛ばすチャンスと同じ記事（注意書きあり）。"
+  - id: carp-c-yuu
+    kind: culture
+    genre: stadium
+    text: 由宇練習場
+    hint: 2軍の本拠地球場
+    teams: [carp]
+    tier: D
+    source: "https://www.carp.co.jp/farm/yuu"
+    check: owner
+    note: "2026-11-28 下書き: 山口県岩国市由宇町にある2軍の本拠地で、公式サイトでは2軍戦を入場無料と案内している。2軍の試合を見に行くか、調整中の選手の動きを追う人でないと知らない。名前の大半は地名（由宇）なので、岩国周辺の人は球団と関係なく知っているかもしれない。地元の報道では「由宇」だけでよく出るので、地元のふつうのファンにも知られている可能性がある。"
+  - id: carp-c-tenpuku
+    kind: culture
+    genre: stadium
+    text: 天福球場
+    hint: 春季キャンプの球場
+    teams: [carp]
+    tier: D
+    source: "https://npb.jp/camp/2026/spr_c.html"
+    check: owner
+    note: "2026-11-28 下書き: 宮崎県日南市の球場で、2026年も1軍が2月1日〜12日のキャンプに使った（出典の NPB 春季キャンプガイド。2軍も後半に使う）。1963年から春・秋のキャンプ地なのは日本語版ウィキペディア「日南市天福球場」による。キャンプの便りを追うファンでないと球場名までは知らない。地名なので日南の人は球団と関係なく知っている。"

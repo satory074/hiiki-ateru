@@ -75,7 +75,11 @@ export function makeReflect(model: Model) {
     const p = bank.params;
     const k = p.priorO[1]! * p.overclaimLambda;
     let out: number[];
-    if (item.kind === "quiz") {
+    if (item.kind === "feel") {
+      // 気持ち: 知ったかぶりの人は「知らない」の λ 分を「どちらでもない」へ移すので、それを戻す
+      const no = e[3]! / (1 - k);
+      out = [e[0]!, e[1]!, e[2]! - k * no, no];
+    } else if (item.kind === "quiz") {
       const nC = item.options.length - 1;
       const dk = e[2]! / (1 - k);
       out = [e[0]! - (k * dk) / nC, e[1]! - (k * dk * (nC - 1)) / nC, dk];

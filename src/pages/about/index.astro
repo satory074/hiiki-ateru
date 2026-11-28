@@ -10,6 +10,7 @@ const counts = {
   life: bank.items.filter((i) => i.kind === "life" || i.kind === "league2" || i.kind === "eralife").length,
   eralife: bank.items.filter((i) => i.kind === "eralife").length,
   foil: bank.items.filter((i) => i.kind === "foil").length,
+  feel: bank.items.filter((i) => i.kind === "feel").length,
 };
 const foilWindows = p.foilWindows.map(([a, b]) => `${a}〜${b}`).join("・");
 const description = "12球団当てが、知っている選手や名物の答えから贔屓球団と野球を見始めた年代を当てるしくみと、答え合わせの集計で保存するもの・しないものの説明です。";
@@ -22,7 +23,7 @@ const description = "12球団当てが、知っている選手や名物の答え
     <h2>何を聞くのか</h2>
     <p>
       質問は全部で {bank.items.length} 問あり、その中から答えに合わせて {p.stop.min}〜{p.stop.max} 問を選びます（1問目は、野球中継を見る頻度です）。
-      内訳は、選手 {counts.player} 問、球場のグルメ・マスコット・応援などの名物 {counts.culture} 問、クイズ {counts.quiz} 問、
+      内訳は、選手 {counts.player} 問、現役の選手が「試合で活躍したら？」{counts.feel} 問、球場のグルメ・マスコット・応援などの名物 {counts.culture} 問、クイズ {counts.quiz} 問、
       あなた自身のこと {counts.life} 問（うち、見始めたころのこと {counts.eralife} 問）、実在しない選手・名物 {counts.foil} 問、子どものころの地方 1 問です。誰でも知っているスター選手は、手がかりにならないので聞きません。
       選手の所属は 2026 年 11 月時点で確かめたものです。毎年、オフと開幕前に見直します。
     </p>
@@ -33,6 +34,13 @@ const description = "12球団当てが、知っている選手や名物の答え
       それぞれについて「その人ならこの質問にどう答えそうか」の確率を持っています。答えるたびに、どの見立てがありそうかを計算し直し（ベイズ更新）、
       次は「答えで見立てが一番絞れそうな質問」を選びます。いちばんありそうな見立ての確率（確信度）が {Math.round(p.stop.confidence * 100)}% を超え、
       見始めた年代の確信度も {Math.round(p.era.stopConfidence * 100)}% を超えるか、{p.stop.max} 問に達したら、最後に1回だけ言い切ります。
+    </p>
+
+    <h2>野球に詳しい人のために</h2>
+    <p>
+      野球に詳しい人は、ほかの球団の選手もよく知っています。「知っているか」だけで当てようとすると、知っている選手の多い別の球団に引っぱられがちです。
+      そこで、現役の選手について「試合で活躍したら、うれしいか・ちょっとくやしいか」も聞きます（1回に {p.feel.maxPerGame} 問まで。同じ選手を二度は聞きません）。
+      応援の決まりごとや2軍の球場のように、その球団の詳しいファンでないと知らないものも混ぜています。
     </p>
 
     <h2>見始めた年代の当て方</h2>

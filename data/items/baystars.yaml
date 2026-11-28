@@ -129,3 +129,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E3%81%AE%E6%97%A5%E6%9C%AC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA"
     check: owner
     note: "2026-11-25 再確認: 出典で確認"
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: baystars-c-yusha-no-idenshi
+    kind: culture
+    genre: cheer
+    text: 勇者の遺伝子
+    hint: 応援歌
+    teams: [baystars]
+    tier: D
+    source: "https://www.baystars.co.jp/community/song/chant.php"
+    check: owner
+    note: "2026-11-28 下書き: 2013年に作られた応援歌で、Wikipedia（応援スタイルの節。出典の明記なし）では相手の投手が代わるときにタオルを広げて歌う。球場に通う人でないと曲名は知らない。2026年も公式サイトの応援歌のページにある。最寄り駅の発車メロディにもなっているので、野球と関係なく名前を聞いた人がいるかもしれない"
+  - id: baystars-c-rising-theme
+    kind: culture
+    genre: cheer
+    text: ライジングテーマ
+    hint: 応援歌
+    teams: [baystars]
+    tier: D
+    source: "https://www.baystars.co.jp/players/theme"
+    check: owner
+    note: "2026-11-28 下書き: 大差で負けている場面などで、走者がいなくても選手を励ますために歌う応援団の曲（Wikipedia「チャンステーマ」では2008年途中から）。偶数番は鳴り物なしで歌う決まりがあり、球場に通う人しか知らない。2026年も公式サイトの「テーマ別応援歌」にある"
+  - id: baystars-c-seiseiryo
+    kind: culture
+    genre: stadium
+    text: 青星寮
+    hint: 若手選手の寮
+    teams: [baystars]
+    tier: D
+    source: "https://www.baystars.co.jp/news/2019/07/0703_03.php"
+    check: owner
+    note: "2026-11-28 下書き: 横須賀の2軍施設の中にある若手選手の寮（せいせいりょう）で、2019年7月に今の建物を新設。入寮の話題を追う熱心なファンでないと知らない。出典に、歴代の寮生に愛されてきた「青星寮カレー」を引き続き出すとある"
+  - id: baystars-c-blue-light
+    kind: culture
+    genre: event
+    text: BLUE☆LIGHT SERIES
+    hint: 球団の行事
+    teams: [baystars]
+    tier: D
+    source: "https://www.baystars.co.jp/event/specialevent/"
+    check: owner
+    note: "2026-11-28 下書き: 本拠地の球場が青一色に光り、ライブパフォーマンスで盛り上げる夜の企画（出典の球団公式のイベントページ）。2026年は4月と9月に開催し、4月の3試合は開始が15分早かった。球場に通う人向けの企画で、外からはほとんど知られない"

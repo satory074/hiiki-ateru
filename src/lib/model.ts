@@ -19,6 +19,11 @@
 //   そのときの答え方は、今の表と「野球を見ない人の表（know.none）」を r^d : 1−r^d で混ぜたもの。
 //   r は贔屓球団の選手なら era.retain.fan（語り継がれるので少し知っている）、それ以外は era.retain.other（ほぼ知らない）。
 //   今も見ている人は、見始めたあとの選手をふつうに知っている（d=0 は今の表のまま）。
+//
+// 気持ちの質問 feel（2026-11-28）:
+//   詳しい人は他球団の選手も知っているので、「知っているか」だけだと別の球団に引っぱられる。
+//   そこで現役の選手に「試合で活躍したら？」も聞く。知らない確率は同じ選手の知識の質問と同じにし、
+//   知っている人の気持ち（うれしい／ちょっとくやしい／どちらでもない）は関係ごとの表 params.feel.known で引く。
 import {
   ERA_IDS,
   N_OUTCOMES,
@@ -119,15 +124,23 @@ export class Model {
       case "player":
       case "culture": {
         const rel = this.relation(h, item);
-        let [w, n, no] = (ov?.[rel] ?? p.know[rel][item.tier][g]!) as [number, number, number];
-        // 見始める前に活躍を終えた選手（d 区分前）: 見ない人の表へ r^d で寄せる
-        const d = item.span && rel !== "none" ? Math.max(0, e - item.span[1]) : 0;
-        if (d > 0) {
-          const keep = Math.pow(rel === "fan" ? p.era.retain.fan : p.era.retain.other, d);
-          const [w0, n0, no0] = p.know.none[item.tier][g]! as [number, number, number];
-          [w, n, no] = [keep * w + (1 - keep) * w0, keep * n + (1 - keep) * n0, keep * no + (1 - keep) * no0];
+        const [w, n, no] = this.knowBase(item, rel, g, e, ov?.[rel]);
+        return [w, n + lambda * no, no * (1 - lambda)];
+      }
+      case "feel": {
+        // 気持ちの質問: 「知らない」は同じ選手の知識の質問と同じ確率（twin の答え合わせの直しも使う）。
+        // 知っている人の気持ちは関係ごとの表。知ったかぶり（O=高）の λ 分は「どちらでもない」へ（知っているふりをしても気持ちは無い）
+        const rel = this.relation(h, item);
+        const own = ov?.[rel];
+        let base: number[];
+        if (own) base = normalize(own); // 答え合わせから直した「知ったかぶりでない人」の 4 つ組
+        else {
+          const no = this.knowBase(item, rel, g, e, item.twin ? p.itemOverrides?.[item.twin]?.[rel] : undefined)[2];
+          const known = normalize(p.feel.known[rel]);
+          base = [...known.map((x) => x * (1 - no)), no];
         }
-        return normalize([w, n + lambda * no, no * (1 - lambda)]);
+        const no = base[3]!;
+        return [base[0]!, base[1]!, base[2]! + lambda * no, no * (1 - lambda)];
       }
       case "foil": {
         const [w, n, no] = p.foil;
@@ -173,6 +186,22 @@ export class Model {
         return [...base.map((q) => q * (1 - r.elsewhere.p)), r.elsewhere.p];
       }
     }
+  }
+
+  /**
+   * 知識の質問の [よく知ってる, 名前は知ってる, 知らない]（合計 1・知ったかぶりの補正の前）。row があればそれを表の代わりに使う（答え合わせの直し）。
+   * 見始める前に活躍を終えた選手（d 区分前）は、見ない人の表へ r^d で寄せる
+   */
+  knowBase(item: Item, rel: Relation, g: number, e: number, row?: number[]): [number, number, number] {
+    const p = this.bank.params;
+    let [w, n, no] = (row ?? p.know[rel][item.tier][g]!) as [number, number, number];
+    const d = item.span && rel !== "none" ? Math.max(0, e - item.span[1]) : 0;
+    if (d > 0) {
+      const keep = Math.pow(rel === "fan" ? p.era.retain.fan : p.era.retain.other, d);
+      const [w0, n0, no0] = p.know.none[item.tier][g]! as [number, number, number];
+      [w, n, no] = [keep * w + (1 - keep) * w0, keep * n + (1 - keep) * n0, keep * no + (1 - keep) * no0];
+    }
+    return normalize([w, n, no]) as [number, number, number];
   }
 
   /** 状態ごとの答えの確率（nStates × 選択肢数、行優先） */

@@ -107,3 +107,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A9%E3%83%83%E3%82%AD%E3%83%BC"
     check: owner
     note: "1994 はラッキーの胸番号（出典に記載） 2026-11-25 再確認: 出典で確認"
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: tigers-c-chance-shurai
+    kind: culture
+    genre: cheer
+    text: チャンス襲来
+    hint: チャンステーマ
+    teams: [tigers]
+    tier: D
+    source: "https://hanshintigers.jp/data/march/"
+    check: owner
+    note: "2026-11-28 下書き: ふつうのチャンスで演奏する応援団の曲（Wikipedia「チャンステーマ」では2010年から）。公式サイトの応援歌のページに「メガホンを使わず手拍子で」とあり、この決まりまで知っているのは球場に通う人だけ。2026年も公式サイトに載っている"
+  - id: tigers-c-t-wave
+    kind: culture
+    genre: cheer
+    text: T-WAVE
+    hint: チャンステーマ
+    teams: [tigers]
+    tier: D
+    source: "https://hanshintigers.jp/data/march/"
+    check: owner
+    note: "2026-11-28 下書き: ややチャンスの場面で、ゆっくりした版から速い版へつないで演奏する応援団の曲（Wikipedia「チャンステーマ」では2017年から）。球場に通う人でないと知らない。2026年も公式サイトの応援歌のページに載っている"
+  - id: tigers-c-wakabayashi-sho
+    kind: culture
+    genre: event
+    text: 若林忠志賞
+    hint: 球団の表彰
+    teams: [tigers]
+    tier: D
+    source: "https://hanshintigers.jp/community/wakabayashi/"
+    check: owner
+    note: "2026-11-28 下書き: 社会貢献やファンサービスを続ける所属選手を、原則として毎年1人表彰する球団の賞で、2011年度から（2017年度は選手会への特別賞のみ、2020年度は見送り）。名前は球団創成期のエースから取っていて、熱心なファンでないと知らない"
+  - id: tigers-c-sgl-stadium
+    kind: culture
+    genre: stadium
+    text: 日鉄鋼板 SGLスタジアム 尼崎
+    hint: 2軍の本拠地球場
+    teams: [tigers]
+    tier: D
+    source: "https://zerocarbon-bp.hanshin.co.jp/park/sgl_stadium.html"
+    check: owner
+    note: "2026-11-28 下書き: 2025年3月に開業した2軍の本拠地球場（兵庫県尼崎市）。2軍の試合を見る人でないと名前までは知らない。名前の半分は会社名と地名（尼崎）なので、尼崎の住民は野球を見なくても知っている可能性がある（オーナー判断）。前の本拠地の鳴尾浜球場は既に質問にある"

@@ -108,3 +108,45 @@ items:
     source: "https://ja.wikipedia.org/wiki/%E3%81%A4%E3%81%B0%E4%B9%9D%E9%83%8E"
     check: owner
     note: "2026-11-25 再確認: 出典で確認"
+
+  # --- 深い質問（知名度 D: その球団の詳しいファンしか知らない。2026-11-28。Claude の下書き・別のエージェントが出典を確認・オーナー確認待ち） ---
+  - id: swallows-c-chance-kawabata
+    kind: culture
+    genre: cheer
+    text: チャンス川端
+    hint: チャンステーマ
+    teams: [swallows]
+    tier: D
+    source: "https://www.yakult-swallows.co.jp/players/song"
+    check: owner
+    note: "2026-11-28 下書き: 元は川端慎吾の個人チャンステーマで、本人の提案で引退後の2026年からチームのチャンステーマになった（経緯は日本語版ウィキペディア「チャンステーマ」、曲名は公式の応援歌ページ）。始まったばかりで、応援席に通う人しか知らない。選手の項目 swallows-p-kawabata と重なり、選手を知っているだけで「聞いたことはある」が出やすい。"
+  - id: swallows-c-ima-koko-kara
+    kind: culture
+    genre: cheer
+    text: 今ここから
+    hint: 応援の曲
+    teams: [swallows]
+    tier: D
+    source: "https://www.yakult-swallows.co.jp/players/song"
+    check: owner
+    note: "2026-11-28 下書き: 公式の応援歌ページにマルチテーマD として載る曲で、2017年に初回の攻撃前のテーマとして入り、今は終盤の大事な回の攻撃前にも使う（年と使い方は日本語版ウィキペディア「チャンステーマ」）。曲名まで知るのは応援席に通う人だけ。ありふれた言い回しなので、知らない人が「聞いたことはある」と答えやすい。"
+  - id: swallows-c-ensei
+    kind: culture
+    genre: event
+    text: 燕征
+    hint: ファンクラブの企画
+    teams: [swallows]
+    tier: D
+    source: "https://www.yakult-swallows.co.jp/fanclub/ensei/2026"
+    check: owner
+    note: "2026-11-28 下書き: ファンクラブ会員がビジターの試合に行くと、来場ポイントと企画限定のトレカがもらえる企画で、2026年も実施（読みは「えんせい」）。ファンクラブに入って遠征する人でないと名前を知らない。毎年続くかは翌年のページで確かめる。「燕」の字で球団の見当がつく。"
+  - id: swallows-c-urasoe
+    kind: culture
+    genre: event
+    text: 浦添キャンプ
+    hint: 春季キャンプ
+    teams: [swallows]
+    tier: D
+    source: "https://www.yakult-swallows.co.jp/special/camp2026"
+    check: owner
+    note: "2026-11-28 下書き: 沖縄県浦添市の ANA BALL PARK 浦添（浦添市民球場）で行う1軍の春季キャンプで、公式のキャンプページがこの呼び名を使う（2026年は2月1日〜26日。NPB の春季キャンプガイドでも確認）。キャンプの便りを追うファンでないと場所までは知らない。地名なので沖縄の人は球団と関係なく知っている。"

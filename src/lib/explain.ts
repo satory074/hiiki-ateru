@@ -54,6 +54,8 @@ export function describeItem(teams: Team[], item: Item): string {
   switch (item.kind) {
     case "player":
       return `${item.text}（${names}${item.hint ? `・${item.hint}` : ""}）`;
+    case "feel":
+      return `${item.text}（${names}${item.hint ? `・${item.hint}` : ""}）が活躍したら`;
     case "culture":
     case "quiz":
       return names ? `${item.text}（${names}）` : item.text;

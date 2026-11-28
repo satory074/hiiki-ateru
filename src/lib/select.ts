@@ -9,6 +9,8 @@
 //   - 1問目は firstItem（中継を見る頻度）に固定する
 //   - 架空の質問（foil）は、窓（3〜5・8〜10・14〜18・22〜26問目）ごとにくじで選んだ番手に1問ずつ入れる
 //   - 地方の質問は、行き詰まったときに1回だけ
+//   - 気持ちの質問（この選手が活躍したら？）は 1 回に params.feel.maxPerGame 問まで。同じ選手は知識・気持ちのどちらか 1 回だけ
+//     （「知らない」を二重に数えないため。item.twin が聞いてあれば出さない）
 //   - 10〜30問。最低問数を超えて、言い切る仮説の確信度が基準（85%）を超え、
 //     さらに見始めた年代の確信度も基準（80%）を超えたら終える（見ないと言い切るときは年代を問わない）
 import { Model, N_E, PER_HYP, eOfState, eraProbs, hypProbs, initialPosterior, update, verdict, watchProb } from "./model";
@@ -132,10 +134,15 @@ export function settled(model: Model, post: Float64Array): boolean {
   return eraConfidence(model, post) >= p.era.stopConfidence;
 }
 
-/** 「知らない」にあたる選択肢か（選手・名物・架空は最後、クイズは「わからない」） */
+/** 「知らない」にあたる選択肢か（選手・名物・架空・気持ちは最後、クイズは「わからない」） */
 export function isDontKnow(item: Item, answer: number): boolean {
-  return (item.kind === "player" || item.kind === "culture" || item.kind === "foil" || item.kind === "quiz") &&
+  return (item.kind === "player" || item.kind === "culture" || item.kind === "foil" || item.kind === "quiz" || item.kind === "feel") &&
     answer === item.options.length - 1;
+}
+
+/** ここまでに出した気持ちの質問の数 */
+export function feelCount(model: Model, s: Session): number {
+  return s.answers.filter((a) => model.itemById.get(a.itemId)?.kind === "feel").length;
 }
 
 function regionStalled(model: Model, s: Session): boolean {
@@ -172,8 +179,11 @@ export function nextItem(model: Model, s: Session, rng: Rng): Next {
   }
 
   const scored: { item: Item; score: number }[] = [];
+  const feelFull = feelCount(model, s) >= p.feel.maxPerGame;
   for (const item of model.bank.items) {
     if (item.kind === "foil" || item.kind === "region" || s.asked.has(item.id)) continue;
+    if (item.twin && s.asked.has(item.twin)) continue;
+    if (item.kind === "feel" && feelFull) continue;
     const w = s.genreWeight.get(item.genre) ?? 1;
     scored.push({ item, score: expectedGain(model, s.post, item) * w });
   }

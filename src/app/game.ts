@@ -45,6 +45,7 @@ const teamStyle = (t: Team) => `--team-light:${t.color};--team-dark:${t.colorDar
 function kindLabel(item: Item): string {
   const look = item.kind === "foil" ? item.look : item.kind;
   if (look === "player") return "この選手を知っていますか？";
+  if (item.kind === "feel") return "この選手が試合で活躍したら？";
   if (look === "culture") return item.hint ? `この${item.hint}を知っていますか？` : "これを知っていますか？";
   if (item.kind === "quiz") return "クイズ（わからなければ「わからない」）";
   if (item.kind === "region") return "あなたのこと（これだけは1回だけ聞きます）";
@@ -103,7 +104,7 @@ export function mountGame(root: HTMLElement, deps: GameDeps) {
     const title = h("h2", { class: "q-text", tabindex: "-1" }, item.text);
     const options = h("div", { class: "options", role: "group", "aria-label": "答え" });
     item.options.forEach((label, a) => options.append(h("button", { class: "opt", type: "button", "data-action": "answer", "data-a": a }, label)));
-    const showHint = item.hint && (item.kind === "player" || (item.kind === "foil" && item.look === "player"));
+    const showHint = item.hint && (item.kind === "player" || item.kind === "feel" || (item.kind === "foil" && item.look === "player"));
     root.replaceChildren(
       h(
         "section",
